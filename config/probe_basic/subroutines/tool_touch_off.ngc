@@ -44,7 +44,6 @@ o<110> if [#<slow_probe_fr> GT 0]
   F[#<slow_probe_fr>]    (set probe slow feedrate)
   G38.2 Z-[#<retract_distance> * 2]    (slow tool probe)
   #<z_slow_probe> = #5063
-  (debug, Probed Pos: #5063 Z Pos: #<_z>)
   G90
   G0 Z[#<z_slow_probe> + #<retract_distance>]
 o<110> endif
@@ -65,7 +64,7 @@ G90    (set absolute coordinates)
 G53 G0 Z0 (Send Spindle to home zero position)
 
 (define new tool length offset parameters)
-#<new_tool_length_offset> = [ABS[#<spindle_zero_height> + #5063]]
+#<new_tool_length_offset> = [ABS[#<spindle_zero_height> - [#<workspace_z> + #<z_slow_probe>]]]
 
 G10 L1 P #5400 Z [#<new_tool_length_offset>]  (5400 = tool number)
 T #5400 G43  H #5400    (enable tool length offset)
