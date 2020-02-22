@@ -19197,6 +19197,120 @@ QPushButton:checked {
              <string>set_probe_height.ngc</string>
             </property>
            </widget>
+           <widget class="VCPSettingsLineEdit" name="spindle_probe_gage_diameter">
+            <property name="geometry">
+             <rect>
+              <x>280</x>
+              <y>30</y>
+              <width>75</width>
+              <height>43</height>
+             </rect>
+            </property>
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>75</width>
+              <height>43</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>75</width>
+              <height>31</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <family>bebas kai</family>
+              <pointsize>14</pointsize>
+              <weight>50</weight>
+              <italic>false</italic>
+              <bold>false</bold>
+             </font>
+            </property>
+            <property name="focusPolicy">
+             <enum>Qt::ClickFocus</enum>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">VCPSettingsLineEdit {
+    font: 14pt &quot;bebas kai&quot;
+}</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+            <property name="placeholderText">
+             <string>0.0</string>
+            </property>
+            <property name="settingName" stdset="0">
+             <string>tool-setter-probe.spindle-probe-gage-diameter</string>
+            </property>
+            <property name="textFormat" stdset="0">
+             <string>{:0.1f}</string>
+            </property>
+           </widget>
+           <widget class="VCPSettingsLineEdit" name="manual_probe_tool_number">
+            <property name="geometry">
+             <rect>
+              <x>280</x>
+              <y>100</y>
+              <width>75</width>
+              <height>43</height>
+             </rect>
+            </property>
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>75</width>
+              <height>43</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>75</width>
+              <height>31</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <family>bebas kai</family>
+              <pointsize>14</pointsize>
+              <weight>50</weight>
+              <italic>false</italic>
+              <bold>false</bold>
+             </font>
+            </property>
+            <property name="focusPolicy">
+             <enum>Qt::ClickFocus</enum>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">VCPSettingsLineEdit {
+    font: 14pt &quot;bebas kai&quot;
+}</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+            </property>
+            <property name="placeholderText">
+             <string>1</string>
+            </property>
+            <property name="settingName" stdset="0">
+             <string>tool-setter-probe.manual-probe-tool-number</string>
+            </property>
+            <property name="textFormat" stdset="0">
+             <string>{:0.1f}</string>
+            </property>
+           </widget>
           </widget>
          </widget>
         </item>
