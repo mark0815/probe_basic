@@ -11,16 +11,14 @@ o<set_probe_height> sub
 #<tool_diameter> = #10    (current tool's diameter used for offseting probe position in x axis)
 
 #<manual_probe_tool_number> = 1
-#<workspace_z> = #[5203 + [20 * #5220]]
-
-(debug, TN: #<manual_probe_tool_number>)
 
 G49
 
 G90
 
 (define new tool length offset parameters)
-#<new_tool_length_offset> = [ABS[#<spindle_zero_height>] - #<workspace_z>]
+#<current_z_pos_in_g53> = [#5213 - #5223 - #5422]
+#<new_tool_length_offset> = [ABS[#<spindle_zero_height>] - #<current_z_pos_in_g53>]
 
 G10 L1 P [#<manual_probe_tool_number>] Z [#<new_tool_length_offset>]
 G43  (enable tool length offset)
