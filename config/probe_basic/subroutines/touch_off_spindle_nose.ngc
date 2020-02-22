@@ -3,16 +3,10 @@ o<touch_off_spindle_nose> sub
 #<fast_probe_fr> = #1    (set from probe screen fast probe feed rate)
 #<slow_probe_fr> = #2    (set from probe screen slow probe feedrate)
 #<z_max_travel> = #3    (max z distance the tool travels before erroring out if not contact is made)
-#<xy_max_travel> = #4    (max xy distance the tool travels before erroring out if not contact is made)
-#<retract_distance> = #6    (distance the tool retracts after making contact during fast feed mode)
 #<spindle_zero_height> = #5    (G53 distance from home to spindle nose triggering point on touch plate)
-#<tool_diameter_probe_mode> = #8    (activates the tool diameter probe subroutine section)
-#<tool_diameter_offset_mode> = #9    (activates the tool diameter offset position for probe subroutine section)
-#<tool_diameter> = #10    (current tool's diameter used for offseting probe position in x axis)
+#<retract_distance> = #6    (distance the tool retracts after making contact during fast feed mode)
 
 #<spindle_gage_ring_radius> = 20.0
-
-(debug, dia: #<spindle_gage_ring_diameter>)
 
 G92.1    (Cancel G92 offset)
 
@@ -21,13 +15,6 @@ G92.1    (Cancel G92 offset)
 #<tool_touch_x_coords> = #5181
 #<tool_touch_y_coords> = #5182
 #<tool_touch_z_coords> = #5183
-
-#<tool_radius_offset> = [#<tool_diameter> / 2]
-#<offset_probing_position> = [#<tool_touch_x_coords> - #<tool_radius_offset>]
-
-o<100> if [#<tool_diameter_offset_mode> EQ 1]
-  #<tool_touch_x_coords> = #<offset_probing_position>
-o<100> endif
 
 G49    (cancel tlo)
 G90    (set absolute coordinates)
@@ -65,7 +52,8 @@ G90    (set absolute coordinates)
 G53 G0 Z0 (Send Spindle to home zero position)
 
 (define new tool length offset parameters)
-#<spindle_zero_height> = [#<workspace_z> + #<z_slow_probe>]
+#1002 = [#<workspace_z> + #<z_slow_probe>]
+(DEBUG, EVAL[vcp.getWidget{"spindle_zero_height"}.setValue{#1002}])
 
 o<touch_off_spindle_nose> endsub
 
