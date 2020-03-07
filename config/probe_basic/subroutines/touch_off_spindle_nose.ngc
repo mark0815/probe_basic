@@ -22,7 +22,7 @@ G53 G0 X#<tool_touch_x_coords> Y#<tool_touch_y_coords>
 G53 G0 Z#<tool_touch_z_coords>
 
 G91
-G0 Y-[#<spindle_probe_gage_diameter> / 2] (move y -20 to probe on the spindle outer tool holder ring)
+G0 Y-[#<spindle_nose_gauge_diameter> / 2] (move y -20 to probe on the spindle outer tool holder ring)
 F #<fast_probe_fr>
 G38.2 Z-[#<z_max_travel>]    (fast tool probe)
 #<z_fast_probe> = #5063    (save probe result of fast probe to parameters)
