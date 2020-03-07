@@ -19197,7 +19197,7 @@ QPushButton:checked {
              <string>set_probe_height.ngc</string>
             </property>
            </widget>
-           <widget class="VCPSettingsLineEdit" name="spindle_probe_gage_diameter">
+           <widget class="VCPSettingsLineEdit" name="spindle_nose_gauge_diameter">
             <property name="geometry">
              <rect>
               <x>280</x>
@@ -19248,10 +19248,10 @@ QPushButton:checked {
              <string>0.0</string>
             </property>
             <property name="settingName" stdset="0">
-             <string>tool-setter-probe.spindle-probe-gage-diameter</string>
+             <string>tool-setter-probe.spindle-nose-gauge-diameter</string>
             </property>
             <property name="textFormat" stdset="0">
-             <string>{:0.1f}</string>
+             <string>{:4f}</string>
             </property>
            </widget>
            <widget class="VCPSettingsLineEdit" name="manual_probe_tool_number">
@@ -19308,7 +19308,7 @@ QPushButton:checked {
              <string>tool-setter-probe.manual-probe-tool-number</string>
             </property>
             <property name="textFormat" stdset="0">
-             <string>{:0.1f}</string>
+             <string>{:0f}</string>
             </property>
            </widget>
           </widget>
@@ -32193,14 +32193,14 @@ font: 11pt bebas kai;
  </designerdata>
  <buttongroups>
   <buttongroup name="guiaxisdisplayGroup"/>
-  <buttongroup name="proberoutinebtnGroup"/>
-  <buttongroup name="xycalbtnGroup"/>
   <buttongroup name="probemodeGroup"/>
-  <buttongroup name="plotviewGroup"/>
-  <buttongroup name="probetabGroup"/>
-  <buttongroup name="probehelpGroup"/>
-  <buttongroup name="mainorthoperspbtnGroup"/>
-  <buttongroup name="fileviewerbtnGroup"/>
   <buttongroup name="plotorthoperspbtnGroup"/>
+  <buttongroup name="proberoutinebtnGroup"/>
+  <buttongroup name="plotviewGroup"/>
+  <buttongroup name="fileviewerbtnGroup"/>
+  <buttongroup name="probehelpGroup"/>
+  <buttongroup name="xycalbtnGroup"/>
+  <buttongroup name="mainorthoperspbtnGroup"/>
+  <buttongroup name="probetabGroup"/>
  </buttongroups>
 </ui>

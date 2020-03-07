@@ -3,9 +3,9 @@ o<touch_off_spindle_nose> sub
 #<fast_probe_fr> = #1    (set from probe screen fast probe feed rate)
 #<slow_probe_fr> = #2    (set from probe screen slow probe feedrate)
 #<z_max_travel> = #3    (max z distance the tool travels before erroring out if not contact is made)
-#<spindle_zero_height> = #5    (G53 distance from home to spindle nose triggering point on touch plate)
-#<retract_distance> = #6    (distance the tool retracts after making contact during fast feed mode)
-#<spindle_probe_gage_diameter> = #7
+#<spindle_zero_height> = #4    (G53 distance from home to spindle nose triggering point on touch plate)
+#<retract_distance> = #5    (distance the tool retracts after making contact during fast feed mode)
+#<spindle_nose_gauge_diameter> = #6
 
 G92.1    (Cancel G92 offset)
 

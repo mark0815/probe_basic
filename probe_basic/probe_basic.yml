@@ -169,8 +169,8 @@ settings:
     min_value: -1000
     max_value: 1000
 
-  tool-setter-probe.spindle-probe-gage-diameter:
-    description: diameter of the spindle gage ring. used for touch of on the tool setter.
+  tool-setter-probe.spindle-nose-gauge-diameter:
+    description: diameter of the spindle gauge ring. used for touch of on the tool setter.
     default_value: 40.0
     persistent: true
     min_value: 0
