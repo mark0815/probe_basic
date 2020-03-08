@@ -4,11 +4,12 @@ o<tool_touch_off> sub
 #<slow_probe_fr> = #2    (set from probe screen slow probe feedrate)
 #<z_max_travel> = #3    (max z distance the tool travels before erroring out if not contact is made)
 #<xy_max_travel> = #4    (max xy distance the tool travels before erroring out if not contact is made)
-#<retract_distance> = #6    (distance the tool retracts after making contact during fast feed mode)
 #<spindle_zero_height> = #5    (G53 distance from home to spindle nose triggering point on touch plate)
-#<tool_diameter_probe_mode> = #8    (activates the tool diameter probe subroutine section)
-#<tool_diameter_offset_mode> = #9    (activates the tool diameter offset position for probe subroutine section)
-#<tool_diameter> = #10    (current tool's diameter used for offseting probe position in x axis)
+#<retract_distance> = #6    (distance the tool retracts after making contact during fast feed mode)
+#<tool_diameter_probe_mode> = #7    (activates the tool diameter probe subroutine section)
+#<tool_diameter_offset_mode> = #8    (activates the tool diameter offset position for probe subroutine section)
+#<tool_diameter> = #9    (current tool's diameter used for offseting probe position in x axis)
+#<tool_setter_switch_diameter> = #10 (tool setter switch diameter)
 
 G92.1    (Cancel G92 offset)
 
@@ -22,7 +23,9 @@ G92.1    (Cancel G92 offset)
 #<offset_probing_position> = [#<tool_touch_x_coords> - #<tool_radius_offset>]
 
 o<100> if [#<tool_diameter_offset_mode> EQ 1]
-  #<tool_touch_x_coords> = #<offset_probing_position>
+  o<101> if [#<tool_diameter> GT #<tool_setter_switch_diameter>]
+    #<tool_touch_x_coords> = #<offset_probing_position>
+  o<101> endif
 o<100> endif
 
 G49    (cancel tlo)

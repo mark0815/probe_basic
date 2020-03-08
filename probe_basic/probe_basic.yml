@@ -176,6 +176,13 @@ settings:
     min_value: 0
     max_value: 100
 
+  tool-setter-probe.tool-setter-switch-diameter:
+    description: diameter of the tool setter switch.
+    default_value: 13.0
+    persistent: true
+    min_value: 0
+    max_value: 50
+
   tool-setter-probe.manual-probe-tool-number:
     description: The tool number of the manual probe.
     default_value: 1

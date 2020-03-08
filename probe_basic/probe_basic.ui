@@ -19197,119 +19197,285 @@ QPushButton:checked {
              <string>set_probe_height.ngc</string>
             </property>
            </widget>
-           <widget class="VCPSettingsLineEdit" name="spindle_nose_gauge_diameter">
+           <widget class="QFrame" name="frame_5">
             <property name="geometry">
              <rect>
-              <x>280</x>
-              <y>30</y>
-              <width>75</width>
-              <height>43</height>
+              <x>510</x>
+              <y>130</y>
+              <width>351</width>
+              <height>311</height>
              </rect>
             </property>
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
             </property>
-            <property name="minimumSize">
-             <size>
-              <width>75</width>
-              <height>43</height>
-             </size>
+            <property name="frameShadow">
+             <enum>QFrame::Raised</enum>
             </property>
-            <property name="maximumSize">
-             <size>
-              <width>75</width>
-              <height>31</height>
-             </size>
-            </property>
-            <property name="font">
-             <font>
-              <family>bebas kai</family>
-              <pointsize>14</pointsize>
-              <weight>50</weight>
-              <italic>false</italic>
-              <bold>false</bold>
-             </font>
-            </property>
-            <property name="focusPolicy">
-             <enum>Qt::ClickFocus</enum>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">VCPSettingsLineEdit {
+            <widget class="QLabel" name="label_5">
+             <property name="geometry">
+              <rect>
+               <x>20</x>
+               <y>20</y>
+               <width>200</width>
+               <height>33</height>
+              </rect>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>200</width>
+               <height>33</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QLabel{   
+    color: rgb(238, 238, 236);
+	font: 16pt &quot;Bebas Kai&quot;;
+}
+
+
+
+
+
+</string>
+             </property>
+             <property name="text">
+              <string>Toolsetter dia</string>
+             </property>
+            </widget>
+            <widget class="VCPSettingsLineEdit" name="tool_setter_switch_diameter">
+             <property name="geometry">
+              <rect>
+               <x>240</x>
+               <y>20</y>
+               <width>75</width>
+               <height>43</height>
+              </rect>
+             </property>
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>75</width>
+               <height>43</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>75</width>
+               <height>31</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <family>bebas kai</family>
+               <pointsize>14</pointsize>
+               <weight>50</weight>
+               <italic>false</italic>
+               <bold>false</bold>
+              </font>
+             </property>
+             <property name="focusPolicy">
+              <enum>Qt::ClickFocus</enum>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">VCPSettingsLineEdit {
     font: 14pt &quot;bebas kai&quot;
 }</string>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-            </property>
-            <property name="placeholderText">
-             <string>0.0</string>
-            </property>
-            <property name="settingName" stdset="0">
-             <string>tool-setter-probe.spindle-nose-gauge-diameter</string>
-            </property>
-            <property name="textFormat" stdset="0">
-             <string>{:4f}</string>
-            </property>
-           </widget>
-           <widget class="VCPSettingsLineEdit" name="manual_probe_tool_number">
-            <property name="geometry">
-             <rect>
-              <x>280</x>
-              <y>100</y>
-              <width>75</width>
-              <height>43</height>
-             </rect>
-            </property>
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>75</width>
-              <height>43</height>
-             </size>
-            </property>
-            <property name="maximumSize">
-             <size>
-              <width>75</width>
-              <height>31</height>
-             </size>
-            </property>
-            <property name="font">
-             <font>
-              <family>bebas kai</family>
-              <pointsize>14</pointsize>
-              <weight>50</weight>
-              <italic>false</italic>
-              <bold>false</bold>
-             </font>
-            </property>
-            <property name="focusPolicy">
-             <enum>Qt::ClickFocus</enum>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">VCPSettingsLineEdit {
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+             </property>
+             <property name="placeholderText">
+              <string>0.0</string>
+             </property>
+             <property name="settingName" stdset="0">
+              <string>tool-setter-probe.tool-setter-switch-diameter</string>
+             </property>
+             <property name="textFormat" stdset="0">
+              <string>{:4f}</string>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_6">
+             <property name="geometry">
+              <rect>
+               <x>20</x>
+               <y>80</y>
+               <width>200</width>
+               <height>33</height>
+              </rect>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>200</width>
+               <height>33</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QLabel{   
+    color: rgb(238, 238, 236);
+	font: 16pt &quot;Bebas Kai&quot;;
+}
+
+
+
+
+
+</string>
+             </property>
+             <property name="text">
+              <string>Spindle node gauge dia</string>
+             </property>
+            </widget>
+            <widget class="VCPSettingsLineEdit" name="spindle_nose_gauge_diameter">
+             <property name="geometry">
+              <rect>
+               <x>240</x>
+               <y>80</y>
+               <width>75</width>
+               <height>43</height>
+              </rect>
+             </property>
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>75</width>
+               <height>43</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>75</width>
+               <height>31</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <family>bebas kai</family>
+               <pointsize>14</pointsize>
+               <weight>50</weight>
+               <italic>false</italic>
+               <bold>false</bold>
+              </font>
+             </property>
+             <property name="focusPolicy">
+              <enum>Qt::ClickFocus</enum>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">VCPSettingsLineEdit {
     font: 14pt &quot;bebas kai&quot;
 }</string>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-            </property>
-            <property name="placeholderText">
-             <string>1</string>
-            </property>
-            <property name="settingName" stdset="0">
-             <string>tool-setter-probe.manual-probe-tool-number</string>
-            </property>
-            <property name="textFormat" stdset="0">
-             <string>{:0f}</string>
-            </property>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+             </property>
+             <property name="placeholderText">
+              <string>0.0</string>
+             </property>
+             <property name="settingName" stdset="0">
+              <string>tool-setter-probe.spindle-nose-gauge-diameter</string>
+             </property>
+             <property name="textFormat" stdset="0">
+              <string>{:4f}</string>
+             </property>
+            </widget>
+            <widget class="QLabel" name="label_7">
+             <property name="geometry">
+              <rect>
+               <x>20</x>
+               <y>140</y>
+               <width>200</width>
+               <height>33</height>
+              </rect>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>200</width>
+               <height>33</height>
+              </size>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">QLabel{   
+    color: rgb(238, 238, 236);
+	font: 16pt &quot;Bebas Kai&quot;;
+}
+
+
+
+
+
+</string>
+             </property>
+             <property name="text">
+              <string>3d touch probe tool No</string>
+             </property>
+            </widget>
+            <widget class="VCPSettingsLineEdit" name="manual_probe_tool_number">
+             <property name="geometry">
+              <rect>
+               <x>240</x>
+               <y>140</y>
+               <width>75</width>
+               <height>43</height>
+              </rect>
+             </property>
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="minimumSize">
+              <size>
+               <width>75</width>
+               <height>43</height>
+              </size>
+             </property>
+             <property name="maximumSize">
+              <size>
+               <width>75</width>
+               <height>31</height>
+              </size>
+             </property>
+             <property name="font">
+              <font>
+               <family>bebas kai</family>
+               <pointsize>14</pointsize>
+               <weight>50</weight>
+               <italic>false</italic>
+               <bold>false</bold>
+              </font>
+             </property>
+             <property name="focusPolicy">
+              <enum>Qt::ClickFocus</enum>
+             </property>
+             <property name="styleSheet">
+              <string notr="true">VCPSettingsLineEdit {
+    font: 14pt &quot;bebas kai&quot;
+}</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+             </property>
+             <property name="placeholderText">
+              <string>1</string>
+             </property>
+             <property name="settingName" stdset="0">
+              <string>tool-setter-probe.manual-probe-tool-number</string>
+             </property>
+             <property name="textFormat" stdset="0">
+              <string>{:0f}</string>
+             </property>
+            </widget>
            </widget>
           </widget>
          </widget>
@@ -32192,15 +32358,15 @@ font: 11pt bebas kai;
   </property>
  </designerdata>
  <buttongroups>
-  <buttongroup name="guiaxisdisplayGroup"/>
-  <buttongroup name="probemodeGroup"/>
-  <buttongroup name="plotorthoperspbtnGroup"/>
-  <buttongroup name="proberoutinebtnGroup"/>
+  <buttongroup name="mainorthoperspbtnGroup"/>
   <buttongroup name="plotviewGroup"/>
   <buttongroup name="fileviewerbtnGroup"/>
-  <buttongroup name="probehelpGroup"/>
+  <buttongroup name="guiaxisdisplayGroup"/>
+  <buttongroup name="proberoutinebtnGroup"/>
   <buttongroup name="xycalbtnGroup"/>
-  <buttongroup name="mainorthoperspbtnGroup"/>
   <buttongroup name="probetabGroup"/>
+  <buttongroup name="plotorthoperspbtnGroup"/>
+  <buttongroup name="probemodeGroup"/>
+  <buttongroup name="probehelpGroup"/>
  </buttongroups>
 </ui>
