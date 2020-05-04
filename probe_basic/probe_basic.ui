@@ -224,7 +224,7 @@ bottom-margin: 0px;
            <enum>QTabWidget::South</enum>
           </property>
           <property name="currentIndex">
-           <number>0</number>
+           <number>1</number>
           </property>
           <widget class="QWidget" name="main_tab">
            <attribute name="title">
@@ -717,13 +717,50 @@ QComboBox QAbstractItemView{
                      <enum>Qt::NoFocus</enum>
                     </property>
                     <property name="styleSheet">
-                     <string notr="true"/>
+                     <string notr="true">QPushButton {
+    color: white;
+    border-color: rgb(74, 77, 81);
+    border-style: solid;
+    border-radius: 5px;
+    border-width: 2px;
+    background: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 rgba(213, 218, 216, 255), stop:0.169312 rgba(82, 82, 83, 255), stop:0.328042 rgba(72, 70, 73, 255), stop:0.492063 rgba(78, 77, 79, 255), stop:0.703704 rgba(72, 70, 73, 255), stop:0.86 rgba(82, 82, 83, 255), stop:1 rgba(213, 218, 216, 255));
+}
+
+QPushButton {
+    font-family: &quot;Bebas Kai&quot;;
+    font-size: 15pt;
+}
+
+QPushButton:disabled {
+    border-color: gray;
+}
+
+/*QPushButton[error=&quot;true&quot;] {
+    border-color: red;
+}*/
+
+QPushButton:hover {
+    background:  qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                     stop: 0 #A19E9E, stop: 1.0 #5C5959);
+}
+
+QPushButton:pressed {
+    background:  qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(85, 85, 238, 255), stop:0.544974 rgba(90, 91, 239, 255), stop:1 rgba(126, 135, 243, 255));
+}
+
+QPushButton:checked[option=&quot;true&quot;] {
+    background:  qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(85, 85, 238, 255), stop:0.544974 rgba(90, 91, 239, 255), stop:1 rgba(126, 135, 243, 255));
+}
+
+QPushButton:checked {
+    background:  qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(85, 85, 238, 255), stop:0.544974 rgba(90, 91, 239, 255), stop:1 rgba(126, 135, 243, 255));
+}</string>
                     </property>
                     <property name="text">
                      <string>PAN</string>
                     </property>
                     <property name="checkable">
-                     <bool>false</bool>
+                     <bool>true</bool>
                     </property>
                    </widget>
                   </item>
@@ -2097,7 +2134,7 @@ QHeaderView {
 }</string>
                    </property>
                    <property name="currentIndex">
-                    <number>0</number>
+                    <number>1</number>
                    </property>
                    <widget class="QWidget" name="page_5">
                     <layout class="QVBoxLayout" name="verticalLayout_50">
@@ -2312,18 +2349,11 @@ QHeaderView {
                    <widget class="QWidget" name="page_6">
                     <layout class="QVBoxLayout" name="verticalLayout_52">
                      <item>
-                      <widget class="GcodeEditor" name="gcodeeditor_4">
-                       <property name="styleSheet">
-                        <string notr="true">GcodeEditor {
-	color: black;
-   	border: 4px;
-	border-color: rgb(120, 120, 120);
-	border-style: solid;
-	background-color: rgb(238, 238, 236);
-}</string>
-                       </property>
-                       <property name="is_editor" stdset="0">
-                        <bool>true</bool>
+                      <widget class="QWebView" name="webView">
+                       <property name="url">
+                        <url>
+                         <string>about:blank</string>
+                        </url>
                        </property>
                       </widget>
                      </item>
@@ -10168,6 +10198,9 @@ color: white;
                        <property name="actionName" stdset="0">
                         <string>machine.set-work-coord:G54</string>
                        </property>
+                       <attribute name="buttonGroup">
+                        <string notr="true">probepagewcsbtnGroup</string>
+                       </attribute>
                       </widget>
                      </item>
                      <item>
@@ -10207,6 +10240,9 @@ color: white;
                        <property name="actionName" stdset="0">
                         <string>machine.set-work-coord:G55</string>
                        </property>
+                       <attribute name="buttonGroup">
+                        <string notr="true">probepagewcsbtnGroup</string>
+                       </attribute>
                       </widget>
                      </item>
                      <item>
@@ -10246,6 +10282,9 @@ color: white;
                        <property name="actionName" stdset="0">
                         <string>machine.set-work-coord:G56</string>
                        </property>
+                       <attribute name="buttonGroup">
+                        <string notr="true">probepagewcsbtnGroup</string>
+                       </attribute>
                       </widget>
                      </item>
                      <item>
@@ -10285,6 +10324,9 @@ color: white;
                        <property name="actionName" stdset="0">
                         <string>machine.set-work-coord:G57</string>
                        </property>
+                       <attribute name="buttonGroup">
+                        <string notr="true">probepagewcsbtnGroup</string>
+                       </attribute>
                       </widget>
                      </item>
                      <item>
@@ -10324,6 +10366,9 @@ color: white;
                        <property name="actionName" stdset="0">
                         <string>machine.set-work-coord:G58</string>
                        </property>
+                       <attribute name="buttonGroup">
+                        <string notr="true">probepagewcsbtnGroup</string>
+                       </attribute>
                       </widget>
                      </item>
                      <item>
@@ -10363,6 +10408,9 @@ color: white;
                        <property name="actionName" stdset="0">
                         <string>machine.set-work-coord:G59</string>
                        </property>
+                       <attribute name="buttonGroup">
+                        <string notr="true">probepagewcsbtnGroup</string>
+                       </attribute>
                       </widget>
                      </item>
                     </layout>
@@ -10435,6 +10483,9 @@ color: white;
                        <property name="actionName" stdset="0">
                         <string>machine.set-work-coord:G59.1</string>
                        </property>
+                       <attribute name="buttonGroup">
+                        <string notr="true">probepagewcsbtnGroup</string>
+                       </attribute>
                       </widget>
                      </item>
                      <item>
@@ -10474,6 +10525,9 @@ color: white;
                        <property name="actionName" stdset="0">
                         <string>machine.set-work-coord:G59.2</string>
                        </property>
+                       <attribute name="buttonGroup">
+                        <string notr="true">probepagewcsbtnGroup</string>
+                       </attribute>
                       </widget>
                      </item>
                      <item>
@@ -10513,6 +10567,9 @@ color: white;
                        <property name="actionName" stdset="0">
                         <string>machine.set-work-coord:G59.3</string>
                        </property>
+                       <attribute name="buttonGroup">
+                        <string notr="true">probepagewcsbtnGroup</string>
+                       </attribute>
                       </widget>
                      </item>
                      <item>
@@ -18319,7 +18376,7 @@ QTabBar::tab:only-one {
            <widget class="QFrame" name="frame_4">
             <property name="geometry">
              <rect>
-              <x>1430</x>
+              <x>950</x>
               <y>10</y>
               <width>201</width>
               <height>180</height>
@@ -18557,6 +18614,602 @@ QTabBar::tab:only-one {
                  </property>
                  <property name="indent">
                   <number>0</number>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </widget>
+           <widget class="QFrame" name="frame_5">
+            <property name="geometry">
+             <rect>
+              <x>1160</x>
+              <y>10</y>
+              <width>471</width>
+              <height>361</height>
+             </rect>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Raised</enum>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_59">
+             <item>
+              <widget class="QLabel" name="work_column_header_6">
+               <property name="enabled">
+                <bool>true</bool>
+               </property>
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="minimumSize">
+                <size>
+                 <width>100</width>
+                 <height>25</height>
+                </size>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>16777215</width>
+                 <height>25</height>
+                </size>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">QLabel{
+    color: rgb(238, 238, 236);
+	font: 16pt &quot;Bebas Kai&quot;;
+}</string>
+               </property>
+               <property name="text">
+                <string>PROGRAMMED COOLANT CONSTANTS</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_170">
+               <property name="topMargin">
+                <number>1</number>
+               </property>
+               <property name="bottomMargin">
+                <number>1</number>
+               </property>
+               <item>
+                <widget class="QLabel" name="label_127">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="minimumSize">
+                  <size>
+                   <width>140</width>
+                   <height>31</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>16777215</width>
+                   <height>31</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QLabel{
+font: 75 14pt &quot;Bebas Kai&quot;;
+color: white;
+}</string>
+                 </property>
+                 <property name="lineWidth">
+                  <number>0</number>
+                 </property>
+                 <property name="text">
+                  <string>ACTIVATE PROGRAMMABLE COOLANT = 1</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                 </property>
+                 <property name="indent">
+                  <number>0</number>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="VCPSettingsLineEdit" name="activate_pogrammable_coolant">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="minimumSize">
+                  <size>
+                   <width>100</width>
+                   <height>31</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>100</width>
+                   <height>31</height>
+                  </size>
+                 </property>
+                 <property name="focusPolicy">
+                  <enum>Qt::ClickFocus</enum>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                 </property>
+                 <property name="placeholderText">
+                  <string>0</string>
+                 </property>
+                 <property name="settingName" stdset="0">
+                  <string>programmable-coolant.active</string>
+                 </property>
+                 <property name="textFormat" stdset="0">
+                  <string>{:0.0f}</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_166">
+               <property name="topMargin">
+                <number>1</number>
+               </property>
+               <property name="bottomMargin">
+                <number>1</number>
+               </property>
+               <item>
+                <widget class="QLabel" name="label_126">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="minimumSize">
+                  <size>
+                   <width>140</width>
+                   <height>31</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>16777215</width>
+                   <height>31</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QLabel{
+font: 75 14pt &quot;Bebas Kai&quot;;
+color: white;
+}</string>
+                 </property>
+                 <property name="lineWidth">
+                  <number>0</number>
+                 </property>
+                 <property name="text">
+                  <string>SPINDLE CENTERLINE TO NOZZLE CENTERLINE DISTANCE</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                 </property>
+                 <property name="indent">
+                  <number>0</number>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="VCPSettingsLineEdit" name="horizontal_spindle_nozzle_dist">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="minimumSize">
+                  <size>
+                   <width>100</width>
+                   <height>31</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>100</width>
+                   <height>31</height>
+                  </size>
+                 </property>
+                 <property name="focusPolicy">
+                  <enum>Qt::ClickFocus</enum>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                 </property>
+                 <property name="placeholderText">
+                  <string>0.0000</string>
+                 </property>
+                 <property name="settingName" stdset="0">
+                  <string>programmable-coolant.spindle-to-nozzle-dist</string>
+                 </property>
+                 <property name="textFormat" stdset="0">
+                  <string>{:0.4f}</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_167">
+               <property name="topMargin">
+                <number>1</number>
+               </property>
+               <property name="bottomMargin">
+                <number>1</number>
+               </property>
+               <item>
+                <widget class="QLabel" name="label_128">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="minimumSize">
+                  <size>
+                   <width>140</width>
+                   <height>31</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>16777215</width>
+                   <height>31</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QLabel{
+font: 75 14pt &quot;Bebas Kai&quot;;
+color: white;
+}</string>
+                 </property>
+                 <property name="lineWidth">
+                  <number>0</number>
+                 </property>
+                 <property name="text">
+                  <string>NOZZLE CENTERLINE TO SPINDLE GAUGE LINE</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                 </property>
+                 <property name="indent">
+                  <number>0</number>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="VCPSettingsLineEdit" name="vertical_spindle_nozzle_dist">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="minimumSize">
+                  <size>
+                   <width>100</width>
+                   <height>31</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>100</width>
+                   <height>31</height>
+                  </size>
+                 </property>
+                 <property name="focusPolicy">
+                  <enum>Qt::ClickFocus</enum>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                 </property>
+                 <property name="placeholderText">
+                  <string>0.0000</string>
+                 </property>
+                 <property name="settingName" stdset="0">
+                  <string>programmable-coolant.gaugeline-to-nozzle-dist</string>
+                 </property>
+                 <property name="textFormat" stdset="0">
+                  <string>{:0.4f}</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_171">
+               <property name="topMargin">
+                <number>1</number>
+               </property>
+               <property name="bottomMargin">
+                <number>1</number>
+               </property>
+               <item>
+                <widget class="QLabel" name="label_132">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="minimumSize">
+                  <size>
+                   <width>140</width>
+                   <height>31</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>16777215</width>
+                   <height>31</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QLabel{
+font: 75 14pt &quot;Bebas Kai&quot;;
+color: white;
+}</string>
+                 </property>
+                 <property name="lineWidth">
+                  <number>0</number>
+                 </property>
+                 <property name="text">
+                  <string>NOZZLE ANGLE OFFSET</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                 </property>
+                 <property name="indent">
+                  <number>0</number>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="VCPSettingsLineEdit" name="pc_angle_offset">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="minimumSize">
+                  <size>
+                   <width>100</width>
+                   <height>31</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>100</width>
+                   <height>31</height>
+                  </size>
+                 </property>
+                 <property name="focusPolicy">
+                  <enum>Qt::ClickFocus</enum>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                 </property>
+                 <property name="placeholderText">
+                  <string>0.0</string>
+                 </property>
+                 <property name="settingName" stdset="0">
+                  <string>programmable-coolant.pc-angle-offset</string>
+                 </property>
+                 <property name="textFormat" stdset="0">
+                  <string>{:0.4f}</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_168">
+               <property name="topMargin">
+                <number>1</number>
+               </property>
+               <property name="bottomMargin">
+                <number>1</number>
+               </property>
+               <item>
+                <widget class="QLabel" name="label_130">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="minimumSize">
+                  <size>
+                   <width>140</width>
+                   <height>31</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>16777215</width>
+                   <height>31</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QLabel{
+font: 75 14pt &quot;Bebas Kai&quot;;
+color: white;
+}</string>
+                 </property>
+                 <property name="lineWidth">
+                  <number>0</number>
+                 </property>
+                 <property name="text">
+                  <string>TOOL LENGTH OFFSET</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                 </property>
+                 <property name="indent">
+                  <number>0</number>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="StatusLabel" name="pc_tool_length">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="minimumSize">
+                  <size>
+                   <width>100</width>
+                   <height>33</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>100</width>
+                   <height>33</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QLabel {
+    border-style: transparent;
+    border-color: transparent;
+    border-width: 1px;
+    border-radius: 5px;
+    color: black;
+    background: white;
+	font: 15pt &quot;Bebas Kai&quot;;
+}</string>
+                 </property>
+                 <property name="text">
+                  <string>0.0000</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                 </property>
+                 <property name="rules" stdset="0">
+                  <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;tooltable:current_tool?z_offset&quot;, &quot;trigger&quot;: true}, {&quot;url&quot;: &quot;status:linear_units?text&quot;, &quot;trigger&quot;: false}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;\&quot;{:.4f}\&quot;.format(ch[0]) if ch[1] == 'in' else \&quot;{:.4f}\&quot;.format(ch[0])&quot;, &quot;name&quot;: &quot;Tool Length&quot;}]</string>
+                 </property>
+                 <property name="format" stdset="0">
+                  <string>{:.3f}</string>
+                 </property>
+                 <property name="statusItem" stdset="0">
+                  <string>tool_offset.3</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <layout class="QHBoxLayout" name="horizontalLayout_169">
+               <property name="topMargin">
+                <number>1</number>
+               </property>
+               <property name="bottomMargin">
+                <number>1</number>
+               </property>
+               <item>
+                <widget class="QLabel" name="label_131">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="minimumSize">
+                  <size>
+                   <width>140</width>
+                   <height>31</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>16777215</width>
+                   <height>31</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QLabel{
+font: 75 14pt &quot;Bebas Kai&quot;;
+color: white;
+}</string>
+                 </property>
+                 <property name="lineWidth">
+                  <number>0</number>
+                 </property>
+                 <property name="text">
+                  <string>CALCULATED NOZZLE ANGLE</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                 </property>
+                 <property name="indent">
+                  <number>0</number>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="StatusLabel" name="coolant_final_angle">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="minimumSize">
+                  <size>
+                   <width>100</width>
+                   <height>33</height>
+                  </size>
+                 </property>
+                 <property name="maximumSize">
+                  <size>
+                   <width>100</width>
+                   <height>33</height>
+                  </size>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">QLabel {
+    border-style: transparent;
+    border-color: transparent;
+    border-width: 1px;
+    border-radius: 5px;
+    color: black;
+    background: white;
+	font: 15pt &quot;Bebas Kai&quot;;
+}</string>
+                 </property>
+                 <property name="text">
+                  <string>0.0000</string>
+                 </property>
+                 <property name="alignment">
+                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                 </property>
+                 <property name="rules" stdset="0">
+                  <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;tooltable:current_tool?z_offset&quot;, &quot;trigger&quot;: true}, {&quot;url&quot;: &quot;status:linear_units?text&quot;, &quot;trigger&quot;: false}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;\&quot;{:.4f}\&quot;.format(ch[0]) if ch[1] == 'in' else \&quot;{:.4f}\&quot;.format(ch[0])&quot;, &quot;name&quot;: &quot;Tool Length&quot;}]</string>
+                 </property>
+                 <property name="format" stdset="0">
+                  <string>{:.3f}</string>
                  </property>
                 </widget>
                </item>
@@ -20583,11 +21236,14 @@ QPushButton:checked {
                    <bool>true</bool>
                   </property>
                   <property name="rules" stdset="0">
-                   <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:gcodes?string&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Checked&quot;, &quot;expression&quot;: &quot;'G58' in ch[0]&quot;, &quot;name&quot;: &quot;g58_offset_status&quot;}]</string>
+                   <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:g5x_index&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Checked&quot;, &quot;expression&quot;: &quot;ch[0] == 5&quot;, &quot;name&quot;: &quot;g58_offset_status&quot;}]</string>
                   </property>
                   <property name="actionName" stdset="0">
                    <string>machine.set-work-coord:G58</string>
                   </property>
+                  <attribute name="buttonGroup">
+                   <string notr="true">customwcsbtnGroup</string>
+                  </attribute>
                  </widget>
                 </item>
                 <item row="9" column="0">
@@ -20628,11 +21284,14 @@ QPushButton:checked {
                    <bool>true</bool>
                   </property>
                   <property name="rules" stdset="0">
-                   <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:gcodes?string&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Checked&quot;, &quot;expression&quot;: &quot;'G59.3' in ch[0]&quot;, &quot;name&quot;: &quot;g59_3_offset_status&quot;}]</string>
+                   <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:g5x_index&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Checked&quot;, &quot;expression&quot;: &quot;ch[0] == 9&quot;, &quot;name&quot;: &quot;g59_3_offset_status&quot;}]</string>
                   </property>
                   <property name="actionName" stdset="0">
                    <string>machine.set-work-coord:G59.3</string>
                   </property>
+                  <attribute name="buttonGroup">
+                   <string notr="true">customwcsbtnGroup</string>
+                  </attribute>
                  </widget>
                 </item>
                 <item row="0" column="0">
@@ -20673,11 +21332,14 @@ QPushButton:checked {
                    <bool>true</bool>
                   </property>
                   <property name="rules" stdset="0">
-                   <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:current_line?string&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Checked&quot;, &quot;expression&quot;: &quot; 'm2, M2, m02, M02, m30, M30' in ch[0]&quot;, &quot;name&quot;: &quot;g54_offset_status&quot;}]</string>
+                   <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:g5x_index&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Checked&quot;, &quot;expression&quot;: &quot;ch[0] == 1&quot;, &quot;name&quot;: &quot;g54_offset_status&quot;}]</string>
                   </property>
                   <property name="actionName" stdset="0">
                    <string>machine.set-work-coord:G54</string>
                   </property>
+                  <attribute name="buttonGroup">
+                   <string notr="true">customwcsbtnGroup</string>
+                  </attribute>
                  </widget>
                 </item>
                 <item row="2" column="0">
@@ -20718,11 +21380,14 @@ QPushButton:checked {
                    <bool>true</bool>
                   </property>
                   <property name="rules" stdset="0">
-                   <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:gcodes?string&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Checked&quot;, &quot;expression&quot;: &quot;'G56' in ch[0]&quot;, &quot;name&quot;: &quot;g56_offset_status&quot;}]</string>
+                   <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:g5x_index&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Checked&quot;, &quot;expression&quot;: &quot;ch[0] == 3&quot;, &quot;name&quot;: &quot;g56_offset_status&quot;}]</string>
                   </property>
                   <property name="actionName" stdset="0">
                    <string>machine.set-work-coord:G56</string>
                   </property>
+                  <attribute name="buttonGroup">
+                   <string notr="true">customwcsbtnGroup</string>
+                  </attribute>
                  </widget>
                 </item>
                 <item row="0" column="1">
@@ -20763,11 +21428,14 @@ QPushButton:checked {
                    <bool>true</bool>
                   </property>
                   <property name="rules" stdset="0">
-                   <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:gcodes?string&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Checked&quot;, &quot;expression&quot;: &quot;'G55' in ch[0]&quot;, &quot;name&quot;: &quot;g55_offset_status&quot;}]</string>
+                   <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:g5x_index&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Checked&quot;, &quot;expression&quot;: &quot;ch[0] == 2&quot;, &quot;name&quot;: &quot;g55_offset_status&quot;}]</string>
                   </property>
                   <property name="actionName" stdset="0">
                    <string>machine.set-work-coord:G55</string>
                   </property>
+                  <attribute name="buttonGroup">
+                   <string notr="true">customwcsbtnGroup</string>
+                  </attribute>
                  </widget>
                 </item>
                 <item row="2" column="1">
@@ -20808,11 +21476,14 @@ QPushButton:checked {
                    <bool>true</bool>
                   </property>
                   <property name="rules" stdset="0">
-                   <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:gcodes?string&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Checked&quot;, &quot;expression&quot;: &quot;'G57' in ch[0]&quot;, &quot;name&quot;: &quot;g57_offset_status&quot;}]</string>
+                   <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:g5x_index&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Checked&quot;, &quot;expression&quot;: &quot;ch[0] == 4&quot;, &quot;name&quot;: &quot;g57_offset_status&quot;}]</string>
                   </property>
                   <property name="actionName" stdset="0">
                    <string>machine.set-work-coord:G57</string>
                   </property>
+                  <attribute name="buttonGroup">
+                   <string notr="true">customwcsbtnGroup</string>
+                  </attribute>
                  </widget>
                 </item>
                 <item row="4" column="1">
@@ -20853,11 +21524,14 @@ QPushButton:checked {
                    <bool>true</bool>
                   </property>
                   <property name="rules" stdset="0">
-                   <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:gcodes?string&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Checked&quot;, &quot;expression&quot;: &quot;'G59' in ch[0]&quot;, &quot;name&quot;: &quot;g59_offset_status&quot;}]</string>
+                   <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:g5x_index&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Checked&quot;, &quot;expression&quot;: &quot;ch[0] == 6&quot;, &quot;name&quot;: &quot;g59_offset_status&quot;}]</string>
                   </property>
                   <property name="actionName" stdset="0">
                    <string>machine.set-work-coord:G59</string>
                   </property>
+                  <attribute name="buttonGroup">
+                   <string notr="true">customwcsbtnGroup</string>
+                  </attribute>
                  </widget>
                 </item>
                 <item row="7" column="1">
@@ -20898,11 +21572,14 @@ QPushButton:checked {
                    <bool>true</bool>
                   </property>
                   <property name="rules" stdset="0">
-                   <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:gcodes?string&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Checked&quot;, &quot;expression&quot;: &quot;'G59.2' in ch[0]&quot;, &quot;name&quot;: &quot;g59_2_offset_status&quot;}]</string>
+                   <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:g5x_index&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Checked&quot;, &quot;expression&quot;: &quot;ch[0] == 8&quot;, &quot;name&quot;: &quot;g59_2_offset_status&quot;}]</string>
                   </property>
                   <property name="actionName" stdset="0">
                    <string>machine.set-work-coord:G59.2</string>
                   </property>
+                  <attribute name="buttonGroup">
+                   <string notr="true">customwcsbtnGroup</string>
+                  </attribute>
                  </widget>
                 </item>
                 <item row="7" column="0">
@@ -20943,11 +21620,14 @@ QPushButton:checked {
                    <bool>true</bool>
                   </property>
                   <property name="rules" stdset="0">
-                   <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:gcodes?string&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Checked&quot;, &quot;expression&quot;: &quot;'G59.1' in ch[0]&quot;, &quot;name&quot;: &quot;g59_1_offset_status&quot;}]</string>
+                   <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:g5x_index&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Checked&quot;, &quot;expression&quot;: &quot;ch[0] == 7&quot;, &quot;name&quot;: &quot;g59_1_offset_status&quot;}]</string>
                   </property>
                   <property name="actionName" stdset="0">
                    <string>machine.set-work-coord:G59.1</string>
                   </property>
+                  <attribute name="buttonGroup">
+                   <string notr="true">customwcsbtnGroup</string>
+                  </attribute>
                  </widget>
                 </item>
                </layout>
@@ -30966,6 +31646,11 @@ font: 11pt bebas kai;
    <extends>QWidget</extends>
    <header>QtQuickWidgets/QQuickWidget</header>
   </customwidget>
+  <customwidget>
+   <class>QWebView</class>
+   <extends>QWidget</extends>
+   <header>QtWebKitWidgets/QWebView</header>
+  </customwidget>
  </customwidgets>
  <resources>
   <include location="probe_basic.qrc"/>
@@ -30986,12 +31671,12 @@ font: 11pt bebas kai;
    <slot>deleteItem()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>738</x>
-     <y>632</y>
+     <x>109</x>
+     <y>75</y>
     </hint>
     <hint type="destinationlabel">
-     <x>749</x>
-     <y>182</y>
+     <x>119</x>
+     <y>75</y>
     </hint>
    </hints>
   </connection>
@@ -31002,12 +31687,12 @@ font: 11pt bebas kai;
    <slot>viewParentDirectory()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>752</x>
-     <y>107</y>
+     <x>129</x>
+     <y>75</y>
     </hint>
     <hint type="destinationlabel">
-     <x>749</x>
-     <y>182</y>
+     <x>119</x>
+     <y>75</y>
     </hint>
    </hints>
   </connection>
@@ -31018,12 +31703,12 @@ font: 11pt bebas kai;
    <slot>newFolder()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>995</x>
-     <y>632</y>
+     <x>144</x>
+     <y>75</y>
     </hint>
     <hint type="destinationlabel">
-     <x>749</x>
-     <y>182</y>
+     <x>119</x>
+     <y>75</y>
     </hint>
    </hints>
   </connection>
@@ -31034,12 +31719,12 @@ font: 11pt bebas kai;
    <slot>newFolder()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>403</x>
-     <y>632</y>
+     <x>144</x>
+     <y>75</y>
     </hint>
     <hint type="destinationlabel">
-     <x>157</x>
-     <y>182</y>
+     <x>119</x>
+     <y>75</y>
     </hint>
    </hints>
   </connection>
@@ -31050,12 +31735,12 @@ font: 11pt bebas kai;
    <slot>doFileTransfer()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>610</x>
-     <y>323</y>
+     <x>79</x>
+     <y>135</y>
     </hint>
     <hint type="destinationlabel">
-     <x>157</x>
-     <y>182</y>
+     <x>119</x>
+     <y>75</y>
     </hint>
    </hints>
   </connection>
@@ -31066,12 +31751,12 @@ font: 11pt bebas kai;
    <slot>deleteItem()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>146</x>
-     <y>632</y>
+     <x>109</x>
+     <y>75</y>
     </hint>
     <hint type="destinationlabel">
-     <x>157</x>
-     <y>182</y>
+     <x>119</x>
+     <y>75</y>
     </hint>
    </hints>
   </connection>
@@ -31082,12 +31767,12 @@ font: 11pt bebas kai;
    <slot>newFile()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>854</x>
-     <y>632</y>
+     <x>119</x>
+     <y>75</y>
     </hint>
     <hint type="destinationlabel">
-     <x>749</x>
-     <y>182</y>
+     <x>119</x>
+     <y>75</y>
     </hint>
    </hints>
   </connection>
@@ -31098,12 +31783,12 @@ font: 11pt bebas kai;
    <slot>doFileTransfer()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>610</x>
-     <y>486</y>
+     <x>79</x>
+     <y>135</y>
     </hint>
     <hint type="destinationlabel">
-     <x>749</x>
-     <y>182</y>
+     <x>119</x>
+     <y>75</y>
     </hint>
    </hints>
   </connection>
@@ -31114,12 +31799,12 @@ font: 11pt bebas kai;
    <slot>viewParentDirectory()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>160</x>
-     <y>107</y>
+     <x>129</x>
+     <y>75</y>
     </hint>
     <hint type="destinationlabel">
-     <x>157</x>
-     <y>182</y>
+     <x>119</x>
+     <y>75</y>
     </hint>
    </hints>
   </connection>
@@ -31130,12 +31815,12 @@ font: 11pt bebas kai;
    <slot>transferFile(QString)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>157</x>
-     <y>182</y>
+     <x>119</x>
+     <y>75</y>
     </hint>
     <hint type="destinationlabel">
-     <x>749</x>
-     <y>182</y>
+     <x>119</x>
+     <y>75</y>
     </hint>
    </hints>
   </connection>
@@ -31146,12 +31831,12 @@ font: 11pt bebas kai;
    <slot>loadSelectedFile()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>1110</x>
-     <y>107</y>
+     <x>119</x>
+     <y>75</y>
     </hint>
     <hint type="destinationlabel">
-     <x>749</x>
-     <y>182</y>
+     <x>119</x>
+     <y>75</y>
     </hint>
    </hints>
   </connection>
@@ -31162,12 +31847,12 @@ font: 11pt bebas kai;
    <slot>transferFile(QString)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>749</x>
-     <y>182</y>
+     <x>119</x>
+     <y>75</y>
     </hint>
     <hint type="destinationlabel">
-     <x>157</x>
-     <y>182</y>
+     <x>119</x>
+     <y>75</y>
     </hint>
    </hints>
   </connection>
@@ -31178,12 +31863,12 @@ font: 11pt bebas kai;
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>749</x>
-     <y>182</y>
+     <x>119</x>
+     <y>75</y>
     </hint>
     <hint type="destinationlabel">
-     <x>1110</x>
-     <y>107</y>
+     <x>119</x>
+     <y>75</y>
     </hint>
    </hints>
   </connection>
@@ -31194,12 +31879,12 @@ font: 11pt bebas kai;
    <slot>newFile()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>262</x>
-     <y>632</y>
+     <x>119</x>
+     <y>75</y>
     </hint>
     <hint type="destinationlabel">
-     <x>157</x>
-     <y>182</y>
+     <x>119</x>
+     <y>75</y>
     </hint>
    </hints>
   </connection>
@@ -31210,12 +31895,12 @@ font: 11pt bebas kai;
    <slot>deleteSelectedTool()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>198</x>
-     <y>620</y>
+     <x>148</x>
+     <y>87</y>
     </hint>
     <hint type="destinationlabel">
-     <x>156</x>
-     <y>151</y>
+     <x>128</x>
+     <y>84</y>
     </hint>
    </hints>
   </connection>
@@ -31226,8 +31911,8 @@ font: 11pt bebas kai;
    <slot>toggleMachineLabels()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>1840</x>
-     <y>397</y>
+     <x>1742</x>
+     <y>101</y>
     </hint>
     <hint type="destinationlabel">
      <x>831</x>
@@ -31242,12 +31927,12 @@ font: 11pt bebas kai;
    <slot>saveToolTable()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>806</x>
-     <y>620</y>
+     <x>148</x>
+     <y>87</y>
     </hint>
     <hint type="destinationlabel">
-     <x>156</x>
-     <y>151</y>
+     <x>128</x>
+     <y>84</y>
     </hint>
    </hints>
   </connection>
@@ -31274,12 +31959,12 @@ font: 11pt bebas kai;
    <slot>loadToolTable()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>978</x>
-     <y>620</y>
+     <x>168</x>
+     <y>87</y>
     </hint>
     <hint type="destinationlabel">
-     <x>156</x>
-     <y>151</y>
+     <x>128</x>
+     <y>84</y>
     </hint>
    </hints>
   </connection>
@@ -31306,12 +31991,12 @@ font: 11pt bebas kai;
    <slot>addTool()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>350</x>
-     <y>620</y>
+     <x>148</x>
+     <y>87</y>
     </hint>
     <hint type="destinationlabel">
-     <x>156</x>
-     <y>151</y>
+     <x>128</x>
+     <y>84</y>
     </hint>
    </hints>
   </connection>
@@ -31402,12 +32087,12 @@ font: 11pt bebas kai;
    <slot>toggleProgramBounds()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>1840</x>
-     <y>133</y>
+     <x>1742</x>
+     <y>101</y>
     </hint>
     <hint type="destinationlabel">
-     <x>1196</x>
-     <y>196</y>
+     <x>110</x>
+     <y>66</y>
     </hint>
    </hints>
   </connection>
@@ -31418,8 +32103,8 @@ font: 11pt bebas kai;
    <slot>toggleMachineBounds()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>1840</x>
-     <y>181</y>
+     <x>1742</x>
+     <y>101</y>
     </hint>
     <hint type="destinationlabel">
      <x>831</x>
@@ -31450,8 +32135,8 @@ font: 11pt bebas kai;
    <slot>toggleProgramBounds()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>1840</x>
-     <y>133</y>
+     <x>1742</x>
+     <y>101</y>
     </hint>
     <hint type="destinationlabel">
      <x>831</x>
@@ -31466,8 +32151,8 @@ font: 11pt bebas kai;
    <slot>toggleMachineTicks()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>1840</x>
-     <y>289</y>
+     <x>1742</x>
+     <y>101</y>
     </hint>
     <hint type="destinationlabel">
      <x>831</x>
@@ -31482,8 +32167,8 @@ font: 11pt bebas kai;
    <slot>toggleProgramTicks()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>1840</x>
-     <y>241</y>
+     <x>1742</x>
+     <y>101</y>
     </hint>
     <hint type="destinationlabel">
      <x>831</x>
@@ -31498,8 +32183,8 @@ font: 11pt bebas kai;
    <slot>toggleProgramLabels()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>1840</x>
-     <y>349</y>
+     <x>1742</x>
+     <y>101</y>
     </hint>
     <hint type="destinationlabel">
      <x>831</x>
@@ -31562,8 +32247,8 @@ font: 11pt bebas kai;
    <slot>showGrid(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>1840</x>
-     <y>457</y>
+     <x>1742</x>
+     <y>101</y>
     </hint>
     <hint type="destinationlabel">
      <x>831</x>
@@ -31578,8 +32263,8 @@ font: 11pt bebas kai;
    <slot>setViewY()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>1743</x>
-     <y>225</y>
+     <x>1742</x>
+     <y>101</y>
     </hint>
     <hint type="destinationlabel">
      <x>831</x>
@@ -31594,8 +32279,8 @@ font: 11pt bebas kai;
    <slot>zoomOut()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>1743</x>
-     <y>387</y>
+     <x>1742</x>
+     <y>101</y>
     </hint>
     <hint type="destinationlabel">
      <x>831</x>
@@ -31610,8 +32295,8 @@ font: 11pt bebas kai;
    <slot>setViewX()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>1743</x>
-     <y>179</y>
+     <x>1742</x>
+     <y>101</y>
     </hint>
     <hint type="destinationlabel">
      <x>831</x>
@@ -31626,8 +32311,8 @@ font: 11pt bebas kai;
    <slot>zoomIn()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>1743</x>
-     <y>341</y>
+     <x>1742</x>
+     <y>101</y>
     </hint>
     <hint type="destinationlabel">
      <x>831</x>
@@ -31642,8 +32327,8 @@ font: 11pt bebas kai;
    <slot>setViewOrtho()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>1743</x>
-     <y>526</y>
+     <x>1742</x>
+     <y>101</y>
     </hint>
     <hint type="destinationlabel">
      <x>831</x>
@@ -31658,8 +32343,8 @@ font: 11pt bebas kai;
    <slot>clearLivePlot()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>1743</x>
-     <y>457</y>
+     <x>1742</x>
+     <y>101</y>
     </hint>
     <hint type="destinationlabel">
      <x>831</x>
@@ -31674,8 +32359,8 @@ font: 11pt bebas kai;
    <slot>setViewMachine()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>1840</x>
-     <y>571</y>
+     <x>1742</x>
+     <y>101</y>
     </hint>
     <hint type="destinationlabel">
      <x>831</x>
@@ -31690,8 +32375,8 @@ font: 11pt bebas kai;
    <slot>setViewPersp()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>1743</x>
-     <y>572</y>
+     <x>1742</x>
+     <y>101</y>
     </hint>
     <hint type="destinationlabel">
      <x>831</x>
@@ -31706,8 +32391,8 @@ font: 11pt bebas kai;
    <slot>printView()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>1840</x>
-     <y>523</y>
+     <x>1742</x>
+     <y>101</y>
     </hint>
     <hint type="destinationlabel">
      <x>831</x>
@@ -31722,12 +32407,12 @@ font: 11pt bebas kai;
    <slot>setViewPersp()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>1743</x>
-     <y>572</y>
+     <x>1742</x>
+     <y>101</y>
     </hint>
     <hint type="destinationlabel">
-     <x>1196</x>
-     <y>196</y>
+     <x>110</x>
+     <y>66</y>
     </hint>
    </hints>
   </connection>
@@ -31742,8 +32427,8 @@ font: 11pt bebas kai;
      <y>101</y>
     </hint>
     <hint type="destinationlabel">
-     <x>1196</x>
-     <y>196</y>
+     <x>110</x>
+     <y>66</y>
     </hint>
    </hints>
   </connection>
@@ -31754,12 +32439,12 @@ font: 11pt bebas kai;
    <slot>setViewX()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>1743</x>
-     <y>179</y>
+     <x>1742</x>
+     <y>101</y>
     </hint>
     <hint type="destinationlabel">
-     <x>1196</x>
-     <y>196</y>
+     <x>110</x>
+     <y>66</y>
     </hint>
    </hints>
   </connection>
@@ -31770,12 +32455,12 @@ font: 11pt bebas kai;
    <slot>setViewY()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>1743</x>
-     <y>225</y>
+     <x>1742</x>
+     <y>101</y>
     </hint>
     <hint type="destinationlabel">
-     <x>1196</x>
-     <y>196</y>
+     <x>110</x>
+     <y>66</y>
     </hint>
    </hints>
   </connection>
@@ -31786,12 +32471,12 @@ font: 11pt bebas kai;
    <slot>zoomIn()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>1743</x>
-     <y>341</y>
+     <x>1742</x>
+     <y>101</y>
     </hint>
     <hint type="destinationlabel">
-     <x>1196</x>
-     <y>196</y>
+     <x>110</x>
+     <y>66</y>
     </hint>
    </hints>
   </connection>
@@ -31802,12 +32487,12 @@ font: 11pt bebas kai;
    <slot>zoomOut()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>1743</x>
-     <y>387</y>
+     <x>1742</x>
+     <y>101</y>
     </hint>
     <hint type="destinationlabel">
-     <x>1196</x>
-     <y>196</y>
+     <x>110</x>
+     <y>66</y>
     </hint>
    </hints>
   </connection>
@@ -31818,12 +32503,12 @@ font: 11pt bebas kai;
    <slot>clearLivePlot()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>1743</x>
-     <y>457</y>
+     <x>1742</x>
+     <y>101</y>
     </hint>
     <hint type="destinationlabel">
-     <x>1196</x>
-     <y>196</y>
+     <x>110</x>
+     <y>66</y>
     </hint>
    </hints>
   </connection>
@@ -31834,12 +32519,12 @@ font: 11pt bebas kai;
    <slot>setViewOrtho()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>1743</x>
-     <y>526</y>
+     <x>1742</x>
+     <y>101</y>
     </hint>
     <hint type="destinationlabel">
-     <x>1196</x>
-     <y>196</y>
+     <x>110</x>
+     <y>66</y>
     </hint>
    </hints>
   </connection>
@@ -31850,12 +32535,12 @@ font: 11pt bebas kai;
    <slot>toggleMachineTicks()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>1840</x>
-     <y>289</y>
+     <x>1742</x>
+     <y>101</y>
     </hint>
     <hint type="destinationlabel">
-     <x>1196</x>
-     <y>196</y>
+     <x>110</x>
+     <y>66</y>
     </hint>
    </hints>
   </connection>
@@ -31866,12 +32551,12 @@ font: 11pt bebas kai;
    <slot>showGrid(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>1840</x>
-     <y>457</y>
+     <x>1742</x>
+     <y>101</y>
     </hint>
     <hint type="destinationlabel">
-     <x>1196</x>
-     <y>196</y>
+     <x>110</x>
+     <y>66</y>
     </hint>
    </hints>
   </connection>
@@ -31882,12 +32567,12 @@ font: 11pt bebas kai;
    <slot>toggleMachineLabels()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>1840</x>
-     <y>397</y>
+     <x>1742</x>
+     <y>101</y>
     </hint>
     <hint type="destinationlabel">
-     <x>1196</x>
-     <y>196</y>
+     <x>110</x>
+     <y>66</y>
     </hint>
    </hints>
   </connection>
@@ -31898,12 +32583,12 @@ font: 11pt bebas kai;
    <slot>toggleMachineBounds()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>1840</x>
-     <y>181</y>
+     <x>1742</x>
+     <y>101</y>
     </hint>
     <hint type="destinationlabel">
-     <x>1196</x>
-     <y>196</y>
+     <x>110</x>
+     <y>66</y>
     </hint>
    </hints>
   </connection>
@@ -31914,12 +32599,12 @@ font: 11pt bebas kai;
    <slot>toggleProgramTicks()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>1840</x>
-     <y>241</y>
+     <x>1742</x>
+     <y>101</y>
     </hint>
     <hint type="destinationlabel">
-     <x>1196</x>
-     <y>196</y>
+     <x>110</x>
+     <y>66</y>
     </hint>
    </hints>
   </connection>
@@ -31930,12 +32615,12 @@ font: 11pt bebas kai;
    <slot>toggleProgramLabels()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>1840</x>
-     <y>349</y>
+     <x>1742</x>
+     <y>101</y>
     </hint>
     <hint type="destinationlabel">
-     <x>1196</x>
-     <y>196</y>
+     <x>110</x>
+     <y>66</y>
     </hint>
    </hints>
   </connection>
@@ -31946,8 +32631,8 @@ font: 11pt bebas kai;
    <slot>setViewZ()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>1743</x>
-     <y>271</y>
+     <x>1742</x>
+     <y>101</y>
     </hint>
     <hint type="destinationlabel">
      <x>831</x>
@@ -31962,12 +32647,12 @@ font: 11pt bebas kai;
    <slot>rename()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>1101</x>
-     <y>632</y>
+     <x>109</x>
+     <y>75</y>
     </hint>
     <hint type="destinationlabel">
-     <x>749</x>
-     <y>182</y>
+     <x>119</x>
+     <y>75</y>
     </hint>
    </hints>
   </connection>
@@ -31978,12 +32663,12 @@ font: 11pt bebas kai;
    <slot>printView()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>1840</x>
-     <y>523</y>
+     <x>1742</x>
+     <y>101</y>
     </hint>
     <hint type="destinationlabel">
-     <x>1196</x>
-     <y>196</y>
+     <x>110</x>
+     <y>66</y>
     </hint>
    </hints>
   </connection>
@@ -31994,12 +32679,12 @@ font: 11pt bebas kai;
    <slot>setViewMachine()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>1840</x>
-     <y>571</y>
+     <x>1742</x>
+     <y>101</y>
     </hint>
     <hint type="destinationlabel">
-     <x>1196</x>
-     <y>196</y>
+     <x>110</x>
+     <y>66</y>
     </hint>
    </hints>
   </connection>
@@ -32010,12 +32695,12 @@ font: 11pt bebas kai;
    <slot>setViewZ()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>1743</x>
-     <y>271</y>
+     <x>1742</x>
+     <y>101</y>
     </hint>
     <hint type="destinationlabel">
-     <x>1196</x>
-     <y>196</y>
+     <x>110</x>
+     <y>66</y>
     </hint>
    </hints>
   </connection>
@@ -32026,12 +32711,12 @@ font: 11pt bebas kai;
    <slot>rename()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>509</x>
-     <y>632</y>
+     <x>109</x>
+     <y>75</y>
     </hint>
     <hint type="destinationlabel">
-     <x>157</x>
-     <y>182</y>
+     <x>119</x>
+     <y>75</y>
     </hint>
    </hints>
   </connection>
@@ -32042,12 +32727,12 @@ font: 11pt bebas kai;
    <slot>setText(QString)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>749</x>
-     <y>182</y>
+     <x>119</x>
+     <y>75</y>
     </hint>
     <hint type="destinationlabel">
-     <x>1264</x>
-     <y>215</y>
+     <x>110</x>
+     <y>60</y>
     </hint>
    </hints>
   </connection>
@@ -32058,12 +32743,12 @@ font: 11pt bebas kai;
    <slot>find_replace()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>1374</x>
-     <y>623</y>
+     <x>128</x>
+     <y>96</y>
     </hint>
     <hint type="destinationlabel">
-     <x>1264</x>
-     <y>215</y>
+     <x>110</x>
+     <y>60</y>
     </hint>
    </hints>
   </connection>
@@ -32074,12 +32759,12 @@ font: 11pt bebas kai;
    <slot>saveAs()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>1592</x>
-     <y>623</y>
+     <x>128</x>
+     <y>96</y>
     </hint>
     <hint type="destinationlabel">
-     <x>1264</x>
-     <y>215</y>
+     <x>110</x>
+     <y>60</y>
     </hint>
    </hints>
   </connection>
@@ -32090,12 +32775,12 @@ font: 11pt bebas kai;
    <slot>setEditable(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>1265</x>
-     <y>623</y>
+     <x>128</x>
+     <y>96</y>
     </hint>
     <hint type="destinationlabel">
-     <x>1264</x>
-     <y>215</y>
+     <x>110</x>
+     <y>60</y>
     </hint>
    </hints>
   </connection>
@@ -32106,12 +32791,12 @@ font: 11pt bebas kai;
    <slot>save()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>1483</x>
-     <y>623</y>
+     <x>128</x>
+     <y>96</y>
     </hint>
     <hint type="destinationlabel">
-     <x>1264</x>
-     <y>215</y>
+     <x>110</x>
+     <y>60</y>
     </hint>
    </hints>
   </connection>
@@ -32122,12 +32807,12 @@ font: 11pt bebas kai;
    <slot>setText(QString)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>749</x>
-     <y>182</y>
+     <x>119</x>
+     <y>75</y>
     </hint>
     <hint type="destinationlabel">
-     <x>1464</x>
-     <y>140</y>
+     <x>328</x>
+     <y>79</y>
     </hint>
    </hints>
   </connection>
@@ -32138,12 +32823,12 @@ font: 11pt bebas kai;
    <slot>setFilename(QString)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>749</x>
-     <y>182</y>
+     <x>119</x>
+     <y>75</y>
     </hint>
     <hint type="destinationlabel">
-     <x>1264</x>
-     <y>215</y>
+     <x>110</x>
+     <y>60</y>
     </hint>
    </hints>
   </connection>
@@ -32154,8 +32839,8 @@ font: 11pt bebas kai;
    <slot>deleteSelectedOffset()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>143</x>
-     <y>562</y>
+     <x>119</x>
+     <y>78</y>
     </hint>
     <hint type="destinationlabel">
      <x>117</x>
@@ -32170,8 +32855,8 @@ font: 11pt bebas kai;
    <slot>clearOffsetTable()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>276</x>
-     <y>562</y>
+     <x>119</x>
+     <y>78</y>
     </hint>
     <hint type="destinationlabel">
      <x>220</x>
@@ -32186,8 +32871,8 @@ font: 11pt bebas kai;
    <slot>saveOffsetTable()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>409</x>
-     <y>562</y>
+     <x>119</x>
+     <y>78</y>
     </hint>
     <hint type="destinationlabel">
      <x>358</x>
@@ -32202,8 +32887,8 @@ font: 11pt bebas kai;
    <slot>loadOffsetTable()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>541</x>
-     <y>562</y>
+     <x>119</x>
+     <y>78</y>
     </hint>
     <hint type="destinationlabel">
      <x>508</x>
@@ -32218,12 +32903,12 @@ font: 11pt bebas kai;
    <slot>setRootPath(QString)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>277</x>
-     <y>107</y>
+     <x>119</x>
+     <y>75</y>
     </hint>
     <hint type="destinationlabel">
-     <x>157</x>
-     <y>182</y>
+     <x>119</x>
+     <y>75</y>
     </hint>
    </hints>
   </connection>
@@ -32234,12 +32919,12 @@ font: 11pt bebas kai;
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>277</x>
-     <y>107</y>
+     <x>119</x>
+     <y>75</y>
     </hint>
     <hint type="destinationlabel">
-     <x>518</x>
-     <y>107</y>
+     <x>119</x>
+     <y>75</y>
     </hint>
    </hints>
   </connection>
@@ -32250,12 +32935,12 @@ font: 11pt bebas kai;
    <slot>ejectDevice()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>518</x>
-     <y>107</y>
+     <x>119</x>
+     <y>75</y>
     </hint>
     <hint type="destinationlabel">
-     <x>277</x>
-     <y>107</y>
+     <x>119</x>
+     <y>75</y>
     </hint>
    </hints>
   </connection>
@@ -32266,12 +32951,12 @@ font: 11pt bebas kai;
    <slot>click()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>1441</x>
-     <y>151</y>
+     <x>185</x>
+     <y>88</y>
     </hint>
     <hint type="destinationlabel">
-     <x>1481</x>
-     <y>149</y>
+     <x>210</x>
+     <y>90</y>
     </hint>
    </hints>
   </connection>
@@ -32282,12 +32967,12 @@ font: 11pt bebas kai;
    <slot>click()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>1457</x>
-     <y>244</y>
+     <x>483</x>
+     <y>168</y>
     </hint>
     <hint type="destinationlabel">
-     <x>1488</x>
-     <y>245</y>
+     <x>503</x>
+     <y>170</y>
     </hint>
    </hints>
   </connection>
@@ -32314,12 +32999,12 @@ font: 11pt bebas kai;
    <slot>click()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>1413</x>
-     <y>407</y>
+     <x>213</x>
+     <y>88</y>
     </hint>
     <hint type="destinationlabel">
-     <x>1484</x>
-     <y>411</y>
+     <x>210</x>
+     <y>90</y>
     </hint>
    </hints>
   </connection>
@@ -32330,12 +33015,28 @@ font: 11pt bebas kai;
    <slot>click()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>1435</x>
-     <y>363</y>
+     <x>483</x>
+     <y>168</y>
     </hint>
     <hint type="destinationlabel">
-     <x>1529</x>
-     <y>363</y>
+     <x>503</x>
+     <y>170</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>pan_button</sender>
+   <signal>clicked(bool)</signal>
+   <receiver>vtk</receiver>
+   <slot>enable_panning(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>744</x>
+     <y>261</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>1210</x>
+     <y>355</y>
     </hint>
    </hints>
   </connection>
@@ -32358,13 +33059,17 @@ font: 11pt bebas kai;
   </property>
  </designerdata>
  <buttongroups>
+  <buttongroup name="proberoutinebtnGroup"/>
   <buttongroup name="mainorthoperspbtnGroup"/>
+  <buttongroup name="customwcsbtnGroup"/>
+  <buttongroup name="guiaxisdisplayGroup"/>
+  <buttongroup name="probepagewcsbtnGroup"/>
+  <buttongroup name="probemodeGroup"/>
   <buttongroup name="plotviewGroup"/>
   <buttongroup name="fileviewerbtnGroup"/>
-  <buttongroup name="guiaxisdisplayGroup"/>
-  <buttongroup name="proberoutinebtnGroup"/>
-  <buttongroup name="xycalbtnGroup"/>
   <buttongroup name="probetabGroup"/>
+  <buttongroup name="xycalbtnGroup"/>
+  <buttongroup name="probehelpGroup"/>
   <buttongroup name="plotorthoperspbtnGroup"/>
   <buttongroup name="probemodeGroup"/>
   <buttongroup name="probehelpGroup"/>
