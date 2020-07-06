@@ -16,6 +16,11 @@ data_plugins:
     kwargs:
       cycle_time: 75
 
+  tooltable:
+    provider: qtpyvcp.plugins.tool_table:ToolTable
+    kwargs:
+        columns: TXYZDR
+
 windows:
   mainwindow:
     provider: probe_basic.probe_basic:ProbeBasic
@@ -217,27 +222,6 @@ settings:
     persistent: true
     min_value: -45
     max_value: 45
-
-  axis-display.xyz-checkbox:
-    description: sets the gui display to 3 axis.
-    default_value: 1
-    persistent: true
-    min_value: 0
-    max_value: 1
-
-  axis-display.xyza-checkbox:
-    description: sets the gui display to 4 axis.
-    default_value: 0
-    persistent: true
-    min_value: 0
-    max_value: 1
-
-  axis-display.xyzab-checkbox:
-    description: sets the gui display to 5 axis.
-    default_value: 0
-    persistent: true
-    min_value: 0
-    max_value: 1
 
 dialogs:
   about_probebasic:

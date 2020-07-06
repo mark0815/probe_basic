@@ -224,7 +224,7 @@ bottom-margin: 0px;
            <enum>QTabWidget::South</enum>
           </property>
           <property name="currentIndex">
-           <number>1</number>
+           <number>0</number>
           </property>
           <widget class="QWidget" name="main_tab">
            <attribute name="title">
@@ -375,6 +375,12 @@ QComboBox QAbstractItemView{
                     <width>0</width>
                     <height>0</height>
                    </size>
+                  </property>
+                  <property name="font">
+                   <font>
+                    <family>Ubuntu Mono</family>
+                    <pointsize>14</pointsize>
+                   </font>
                   </property>
                   <property name="focusPolicy">
                    <enum>Qt::NoFocus</enum>
@@ -5700,7 +5706,7 @@ color: rgb(255, 255, 255);
                        <number>4</number>
                       </property>
                       <property name="rules" stdset="0">
-                       <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;tooltable:current_tool?remark&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;ch[0]&quot;, &quot;name&quot;: &quot;Tool Comment&quot;}]</string>
+                       <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;tooltable:current_tool?Remark&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;ch[0]&quot;, &quot;name&quot;: &quot;Tool Comment&quot;}]</string>
                       </property>
                       <property name="format" stdset="0">
                        <string>{:.3f}</string>
@@ -7942,44 +7948,84 @@ OFFSET</string>
                       </widget>
                      </item>
                      <item>
-                      <widget class="StatusLabel" name="statuslabel_50">
+                      <widget class="DROWidget" name="drowidget_13">
+                       <property name="sizePolicy">
+                        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                         <horstretch>0</horstretch>
+                         <verstretch>0</verstretch>
+                        </sizepolicy>
+                       </property>
                        <property name="styleSheet">
-                        <string notr="true">StatusLabel{
+                        <string notr="true">QLabel{
     border-style: transparant;
     border-color: rgb(235, 235, 235);
     border-width: 1px;
     border-radius: 5px;
     color: black;
     background: rgb(235, 235, 235);
-	font: 17pt &quot;Bebas Kai&quot;;
+    padding-right: 2px;
+    font: 17pt &quot;Bebas Kai&quot;;
 }</string>
                        </property>
                        <property name="alignment">
                         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                        </property>
-                       <property name="rules" stdset="0">
-                        <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;position:rel?axis=x&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;\&quot;{:.4f}\&quot;.format(ch[0])&quot;, &quot;name&quot;: &quot;New Rule&quot;}]</string>
+                       <property name="referenceType" stdset="0">
+                        <enum>DROWidget::Relative</enum>
+                       </property>
+                       <property name="axis" stdset="0">
+                        <enum>DROWidget::X</enum>
                        </property>
                       </widget>
                      </item>
                      <item>
-                      <widget class="StatusLabel" name="statuslabel_51">
+                      <widget class="DROLabel" name="drolabel_25">
+                       <property name="sizePolicy">
+                        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                         <horstretch>0</horstretch>
+                         <verstretch>0</verstretch>
+                        </sizepolicy>
+                       </property>
                        <property name="styleSheet">
-                        <string notr="true">StatusLabel{
-    border-style: transparant;
+                        <string notr="true">QLabel{
+    border-style: transparent;
     border-color: rgb(235, 235, 235);
     border-width: 1px;
     border-radius: 5px;
     color: black;
     background: rgb(235, 235, 235);
 	font: 17pt &quot;Bebas Kai&quot;;
+    padding-right: 2px;
+}
+
+QLabel[style=&quot;unhomed&quot;]{
+   color: red;
+}
+
+QLabel[style=&quot;homing&quot;]{
+   color: rgb(196, 160, 0);
 }</string>
                        </property>
                        <property name="alignment">
                         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                        </property>
-                       <property name="rules" stdset="0">
-                        <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:position&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;\&quot;{:.4f}\&quot;.format(ch[0][0])&quot;, &quot;name&quot;: &quot;New Rule&quot;}]</string>
+                       <property name="referenceType" stdset="0">
+                        <number>0</number>
+                       </property>
+                       <property name="axisNumber" stdset="0">
+                        <number>0</number>
+                       </property>
+                       <property name="inchFormat" stdset="0">
+                        <string>%9.4f</string>
+                       </property>
+                       <property name="millimeterFormat" stdset="0">
+                        <string>%10.3f</string>
+                       </property>
+                       <property name="degreeFormat" stdset="0">
+                        <string>%10.2f</string>
+                       </property>
+                       <property name="latheMode" stdset="0">
+                        <number>0</number>
                        </property>
                       </widget>
                      </item>
@@ -8141,44 +8187,84 @@ OFFSET</string>
                       </widget>
                      </item>
                      <item>
-                      <widget class="StatusLabel" name="statuslabel_55">
+                      <widget class="DROWidget" name="drowidget_14">
+                       <property name="sizePolicy">
+                        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                         <horstretch>0</horstretch>
+                         <verstretch>0</verstretch>
+                        </sizepolicy>
+                       </property>
                        <property name="styleSheet">
-                        <string notr="true">StatusLabel{
+                        <string notr="true">QLabel{
     border-style: transparant;
     border-color: rgb(235, 235, 235);
     border-width: 1px;
     border-radius: 5px;
     color: black;
     background: rgb(235, 235, 235);
-	font: 17pt &quot;Bebas Kai&quot;;
+    padding-right: 2px;
+    font: 17pt &quot;Bebas Kai&quot;;
 }</string>
                        </property>
                        <property name="alignment">
                         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                        </property>
-                       <property name="rules" stdset="0">
-                        <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;position:rel?axis=y&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;\&quot;{:.4f}\&quot;.format(ch[0])&quot;, &quot;name&quot;: &quot;New Rule&quot;}]</string>
+                       <property name="referenceType" stdset="0">
+                        <enum>DROWidget::Relative</enum>
+                       </property>
+                       <property name="axis" stdset="0">
+                        <enum>DROWidget::Y</enum>
                        </property>
                       </widget>
                      </item>
                      <item>
-                      <widget class="StatusLabel" name="statuslabel_56">
+                      <widget class="DROLabel" name="drolabel_26">
+                       <property name="sizePolicy">
+                        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                         <horstretch>0</horstretch>
+                         <verstretch>0</verstretch>
+                        </sizepolicy>
+                       </property>
                        <property name="styleSheet">
-                        <string notr="true">StatusLabel{
-    border-style: transparant;
+                        <string notr="true">QLabel{
+    border-style: transparent;
     border-color: rgb(235, 235, 235);
     border-width: 1px;
     border-radius: 5px;
     color: black;
     background: rgb(235, 235, 235);
 	font: 17pt &quot;Bebas Kai&quot;;
+    padding-right: 2px;
+}
+
+QLabel[style=&quot;unhomed&quot;]{
+   color: red;
+}
+
+QLabel[style=&quot;homing&quot;]{
+   color: rgb(196, 160, 0);
 }</string>
                        </property>
                        <property name="alignment">
                         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                        </property>
-                       <property name="rules" stdset="0">
-                        <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:position&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;\&quot;{:.4f}\&quot;.format(ch[0][1])&quot;, &quot;name&quot;: &quot;New Rule&quot;}]</string>
+                       <property name="referenceType" stdset="0">
+                        <number>0</number>
+                       </property>
+                       <property name="axisNumber" stdset="0">
+                        <number>1</number>
+                       </property>
+                       <property name="inchFormat" stdset="0">
+                        <string>%9.4f</string>
+                       </property>
+                       <property name="millimeterFormat" stdset="0">
+                        <string>%10.3f</string>
+                       </property>
+                       <property name="degreeFormat" stdset="0">
+                        <string>%10.2f</string>
+                       </property>
+                       <property name="latheMode" stdset="0">
+                        <number>0</number>
                        </property>
                       </widget>
                      </item>
@@ -8340,44 +8426,84 @@ OFFSET</string>
                       </widget>
                      </item>
                      <item>
-                      <widget class="StatusLabel" name="statuslabel_60">
+                      <widget class="DROWidget" name="drowidget_15">
+                       <property name="sizePolicy">
+                        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                         <horstretch>0</horstretch>
+                         <verstretch>0</verstretch>
+                        </sizepolicy>
+                       </property>
                        <property name="styleSheet">
-                        <string notr="true">StatusLabel{
+                        <string notr="true">QLabel{
     border-style: transparant;
     border-color: rgb(235, 235, 235);
     border-width: 1px;
     border-radius: 5px;
     color: black;
     background: rgb(235, 235, 235);
-	font: 17pt &quot;Bebas Kai&quot;;
+    padding-right: 2px;
+    font: 17pt &quot;Bebas Kai&quot;;
 }</string>
                        </property>
                        <property name="alignment">
                         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                        </property>
-                       <property name="rules" stdset="0">
-                        <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;position:rel?axis=z&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;\&quot;{:.4f}\&quot;.format(ch[0])&quot;, &quot;name&quot;: &quot;New Rule&quot;}]</string>
+                       <property name="referenceType" stdset="0">
+                        <enum>DROWidget::Relative</enum>
+                       </property>
+                       <property name="axis" stdset="0">
+                        <enum>DROWidget::Z</enum>
                        </property>
                       </widget>
                      </item>
                      <item>
-                      <widget class="StatusLabel" name="statuslabel_61">
+                      <widget class="DROLabel" name="drolabel_27">
+                       <property name="sizePolicy">
+                        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                         <horstretch>0</horstretch>
+                         <verstretch>0</verstretch>
+                        </sizepolicy>
+                       </property>
                        <property name="styleSheet">
-                        <string notr="true">StatusLabel{
-    border-style: transparant;
+                        <string notr="true">QLabel{
+    border-style: transparent;
     border-color: rgb(235, 235, 235);
     border-width: 1px;
     border-radius: 5px;
     color: black;
     background: rgb(235, 235, 235);
 	font: 17pt &quot;Bebas Kai&quot;;
+    padding-right: 2px;
+}
+
+QLabel[style=&quot;unhomed&quot;]{
+   color: red;
+}
+
+QLabel[style=&quot;homing&quot;]{
+   color: rgb(196, 160, 0);
 }</string>
                        </property>
                        <property name="alignment">
                         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                        </property>
-                       <property name="rules" stdset="0">
-                        <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:position&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;\&quot;{:.4f}\&quot;.format(ch[0][2])&quot;, &quot;name&quot;: &quot;New Rule&quot;}]</string>
+                       <property name="referenceType" stdset="0">
+                        <number>0</number>
+                       </property>
+                       <property name="axisNumber" stdset="0">
+                        <number>2</number>
+                       </property>
+                       <property name="inchFormat" stdset="0">
+                        <string>%9.4f</string>
+                       </property>
+                       <property name="millimeterFormat" stdset="0">
+                        <string>%10.3f</string>
+                       </property>
+                       <property name="degreeFormat" stdset="0">
+                        <string>%10.2f</string>
+                       </property>
+                       <property name="latheMode" stdset="0">
+                        <number>0</number>
                        </property>
                       </widget>
                      </item>
@@ -8501,7 +8627,7 @@ OFFSET</string>
 ]</string>
                        </property>
                        <property name="MDICommand" stdset="0">
-                        <string>G10 L2 P{ch[0]} A0.0</string>
+                        <string>G10 L20 P{ch[0]} A0.0</string>
                        </property>
                       </widget>
                      </item>
@@ -8538,44 +8664,84 @@ OFFSET</string>
                       </widget>
                      </item>
                      <item>
-                      <widget class="StatusLabel" name="statuslabel_65">
+                      <widget class="DROWidget" name="drowidget_16">
+                       <property name="sizePolicy">
+                        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                         <horstretch>0</horstretch>
+                         <verstretch>0</verstretch>
+                        </sizepolicy>
+                       </property>
                        <property name="styleSheet">
-                        <string notr="true">StatusLabel{
+                        <string notr="true">QLabel{
     border-style: transparant;
     border-color: rgb(235, 235, 235);
     border-width: 1px;
     border-radius: 5px;
     color: black;
     background: rgb(235, 235, 235);
-	font: 17pt &quot;Bebas Kai&quot;;
+    padding-right: 2px;
+    font: 17pt &quot;Bebas Kai&quot;;
 }</string>
                        </property>
                        <property name="alignment">
                         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                        </property>
-                       <property name="rules" stdset="0">
-                        <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;position:rel?axis=a&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;\&quot;{:.4f}\&quot;.format(ch[0])&quot;, &quot;name&quot;: &quot;New Rule&quot;}]</string>
+                       <property name="referenceType" stdset="0">
+                        <enum>DROWidget::Relative</enum>
+                       </property>
+                       <property name="axis" stdset="0">
+                        <enum>DROWidget::A</enum>
                        </property>
                       </widget>
                      </item>
                      <item>
-                      <widget class="StatusLabel" name="statuslabel_66">
+                      <widget class="DROLabel" name="drolabel_28">
+                       <property name="sizePolicy">
+                        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                         <horstretch>0</horstretch>
+                         <verstretch>0</verstretch>
+                        </sizepolicy>
+                       </property>
                        <property name="styleSheet">
-                        <string notr="true">StatusLabel{
-    border-style: transparant;
+                        <string notr="true">QLabel{
+    border-style: transparent;
     border-color: rgb(235, 235, 235);
     border-width: 1px;
     border-radius: 5px;
     color: black;
     background: rgb(235, 235, 235);
 	font: 17pt &quot;Bebas Kai&quot;;
+    padding-right: 2px;
+}
+
+QLabel[style=&quot;unhomed&quot;]{
+   color: red;
+}
+
+QLabel[style=&quot;homing&quot;]{
+   color: rgb(196, 160, 0);
 }</string>
                        </property>
                        <property name="alignment">
                         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                        </property>
-                       <property name="rules" stdset="0">
-                        <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:position&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;\&quot;{:.4f}\&quot;.format(ch[0][3])&quot;, &quot;name&quot;: &quot;New Rule&quot;}]</string>
+                       <property name="referenceType" stdset="0">
+                        <number>0</number>
+                       </property>
+                       <property name="axisNumber" stdset="0">
+                        <number>3</number>
+                       </property>
+                       <property name="inchFormat" stdset="0">
+                        <string>%9.4f</string>
+                       </property>
+                       <property name="millimeterFormat" stdset="0">
+                        <string>%10.3f</string>
+                       </property>
+                       <property name="degreeFormat" stdset="0">
+                        <string>%10.2f</string>
+                       </property>
+                       <property name="latheMode" stdset="0">
+                        <number>0</number>
                        </property>
                       </widget>
                      </item>
@@ -8700,7 +8866,7 @@ OFFSET</string>
 ]</string>
                        </property>
                        <property name="MDICommand" stdset="0">
-                        <string>G10 L2 P{ch[0]} B0.0</string>
+                        <string>G10 L20 P{ch[0]} B0.0</string>
                        </property>
                       </widget>
                      </item>
@@ -8737,44 +8903,84 @@ OFFSET</string>
                       </widget>
                      </item>
                      <item>
-                      <widget class="StatusLabel" name="statuslabel_70">
+                      <widget class="DROWidget" name="drowidget_17">
+                       <property name="sizePolicy">
+                        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                         <horstretch>0</horstretch>
+                         <verstretch>0</verstretch>
+                        </sizepolicy>
+                       </property>
                        <property name="styleSheet">
-                        <string notr="true">StatusLabel{
+                        <string notr="true">QLabel{
     border-style: transparant;
     border-color: rgb(235, 235, 235);
     border-width: 1px;
     border-radius: 5px;
     color: black;
     background: rgb(235, 235, 235);
-	font: 17pt &quot;Bebas Kai&quot;;
+    padding-right: 2px;
+    font: 17pt &quot;Bebas Kai&quot;;
 }</string>
                        </property>
                        <property name="alignment">
                         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                        </property>
-                       <property name="rules" stdset="0">
-                        <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;position:rel?axis=b&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;\&quot;{:.4f}\&quot;.format(ch[0])&quot;, &quot;name&quot;: &quot;New Rule&quot;}]</string>
+                       <property name="referenceType" stdset="0">
+                        <enum>DROWidget::Relative</enum>
+                       </property>
+                       <property name="axis" stdset="0">
+                        <enum>DROWidget::B</enum>
                        </property>
                       </widget>
                      </item>
                      <item>
-                      <widget class="StatusLabel" name="statuslabel_71">
+                      <widget class="DROLabel" name="drolabel_29">
+                       <property name="sizePolicy">
+                        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                         <horstretch>0</horstretch>
+                         <verstretch>0</verstretch>
+                        </sizepolicy>
+                       </property>
                        <property name="styleSheet">
-                        <string notr="true">StatusLabel{
-    border-style: transparant;
+                        <string notr="true">QLabel{
+    border-style: transparent;
     border-color: rgb(235, 235, 235);
     border-width: 1px;
     border-radius: 5px;
     color: black;
     background: rgb(235, 235, 235);
 	font: 17pt &quot;Bebas Kai&quot;;
+    padding-right: 2px;
+}
+
+QLabel[style=&quot;unhomed&quot;]{
+   color: red;
+}
+
+QLabel[style=&quot;homing&quot;]{
+   color: rgb(196, 160, 0);
 }</string>
                        </property>
                        <property name="alignment">
                         <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                        </property>
-                       <property name="rules" stdset="0">
-                        <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:position&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;\&quot;{:.4f}\&quot;.format(ch[0][4])&quot;, &quot;name&quot;: &quot;New Rule&quot;}]</string>
+                       <property name="referenceType" stdset="0">
+                        <number>0</number>
+                       </property>
+                       <property name="axisNumber" stdset="0">
+                        <number>4</number>
+                       </property>
+                       <property name="inchFormat" stdset="0">
+                        <string>%9.4f</string>
+                       </property>
+                       <property name="millimeterFormat" stdset="0">
+                        <string>%10.3f</string>
+                       </property>
+                       <property name="degreeFormat" stdset="0">
+                        <string>%10.2f</string>
+                       </property>
+                       <property name="latheMode" stdset="0">
+                        <number>0</number>
                        </property>
                       </widget>
                      </item>
@@ -18373,254 +18579,6 @@ QTabBar::tab:only-one {
            <attribute name="title">
             <string>SETTINGS</string>
            </attribute>
-           <widget class="QFrame" name="frame_4">
-            <property name="geometry">
-             <rect>
-              <x>950</x>
-              <y>10</y>
-              <width>201</width>
-              <height>180</height>
-             </rect>
-            </property>
-            <property name="styleSheet">
-             <string notr="true">.QFrame{
-    background-color: rgb(51, 57, 59);
-}</string>
-            </property>
-            <property name="frameShape">
-             <enum>QFrame::StyledPanel</enum>
-            </property>
-            <property name="frameShadow">
-             <enum>QFrame::Raised</enum>
-            </property>
-            <layout class="QVBoxLayout" name="verticalLayout_58">
-             <item>
-              <layout class="QHBoxLayout" name="horizontalLayout_137">
-               <property name="leftMargin">
-                <number>6</number>
-               </property>
-               <property name="rightMargin">
-                <number>6</number>
-               </property>
-               <item>
-                <widget class="VCPSettingsCheckBox" name="xyz_checkbox">
-                 <property name="sizePolicy">
-                  <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                   <horstretch>0</horstretch>
-                   <verstretch>0</verstretch>
-                  </sizepolicy>
-                 </property>
-                 <property name="checked">
-                  <bool>true</bool>
-                 </property>
-                 <property name="autoExclusive">
-                  <bool>true</bool>
-                 </property>
-                 <property name="settingName" stdset="0">
-                  <string>axis-display.xyz-checkbox</string>
-                 </property>
-                 <property name="page" stdset="0">
-                  <number>0</number>
-                 </property>
-                 <attribute name="buttonGroup">
-                  <string notr="true">guiaxisdisplayGroup</string>
-                 </attribute>
-                </widget>
-               </item>
-               <item>
-                <widget class="QLabel" name="label_118">
-                 <property name="sizePolicy">
-                  <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-                   <horstretch>0</horstretch>
-                   <verstretch>0</verstretch>
-                  </sizepolicy>
-                 </property>
-                 <property name="minimumSize">
-                  <size>
-                   <width>120</width>
-                   <height>31</height>
-                  </size>
-                 </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>120</width>
-                   <height>31</height>
-                  </size>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">QLabel{
-    color: white;
-	font: 14pt &quot;Bebas Kai&quot;;
-}</string>
-                 </property>
-                 <property name="lineWidth">
-                  <number>0</number>
-                 </property>
-                 <property name="text">
-                  <string>3 AXIS INTERFACE</string>
-                 </property>
-                 <property name="alignment">
-                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                 </property>
-                 <property name="indent">
-                  <number>0</number>
-                 </property>
-                </widget>
-               </item>
-              </layout>
-             </item>
-             <item>
-              <layout class="QHBoxLayout" name="horizontalLayout_139">
-               <property name="leftMargin">
-                <number>6</number>
-               </property>
-               <property name="rightMargin">
-                <number>6</number>
-               </property>
-               <item>
-                <widget class="VCPSettingsCheckBox" name="xyza_checkbox">
-                 <property name="sizePolicy">
-                  <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                   <horstretch>0</horstretch>
-                   <verstretch>0</verstretch>
-                  </sizepolicy>
-                 </property>
-                 <property name="autoExclusive">
-                  <bool>true</bool>
-                 </property>
-                 <property name="settingName" stdset="0">
-                  <string>axis-display.xyza-checkbox</string>
-                 </property>
-                 <property name="page" stdset="0">
-                  <number>1</number>
-                 </property>
-                 <attribute name="buttonGroup">
-                  <string notr="true">guiaxisdisplayGroup</string>
-                 </attribute>
-                </widget>
-               </item>
-               <item>
-                <widget class="QLabel" name="label_120">
-                 <property name="sizePolicy">
-                  <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-                   <horstretch>0</horstretch>
-                   <verstretch>0</verstretch>
-                  </sizepolicy>
-                 </property>
-                 <property name="minimumSize">
-                  <size>
-                   <width>120</width>
-                   <height>31</height>
-                  </size>
-                 </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>120</width>
-                   <height>31</height>
-                  </size>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">QLabel{
-    color: white;
-	font: 14pt &quot;Bebas Kai&quot;;
-}</string>
-                 </property>
-                 <property name="frameShape">
-                  <enum>QFrame::NoFrame</enum>
-                 </property>
-                 <property name="lineWidth">
-                  <number>0</number>
-                 </property>
-                 <property name="text">
-                  <string>4 AXIS INTERFACE</string>
-                 </property>
-                 <property name="alignment">
-                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                 </property>
-                 <property name="indent">
-                  <number>0</number>
-                 </property>
-                </widget>
-               </item>
-              </layout>
-             </item>
-             <item>
-              <layout class="QHBoxLayout" name="horizontalLayout_142">
-               <property name="leftMargin">
-                <number>6</number>
-               </property>
-               <property name="rightMargin">
-                <number>6</number>
-               </property>
-               <item>
-                <widget class="VCPSettingsCheckBox" name="xyzab_checkbox">
-                 <property name="sizePolicy">
-                  <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-                   <horstretch>0</horstretch>
-                   <verstretch>0</verstretch>
-                  </sizepolicy>
-                 </property>
-                 <property name="autoExclusive">
-                  <bool>true</bool>
-                 </property>
-                 <property name="settingName" stdset="0">
-                  <string>axis-display.xyzab-checkbox</string>
-                 </property>
-                 <property name="page" stdset="0">
-                  <number>2</number>
-                 </property>
-                 <attribute name="buttonGroup">
-                  <string notr="true">guiaxisdisplayGroup</string>
-                 </attribute>
-                </widget>
-               </item>
-               <item>
-                <widget class="QLabel" name="label_121">
-                 <property name="sizePolicy">
-                  <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-                   <horstretch>0</horstretch>
-                   <verstretch>0</verstretch>
-                  </sizepolicy>
-                 </property>
-                 <property name="minimumSize">
-                  <size>
-                   <width>120</width>
-                   <height>31</height>
-                  </size>
-                 </property>
-                 <property name="maximumSize">
-                  <size>
-                   <width>120</width>
-                   <height>31</height>
-                  </size>
-                 </property>
-                 <property name="styleSheet">
-                  <string notr="true">QLabel{
-    color: white;
-	font: 14pt &quot;Bebas Kai&quot;;
-}</string>
-                 </property>
-                 <property name="frameShape">
-                  <enum>QFrame::NoFrame</enum>
-                 </property>
-                 <property name="lineWidth">
-                  <number>0</number>
-                 </property>
-                 <property name="text">
-                  <string>5 AXIS INTERFACE</string>
-                 </property>
-                 <property name="alignment">
-                  <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                 </property>
-                 <property name="indent">
-                  <number>0</number>
-                 </property>
-                </widget>
-               </item>
-              </layout>
-             </item>
-            </layout>
-           </widget>
            <widget class="QFrame" name="frame_5">
             <property name="geometry">
              <rect>
@@ -20191,7 +20149,7 @@ QPushButton:checked {
            <enum>QTabWidget::South</enum>
           </property>
           <property name="currentIndex">
-           <number>1</number>
+           <number>0</number>
           </property>
           <widget class="QWidget" name="tabWidget_24Page1">
            <attribute name="title">
@@ -25201,10 +25159,10 @@ border-radius: 1px;
 }</string>
         </property>
         <property name="currentIndex">
-         <number>0</number>
+         <number>2</number>
         </property>
-        <property name="settingName" stdset="0">
-         <string>axis_display_setting</string>
+        <property name="rules" stdset="0">
+         <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;status:axes&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;currentIndex&quot;, &quot;expression&quot;: &quot;ch[0]-3&quot;, &quot;name&quot;: &quot;axis_display_rule&quot;}]</string>
         </property>
         <widget class="QWidget" name="xyz">
          <layout class="QVBoxLayout" name="verticalLayout_51">
@@ -25366,7 +25324,7 @@ border-radius: 1px;
                   <item>
                    <widget class="QLabel" name="work_column_header_8">
                     <property name="enabled">
-                     <bool>true</bool>
+                     <bool>false</bool>
                     </property>
                     <property name="sizePolicy">
                      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
@@ -25563,7 +25521,7 @@ border-radius: 1px;
                 </widget>
                </item>
                <item>
-                <widget class="StatusLabel" name="statuslabel_101">
+                <widget class="DROWidget" name="drowidget">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                    <horstretch>0</horstretch>
@@ -25582,17 +25540,8 @@ border-radius: 1px;
                    <height>35</height>
                   </size>
                  </property>
-                 <property name="font">
-                  <font>
-                   <family>Bebas Kai</family>
-                   <pointsize>17</pointsize>
-                   <weight>50</weight>
-                   <italic>false</italic>
-                   <bold>false</bold>
-                  </font>
-                 </property>
                  <property name="styleSheet">
-                  <string notr="true">StatusLabel{
+                  <string notr="true">QLabel{
     border-style: transparant;
     border-color: rgb(235, 235, 235);
     border-width: 1px;
@@ -25606,13 +25555,13 @@ border-radius: 1px;
                  <property name="alignment">
                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                  </property>
-                 <property name="rules" stdset="0">
-                  <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;position:rel?string&amp;axis=x&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;ch[0]&quot;, &quot;name&quot;: &quot;REL axis position&quot;}]</string>
+                 <property name="referenceType" stdset="0">
+                  <enum>DROWidget::Relative</enum>
                  </property>
                 </widget>
                </item>
                <item>
-                <widget class="StatusLabel" name="statuslabel_102">
+                <widget class="DROLabel" name="drolabel">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                    <horstretch>0</horstretch>
@@ -25631,17 +25580,8 @@ border-radius: 1px;
                    <height>35</height>
                   </size>
                  </property>
-                 <property name="font">
-                  <font>
-                   <family>Bebas Kai</family>
-                   <pointsize>17</pointsize>
-                   <weight>50</weight>
-                   <italic>false</italic>
-                   <bold>false</bold>
-                  </font>
-                 </property>
                  <property name="styleSheet">
-                  <string notr="true">StatusLabel{
+                  <string notr="true">QLabel{
     border-style: transparent;
     border-color: rgb(235, 235, 235);
     border-width: 1px;
@@ -25652,27 +25592,39 @@ border-radius: 1px;
     padding-right: 2px;
 }
 
-StatusLabel[style=&quot;unhomed&quot;]{
+QLabel[style=&quot;unhomed&quot;]{
    color: red;
 }
 
-StatusLabel[style=&quot;homing&quot;]{
+QLabel[style=&quot;homing&quot;]{
    color: rgb(196, 160, 0);
 }</string>
                  </property>
                  <property name="alignment">
                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                  </property>
-                 <property name="style" stdset="0">
-                  <string>unhomed</string>
+                 <property name="referenceType" stdset="0">
+                  <number>0</number>
                  </property>
-                 <property name="rules" stdset="0">
-                  <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;position:abs?string&amp;axis=x&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;ch[0]&quot;, &quot;name&quot;: &quot;axis position&quot;}, {&quot;channels&quot;: [{&quot;url&quot;: &quot;status:joint.0.homed&quot;, &quot;trigger&quot;: true}, {&quot;url&quot;: &quot;status:joint.0.homing&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Style Class&quot;, &quot;expression&quot;: &quot;\&quot;homed\&quot; if ch[0] else \&quot;homing\&quot; if ch[1] else \&quot;unhomed\&quot;&quot;, &quot;name&quot;: &quot;homing indicator&quot;}]</string>
+                 <property name="axisNumber" stdset="0">
+                  <number>0</number>
+                 </property>
+                 <property name="inchFormat" stdset="0">
+                  <string>%9.4f</string>
+                 </property>
+                 <property name="millimeterFormat" stdset="0">
+                  <string>%10.3f</string>
+                 </property>
+                 <property name="degreeFormat" stdset="0">
+                  <string>%10.2f</string>
+                 </property>
+                 <property name="latheMode" stdset="0">
+                  <number>0</number>
                  </property>
                 </widget>
                </item>
                <item>
-                <widget class="StatusLabel" name="statuslabel_103">
+                <widget class="DROLabel" name="drolabel_2">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                    <horstretch>0</horstretch>
@@ -25691,35 +25643,38 @@ StatusLabel[style=&quot;homing&quot;]{
                    <height>35</height>
                   </size>
                  </property>
-                 <property name="font">
-                  <font>
-                   <family>Bebas Kai</family>
-                   <pointsize>17</pointsize>
-                   <weight>50</weight>
-                   <italic>false</italic>
-                   <bold>false</bold>
-                  </font>
-                 </property>
-                 <property name="mouseTracking">
-                  <bool>true</bool>
-                 </property>
                  <property name="styleSheet">
-                  <string notr="true">StatusLabel{
-    border-style: transparant;
+                  <string notr="true">QLabel{
+    border-style: transparent;
     border-color: rgb(235, 235, 235);
     border-width: 1px;
     border-radius: 5px;
     color: black;
     background: rgb(235, 235, 235);
+	font: 17pt &quot;Bebas Kai&quot;;
     padding-right: 2px;
-    font: 17pt &quot;Bebas Kai&quot;;
 }</string>
                  </property>
                  <property name="alignment">
                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                  </property>
-                 <property name="rules" stdset="0">
-                  <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;position:dtg?string&amp;axis=x&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;ch[0]&quot;, &quot;name&quot;: &quot;REL axis position&quot;}]</string>
+                 <property name="referenceType" stdset="0">
+                  <number>2</number>
+                 </property>
+                 <property name="axisNumber" stdset="0">
+                  <number>0</number>
+                 </property>
+                 <property name="inchFormat" stdset="0">
+                  <string>%9.4f</string>
+                 </property>
+                 <property name="millimeterFormat" stdset="0">
+                  <string>%10.3f</string>
+                 </property>
+                 <property name="degreeFormat" stdset="0">
+                  <string>%10.2f</string>
+                 </property>
+                 <property name="latheMode" stdset="0">
+                  <number>0</number>
                  </property>
                 </widget>
                </item>
@@ -25844,7 +25799,7 @@ StatusLabel[style=&quot;homing&quot;]{
                 </widget>
                </item>
                <item>
-                <widget class="StatusLabel" name="statuslabel_92">
+                <widget class="DROWidget" name="drowidget_2">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                    <horstretch>0</horstretch>
@@ -25863,17 +25818,8 @@ StatusLabel[style=&quot;homing&quot;]{
                    <height>35</height>
                   </size>
                  </property>
-                 <property name="font">
-                  <font>
-                   <family>Bebas Kai</family>
-                   <pointsize>17</pointsize>
-                   <weight>50</weight>
-                   <italic>false</italic>
-                   <bold>false</bold>
-                  </font>
-                 </property>
                  <property name="styleSheet">
-                  <string notr="true">StatusLabel{
+                  <string notr="true">QLabel{
     border-style: transparant;
     border-color: rgb(235, 235, 235);
     border-width: 1px;
@@ -25887,13 +25833,16 @@ StatusLabel[style=&quot;homing&quot;]{
                  <property name="alignment">
                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                  </property>
-                 <property name="rules" stdset="0">
-                  <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;position:rel?string&amp;axis=y&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;ch[0]&quot;, &quot;name&quot;: &quot;REL axis position&quot;}]</string>
+                 <property name="referenceType" stdset="0">
+                  <enum>DROWidget::Relative</enum>
+                 </property>
+                 <property name="axis" stdset="0">
+                  <enum>DROWidget::Y</enum>
                  </property>
                 </widget>
                </item>
                <item>
-                <widget class="StatusLabel" name="statuslabel_93">
+                <widget class="DROLabel" name="drolabel_3">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                    <horstretch>0</horstretch>
@@ -25912,17 +25861,8 @@ StatusLabel[style=&quot;homing&quot;]{
                    <height>35</height>
                   </size>
                  </property>
-                 <property name="font">
-                  <font>
-                   <family>Bebas Kai</family>
-                   <pointsize>17</pointsize>
-                   <weight>50</weight>
-                   <italic>false</italic>
-                   <bold>false</bold>
-                  </font>
-                 </property>
                  <property name="styleSheet">
-                  <string notr="true">StatusLabel{
+                  <string notr="true">QLabel{
     border-style: transparent;
     border-color: rgb(235, 235, 235);
     border-width: 1px;
@@ -25933,27 +25873,39 @@ StatusLabel[style=&quot;homing&quot;]{
     padding-right: 2px;
 }
 
-StatusLabel[style=&quot;unhomed&quot;]{
+QLabel[style=&quot;unhomed&quot;]{
    color: red;
 }
 
-StatusLabel[style=&quot;homing&quot;]{
+QLabel[style=&quot;homing&quot;]{
    color: rgb(196, 160, 0);
 }</string>
                  </property>
                  <property name="alignment">
                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                  </property>
-                 <property name="style" stdset="0">
-                  <string>unhomed</string>
+                 <property name="referenceType" stdset="0">
+                  <number>0</number>
                  </property>
-                 <property name="rules" stdset="0">
-                  <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;position:abs?string&amp;axis=y&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;ch[0]&quot;, &quot;name&quot;: &quot;axis position&quot;}, {&quot;channels&quot;: [{&quot;url&quot;: &quot;status:joint.1.homed&quot;, &quot;trigger&quot;: true}, {&quot;url&quot;: &quot;status:joint.1.homing&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Style Class&quot;, &quot;expression&quot;: &quot;\&quot;homed\&quot; if ch[0] else \&quot;homing\&quot; if ch[1] else \&quot;unhomed\&quot;&quot;, &quot;name&quot;: &quot;homing indicator&quot;}]</string>
+                 <property name="axisNumber" stdset="0">
+                  <number>1</number>
+                 </property>
+                 <property name="inchFormat" stdset="0">
+                  <string>%9.4f</string>
+                 </property>
+                 <property name="millimeterFormat" stdset="0">
+                  <string>%10.3f</string>
+                 </property>
+                 <property name="degreeFormat" stdset="0">
+                  <string>%10.2f</string>
+                 </property>
+                 <property name="latheMode" stdset="0">
+                  <number>0</number>
                  </property>
                 </widget>
                </item>
                <item>
-                <widget class="StatusLabel" name="statuslabel_94">
+                <widget class="DROLabel" name="drolabel_4">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                    <horstretch>0</horstretch>
@@ -25972,32 +25924,38 @@ StatusLabel[style=&quot;homing&quot;]{
                    <height>35</height>
                   </size>
                  </property>
-                 <property name="font">
-                  <font>
-                   <family>Bebas Kai</family>
-                   <pointsize>17</pointsize>
-                   <weight>50</weight>
-                   <italic>false</italic>
-                   <bold>false</bold>
-                  </font>
-                 </property>
                  <property name="styleSheet">
-                  <string notr="true">StatusLabel{
-    border-style: transparant;
+                  <string notr="true">QLabel{
+    border-style: transparent;
     border-color: rgb(235, 235, 235);
     border-width: 1px;
     border-radius: 5px;
     color: black;
     background: rgb(235, 235, 235);
+	font: 17pt &quot;Bebas Kai&quot;;
     padding-right: 2px;
-    font: 17pt &quot;Bebas Kai&quot;;
 }</string>
                  </property>
                  <property name="alignment">
                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                  </property>
-                 <property name="rules" stdset="0">
-                  <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;position:dtg?string&amp;axis=y&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;ch[0]&quot;, &quot;name&quot;: &quot;REL axis position&quot;}]</string>
+                 <property name="referenceType" stdset="0">
+                  <number>2</number>
+                 </property>
+                 <property name="axisNumber" stdset="0">
+                  <number>1</number>
+                 </property>
+                 <property name="inchFormat" stdset="0">
+                  <string>%9.4f</string>
+                 </property>
+                 <property name="millimeterFormat" stdset="0">
+                  <string>%10.3f</string>
+                 </property>
+                 <property name="degreeFormat" stdset="0">
+                  <string>%10.2f</string>
+                 </property>
+                 <property name="latheMode" stdset="0">
+                  <number>0</number>
                  </property>
                 </widget>
                </item>
@@ -26122,7 +26080,7 @@ StatusLabel[style=&quot;homing&quot;]{
                 </widget>
                </item>
                <item>
-                <widget class="StatusLabel" name="statuslabel_95">
+                <widget class="DROWidget" name="drowidget_3">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                    <horstretch>0</horstretch>
@@ -26141,17 +26099,8 @@ StatusLabel[style=&quot;homing&quot;]{
                    <height>35</height>
                   </size>
                  </property>
-                 <property name="font">
-                  <font>
-                   <family>Bebas Kai</family>
-                   <pointsize>17</pointsize>
-                   <weight>50</weight>
-                   <italic>false</italic>
-                   <bold>false</bold>
-                  </font>
-                 </property>
                  <property name="styleSheet">
-                  <string notr="true">StatusLabel{
+                  <string notr="true">QLabel{
     border-style: transparant;
     border-color: rgb(235, 235, 235);
     border-width: 1px;
@@ -26165,13 +26114,16 @@ StatusLabel[style=&quot;homing&quot;]{
                  <property name="alignment">
                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                  </property>
-                 <property name="rules" stdset="0">
-                  <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;position:rel?string&amp;axis=z&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;ch[0]&quot;, &quot;name&quot;: &quot;REL axis position&quot;}]</string>
+                 <property name="referenceType" stdset="0">
+                  <enum>DROWidget::Relative</enum>
+                 </property>
+                 <property name="axis" stdset="0">
+                  <enum>DROWidget::Z</enum>
                  </property>
                 </widget>
                </item>
                <item>
-                <widget class="StatusLabel" name="statuslabel_96">
+                <widget class="DROLabel" name="drolabel_5">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                    <horstretch>0</horstretch>
@@ -26190,17 +26142,8 @@ StatusLabel[style=&quot;homing&quot;]{
                    <height>35</height>
                   </size>
                  </property>
-                 <property name="font">
-                  <font>
-                   <family>Bebas Kai</family>
-                   <pointsize>17</pointsize>
-                   <weight>50</weight>
-                   <italic>false</italic>
-                   <bold>false</bold>
-                  </font>
-                 </property>
                  <property name="styleSheet">
-                  <string notr="true">StatusLabel{
+                  <string notr="true">QLabel{
     border-style: transparent;
     border-color: rgb(235, 235, 235);
     border-width: 1px;
@@ -26211,27 +26154,39 @@ StatusLabel[style=&quot;homing&quot;]{
     padding-right: 2px;
 }
 
-StatusLabel[style=&quot;unhomed&quot;]{
+QLabel[style=&quot;unhomed&quot;]{
    color: red;
 }
 
-StatusLabel[style=&quot;homing&quot;]{
+QLabel[style=&quot;homing&quot;]{
    color: rgb(196, 160, 0);
 }</string>
                  </property>
                  <property name="alignment">
                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                  </property>
-                 <property name="style" stdset="0">
-                  <string>unhomed</string>
+                 <property name="referenceType" stdset="0">
+                  <number>0</number>
                  </property>
-                 <property name="rules" stdset="0">
-                  <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;position:abs?string&amp;axis=z&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;ch[0]&quot;, &quot;name&quot;: &quot;axis position&quot;}, {&quot;channels&quot;: [{&quot;url&quot;: &quot;status:joint.2.homed&quot;, &quot;trigger&quot;: true}, {&quot;url&quot;: &quot;status:joint.2.homing&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Style Class&quot;, &quot;expression&quot;: &quot;\&quot;homed\&quot; if ch[0] else \&quot;homing\&quot; if ch[1] else \&quot;unhomed\&quot;&quot;, &quot;name&quot;: &quot;homing indicator&quot;}]</string>
+                 <property name="axisNumber" stdset="0">
+                  <number>2</number>
+                 </property>
+                 <property name="inchFormat" stdset="0">
+                  <string>%9.4f</string>
+                 </property>
+                 <property name="millimeterFormat" stdset="0">
+                  <string>%10.3f</string>
+                 </property>
+                 <property name="degreeFormat" stdset="0">
+                  <string>%10.2f</string>
+                 </property>
+                 <property name="latheMode" stdset="0">
+                  <number>0</number>
                  </property>
                 </widget>
                </item>
                <item>
-                <widget class="StatusLabel" name="statuslabel_97">
+                <widget class="DROLabel" name="drolabel_6">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                    <horstretch>0</horstretch>
@@ -26250,32 +26205,38 @@ StatusLabel[style=&quot;homing&quot;]{
                    <height>35</height>
                   </size>
                  </property>
-                 <property name="font">
-                  <font>
-                   <family>Bebas Kai</family>
-                   <pointsize>17</pointsize>
-                   <weight>50</weight>
-                   <italic>false</italic>
-                   <bold>false</bold>
-                  </font>
-                 </property>
                  <property name="styleSheet">
-                  <string notr="true">StatusLabel{
-    border-style: transparant;
+                  <string notr="true">QLabel{
+    border-style: transparent;
     border-color: rgb(235, 235, 235);
     border-width: 1px;
     border-radius: 5px;
     color: black;
     background: rgb(235, 235, 235);
+	font: 17pt &quot;Bebas Kai&quot;;
     padding-right: 2px;
-    font: 17pt &quot;Bebas Kai&quot;;
 }</string>
                  </property>
                  <property name="alignment">
                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                  </property>
-                 <property name="rules" stdset="0">
-                  <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;position:dtg?string&amp;axis=z&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;ch[0]&quot;, &quot;name&quot;: &quot;REL axis position&quot;}]</string>
+                 <property name="referenceType" stdset="0">
+                  <number>2</number>
+                 </property>
+                 <property name="axisNumber" stdset="0">
+                  <number>2</number>
+                 </property>
+                 <property name="inchFormat" stdset="0">
+                  <string>%9.4f</string>
+                 </property>
+                 <property name="millimeterFormat" stdset="0">
+                  <string>%10.3f</string>
+                 </property>
+                 <property name="degreeFormat" stdset="0">
+                  <string>%10.2f</string>
+                 </property>
+                 <property name="latheMode" stdset="0">
+                  <number>0</number>
                  </property>
                 </widget>
                </item>
@@ -26604,7 +26565,7 @@ StatusLabel[style=&quot;homing&quot;]{
                   <item>
                    <widget class="QLabel" name="work_column_header_9">
                     <property name="enabled">
-                     <bool>true</bool>
+                     <bool>false</bool>
                     </property>
                     <property name="sizePolicy">
                      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
@@ -26801,7 +26762,7 @@ StatusLabel[style=&quot;homing&quot;]{
                 </widget>
                </item>
                <item>
-                <widget class="StatusLabel" name="statuslabel_89">
+                <widget class="DROWidget" name="drowidget_4">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                    <horstretch>0</horstretch>
@@ -26820,17 +26781,8 @@ StatusLabel[style=&quot;homing&quot;]{
                    <height>35</height>
                   </size>
                  </property>
-                 <property name="font">
-                  <font>
-                   <family>Bebas Kai</family>
-                   <pointsize>17</pointsize>
-                   <weight>50</weight>
-                   <italic>false</italic>
-                   <bold>false</bold>
-                  </font>
-                 </property>
                  <property name="styleSheet">
-                  <string notr="true">StatusLabel{
+                  <string notr="true">QLabel{
     border-style: transparant;
     border-color: rgb(235, 235, 235);
     border-width: 1px;
@@ -26844,13 +26796,13 @@ StatusLabel[style=&quot;homing&quot;]{
                  <property name="alignment">
                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                  </property>
-                 <property name="rules" stdset="0">
-                  <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;position:rel?string&amp;axis=x&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;ch[0]&quot;, &quot;name&quot;: &quot;REL axis position&quot;}]</string>
+                 <property name="referenceType" stdset="0">
+                  <enum>DROWidget::Relative</enum>
                  </property>
                 </widget>
                </item>
                <item>
-                <widget class="StatusLabel" name="statuslabel_90">
+                <widget class="DROLabel" name="drolabel_7">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                    <horstretch>0</horstretch>
@@ -26869,17 +26821,8 @@ StatusLabel[style=&quot;homing&quot;]{
                    <height>35</height>
                   </size>
                  </property>
-                 <property name="font">
-                  <font>
-                   <family>Bebas Kai</family>
-                   <pointsize>17</pointsize>
-                   <weight>50</weight>
-                   <italic>false</italic>
-                   <bold>false</bold>
-                  </font>
-                 </property>
                  <property name="styleSheet">
-                  <string notr="true">StatusLabel{
+                  <string notr="true">QLabel{
     border-style: transparent;
     border-color: rgb(235, 235, 235);
     border-width: 1px;
@@ -26890,27 +26833,39 @@ StatusLabel[style=&quot;homing&quot;]{
     padding-right: 2px;
 }
 
-StatusLabel[style=&quot;unhomed&quot;]{
+QLabel[style=&quot;unhomed&quot;]{
    color: red;
 }
 
-StatusLabel[style=&quot;homing&quot;]{
+QLabel[style=&quot;homing&quot;]{
    color: rgb(196, 160, 0);
 }</string>
                  </property>
                  <property name="alignment">
                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                  </property>
-                 <property name="style" stdset="0">
-                  <string>unhomed</string>
+                 <property name="referenceType" stdset="0">
+                  <number>0</number>
                  </property>
-                 <property name="rules" stdset="0">
-                  <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;position:abs?string&amp;axis=x&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;ch[0]&quot;, &quot;name&quot;: &quot;axis position&quot;}, {&quot;channels&quot;: [{&quot;url&quot;: &quot;status:joint.0.homed&quot;, &quot;trigger&quot;: true}, {&quot;url&quot;: &quot;status:joint.0.homing&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Style Class&quot;, &quot;expression&quot;: &quot;\&quot;homed\&quot; if ch[0] else \&quot;homing\&quot; if ch[1] else \&quot;unhomed\&quot;&quot;, &quot;name&quot;: &quot;homing indicator&quot;}]</string>
+                 <property name="axisNumber" stdset="0">
+                  <number>0</number>
+                 </property>
+                 <property name="inchFormat" stdset="0">
+                  <string>%9.4f</string>
+                 </property>
+                 <property name="millimeterFormat" stdset="0">
+                  <string>%10.3f</string>
+                 </property>
+                 <property name="degreeFormat" stdset="0">
+                  <string>%10.2f</string>
+                 </property>
+                 <property name="latheMode" stdset="0">
+                  <number>0</number>
                  </property>
                 </widget>
                </item>
                <item>
-                <widget class="StatusLabel" name="statuslabel_91">
+                <widget class="DROLabel" name="drolabel_8">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                    <horstretch>0</horstretch>
@@ -26929,35 +26884,38 @@ StatusLabel[style=&quot;homing&quot;]{
                    <height>35</height>
                   </size>
                  </property>
-                 <property name="font">
-                  <font>
-                   <family>Bebas Kai</family>
-                   <pointsize>17</pointsize>
-                   <weight>50</weight>
-                   <italic>false</italic>
-                   <bold>false</bold>
-                  </font>
-                 </property>
-                 <property name="mouseTracking">
-                  <bool>true</bool>
-                 </property>
                  <property name="styleSheet">
-                  <string notr="true">StatusLabel{
-    border-style: transparant;
+                  <string notr="true">QLabel{
+    border-style: transparent;
     border-color: rgb(235, 235, 235);
     border-width: 1px;
     border-radius: 5px;
     color: black;
     background: rgb(235, 235, 235);
+	font: 17pt &quot;Bebas Kai&quot;;
     padding-right: 2px;
-    font: 17pt &quot;Bebas Kai&quot;;
 }</string>
                  </property>
                  <property name="alignment">
                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                  </property>
-                 <property name="rules" stdset="0">
-                  <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;position:dtg?string&amp;axis=x&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;ch[0]&quot;, &quot;name&quot;: &quot;REL axis position&quot;}]</string>
+                 <property name="referenceType" stdset="0">
+                  <number>2</number>
+                 </property>
+                 <property name="axisNumber" stdset="0">
+                  <number>0</number>
+                 </property>
+                 <property name="inchFormat" stdset="0">
+                  <string>%9.4f</string>
+                 </property>
+                 <property name="millimeterFormat" stdset="0">
+                  <string>%10.3f</string>
+                 </property>
+                 <property name="degreeFormat" stdset="0">
+                  <string>%10.2f</string>
+                 </property>
+                 <property name="latheMode" stdset="0">
+                  <number>0</number>
                  </property>
                 </widget>
                </item>
@@ -27082,7 +27040,7 @@ StatusLabel[style=&quot;homing&quot;]{
                 </widget>
                </item>
                <item>
-                <widget class="StatusLabel" name="statuslabel_80">
+                <widget class="DROWidget" name="drowidget_5">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                    <horstretch>0</horstretch>
@@ -27101,17 +27059,8 @@ StatusLabel[style=&quot;homing&quot;]{
                    <height>35</height>
                   </size>
                  </property>
-                 <property name="font">
-                  <font>
-                   <family>Bebas Kai</family>
-                   <pointsize>17</pointsize>
-                   <weight>50</weight>
-                   <italic>false</italic>
-                   <bold>false</bold>
-                  </font>
-                 </property>
                  <property name="styleSheet">
-                  <string notr="true">StatusLabel{
+                  <string notr="true">QLabel{
     border-style: transparant;
     border-color: rgb(235, 235, 235);
     border-width: 1px;
@@ -27125,13 +27074,16 @@ StatusLabel[style=&quot;homing&quot;]{
                  <property name="alignment">
                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                  </property>
-                 <property name="rules" stdset="0">
-                  <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;position:rel?string&amp;axis=y&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;ch[0]&quot;, &quot;name&quot;: &quot;REL axis position&quot;}]</string>
+                 <property name="referenceType" stdset="0">
+                  <enum>DROWidget::Relative</enum>
+                 </property>
+                 <property name="axis" stdset="0">
+                  <enum>DROWidget::Y</enum>
                  </property>
                 </widget>
                </item>
                <item>
-                <widget class="StatusLabel" name="statuslabel_81">
+                <widget class="DROLabel" name="drolabel_9">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                    <horstretch>0</horstretch>
@@ -27150,17 +27102,8 @@ StatusLabel[style=&quot;homing&quot;]{
                    <height>35</height>
                   </size>
                  </property>
-                 <property name="font">
-                  <font>
-                   <family>Bebas Kai</family>
-                   <pointsize>17</pointsize>
-                   <weight>50</weight>
-                   <italic>false</italic>
-                   <bold>false</bold>
-                  </font>
-                 </property>
                  <property name="styleSheet">
-                  <string notr="true">StatusLabel{
+                  <string notr="true">QLabel{
     border-style: transparent;
     border-color: rgb(235, 235, 235);
     border-width: 1px;
@@ -27171,27 +27114,39 @@ StatusLabel[style=&quot;homing&quot;]{
     padding-right: 2px;
 }
 
-StatusLabel[style=&quot;unhomed&quot;]{
+QLabel[style=&quot;unhomed&quot;]{
    color: red;
 }
 
-StatusLabel[style=&quot;homing&quot;]{
+QLabel[style=&quot;homing&quot;]{
    color: rgb(196, 160, 0);
 }</string>
                  </property>
                  <property name="alignment">
                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                  </property>
-                 <property name="style" stdset="0">
-                  <string>unhomed</string>
+                 <property name="referenceType" stdset="0">
+                  <number>0</number>
                  </property>
-                 <property name="rules" stdset="0">
-                  <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;position:abs?string&amp;axis=y&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;ch[0]&quot;, &quot;name&quot;: &quot;axis position&quot;}, {&quot;channels&quot;: [{&quot;url&quot;: &quot;status:joint.1.homed&quot;, &quot;trigger&quot;: true}, {&quot;url&quot;: &quot;status:joint.1.homing&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Style Class&quot;, &quot;expression&quot;: &quot;\&quot;homed\&quot; if ch[0] else \&quot;homing\&quot; if ch[1] else \&quot;unhomed\&quot;&quot;, &quot;name&quot;: &quot;homing indicator&quot;}]</string>
+                 <property name="axisNumber" stdset="0">
+                  <number>1</number>
+                 </property>
+                 <property name="inchFormat" stdset="0">
+                  <string>%9.4f</string>
+                 </property>
+                 <property name="millimeterFormat" stdset="0">
+                  <string>%10.3f</string>
+                 </property>
+                 <property name="degreeFormat" stdset="0">
+                  <string>%10.2f</string>
+                 </property>
+                 <property name="latheMode" stdset="0">
+                  <number>0</number>
                  </property>
                 </widget>
                </item>
                <item>
-                <widget class="StatusLabel" name="statuslabel_82">
+                <widget class="DROLabel" name="drolabel_10">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                    <horstretch>0</horstretch>
@@ -27210,32 +27165,38 @@ StatusLabel[style=&quot;homing&quot;]{
                    <height>35</height>
                   </size>
                  </property>
-                 <property name="font">
-                  <font>
-                   <family>Bebas Kai</family>
-                   <pointsize>17</pointsize>
-                   <weight>50</weight>
-                   <italic>false</italic>
-                   <bold>false</bold>
-                  </font>
-                 </property>
                  <property name="styleSheet">
-                  <string notr="true">StatusLabel{
-    border-style: transparant;
+                  <string notr="true">QLabel{
+    border-style: transparent;
     border-color: rgb(235, 235, 235);
     border-width: 1px;
     border-radius: 5px;
     color: black;
     background: rgb(235, 235, 235);
+	font: 17pt &quot;Bebas Kai&quot;;
     padding-right: 2px;
-    font: 17pt &quot;Bebas Kai&quot;;
 }</string>
                  </property>
                  <property name="alignment">
                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                  </property>
-                 <property name="rules" stdset="0">
-                  <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;position:dtg?string&amp;axis=y&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;ch[0]&quot;, &quot;name&quot;: &quot;REL axis position&quot;}]</string>
+                 <property name="referenceType" stdset="0">
+                  <number>2</number>
+                 </property>
+                 <property name="axisNumber" stdset="0">
+                  <number>1</number>
+                 </property>
+                 <property name="inchFormat" stdset="0">
+                  <string>%9.4f</string>
+                 </property>
+                 <property name="millimeterFormat" stdset="0">
+                  <string>%10.3f</string>
+                 </property>
+                 <property name="degreeFormat" stdset="0">
+                  <string>%10.2f</string>
+                 </property>
+                 <property name="latheMode" stdset="0">
+                  <number>0</number>
                  </property>
                 </widget>
                </item>
@@ -27360,7 +27321,7 @@ StatusLabel[style=&quot;homing&quot;]{
                 </widget>
                </item>
                <item>
-                <widget class="StatusLabel" name="statuslabel_83">
+                <widget class="DROWidget" name="drowidget_6">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                    <horstretch>0</horstretch>
@@ -27379,17 +27340,8 @@ StatusLabel[style=&quot;homing&quot;]{
                    <height>35</height>
                   </size>
                  </property>
-                 <property name="font">
-                  <font>
-                   <family>Bebas Kai</family>
-                   <pointsize>17</pointsize>
-                   <weight>50</weight>
-                   <italic>false</italic>
-                   <bold>false</bold>
-                  </font>
-                 </property>
                  <property name="styleSheet">
-                  <string notr="true">StatusLabel{
+                  <string notr="true">QLabel{
     border-style: transparant;
     border-color: rgb(235, 235, 235);
     border-width: 1px;
@@ -27403,13 +27355,16 @@ StatusLabel[style=&quot;homing&quot;]{
                  <property name="alignment">
                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                  </property>
-                 <property name="rules" stdset="0">
-                  <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;position:rel?string&amp;axis=z&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;ch[0]&quot;, &quot;name&quot;: &quot;REL axis position&quot;}]</string>
+                 <property name="referenceType" stdset="0">
+                  <enum>DROWidget::Relative</enum>
+                 </property>
+                 <property name="axis" stdset="0">
+                  <enum>DROWidget::Z</enum>
                  </property>
                 </widget>
                </item>
                <item>
-                <widget class="StatusLabel" name="statuslabel_84">
+                <widget class="DROLabel" name="drolabel_11">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                    <horstretch>0</horstretch>
@@ -27428,17 +27383,8 @@ StatusLabel[style=&quot;homing&quot;]{
                    <height>35</height>
                   </size>
                  </property>
-                 <property name="font">
-                  <font>
-                   <family>Bebas Kai</family>
-                   <pointsize>17</pointsize>
-                   <weight>50</weight>
-                   <italic>false</italic>
-                   <bold>false</bold>
-                  </font>
-                 </property>
                  <property name="styleSheet">
-                  <string notr="true">StatusLabel{
+                  <string notr="true">QLabel{
     border-style: transparent;
     border-color: rgb(235, 235, 235);
     border-width: 1px;
@@ -27449,27 +27395,39 @@ StatusLabel[style=&quot;homing&quot;]{
     padding-right: 2px;
 }
 
-StatusLabel[style=&quot;unhomed&quot;]{
+QLabel[style=&quot;unhomed&quot;]{
    color: red;
 }
 
-StatusLabel[style=&quot;homing&quot;]{
+QLabel[style=&quot;homing&quot;]{
    color: rgb(196, 160, 0);
 }</string>
                  </property>
                  <property name="alignment">
                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                  </property>
-                 <property name="style" stdset="0">
-                  <string>unhomed</string>
+                 <property name="referenceType" stdset="0">
+                  <number>0</number>
                  </property>
-                 <property name="rules" stdset="0">
-                  <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;position:abs?string&amp;axis=z&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;ch[0]&quot;, &quot;name&quot;: &quot;axis position&quot;}, {&quot;channels&quot;: [{&quot;url&quot;: &quot;status:joint.2.homed&quot;, &quot;trigger&quot;: true}, {&quot;url&quot;: &quot;status:joint.2.homing&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Style Class&quot;, &quot;expression&quot;: &quot;\&quot;homed\&quot; if ch[0] else \&quot;homing\&quot; if ch[1] else \&quot;unhomed\&quot;&quot;, &quot;name&quot;: &quot;homing indicator&quot;}]</string>
+                 <property name="axisNumber" stdset="0">
+                  <number>2</number>
+                 </property>
+                 <property name="inchFormat" stdset="0">
+                  <string>%9.4f</string>
+                 </property>
+                 <property name="millimeterFormat" stdset="0">
+                  <string>%10.3f</string>
+                 </property>
+                 <property name="degreeFormat" stdset="0">
+                  <string>%10.2f</string>
+                 </property>
+                 <property name="latheMode" stdset="0">
+                  <number>0</number>
                  </property>
                 </widget>
                </item>
                <item>
-                <widget class="StatusLabel" name="statuslabel_85">
+                <widget class="DROLabel" name="drolabel_12">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                    <horstretch>0</horstretch>
@@ -27488,32 +27446,38 @@ StatusLabel[style=&quot;homing&quot;]{
                    <height>35</height>
                   </size>
                  </property>
-                 <property name="font">
-                  <font>
-                   <family>Bebas Kai</family>
-                   <pointsize>17</pointsize>
-                   <weight>50</weight>
-                   <italic>false</italic>
-                   <bold>false</bold>
-                  </font>
-                 </property>
                  <property name="styleSheet">
-                  <string notr="true">StatusLabel{
-    border-style: transparant;
+                  <string notr="true">QLabel{
+    border-style: transparent;
     border-color: rgb(235, 235, 235);
     border-width: 1px;
     border-radius: 5px;
     color: black;
     background: rgb(235, 235, 235);
+	font: 17pt &quot;Bebas Kai&quot;;
     padding-right: 2px;
-    font: 17pt &quot;Bebas Kai&quot;;
 }</string>
                  </property>
                  <property name="alignment">
                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                  </property>
-                 <property name="rules" stdset="0">
-                  <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;position:dtg?string&amp;axis=z&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;ch[0]&quot;, &quot;name&quot;: &quot;REL axis position&quot;}]</string>
+                 <property name="referenceType" stdset="0">
+                  <number>2</number>
+                 </property>
+                 <property name="axisNumber" stdset="0">
+                  <number>2</number>
+                 </property>
+                 <property name="inchFormat" stdset="0">
+                  <string>%9.4f</string>
+                 </property>
+                 <property name="millimeterFormat" stdset="0">
+                  <string>%10.3f</string>
+                 </property>
+                 <property name="degreeFormat" stdset="0">
+                  <string>%10.2f</string>
+                 </property>
+                 <property name="latheMode" stdset="0">
+                  <number>0</number>
                  </property>
                 </widget>
                </item>
@@ -27637,7 +27601,7 @@ StatusLabel[style=&quot;homing&quot;]{
                 </widget>
                </item>
                <item>
-                <widget class="StatusLabel" name="statuslabel_86">
+                <widget class="DROWidget" name="drowidget_7">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                    <horstretch>0</horstretch>
@@ -27656,17 +27620,8 @@ StatusLabel[style=&quot;homing&quot;]{
                    <height>35</height>
                   </size>
                  </property>
-                 <property name="font">
-                  <font>
-                   <family>Bebas Kai</family>
-                   <pointsize>17</pointsize>
-                   <weight>50</weight>
-                   <italic>false</italic>
-                   <bold>false</bold>
-                  </font>
-                 </property>
                  <property name="styleSheet">
-                  <string notr="true">StatusLabel{
+                  <string notr="true">QLabel{
     border-style: transparant;
     border-color: rgb(235, 235, 235);
     border-width: 1px;
@@ -27680,13 +27635,16 @@ StatusLabel[style=&quot;homing&quot;]{
                  <property name="alignment">
                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                  </property>
-                 <property name="rules" stdset="0">
-                  <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;position:rel?string&amp;axis=a&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;ch[0]&quot;, &quot;name&quot;: &quot;REL axis position&quot;}]</string>
+                 <property name="referenceType" stdset="0">
+                  <enum>DROWidget::Relative</enum>
+                 </property>
+                 <property name="axis" stdset="0">
+                  <enum>DROWidget::A</enum>
                  </property>
                 </widget>
                </item>
                <item>
-                <widget class="StatusLabel" name="statuslabel_87">
+                <widget class="DROLabel" name="drolabel_13">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                    <horstretch>0</horstretch>
@@ -27705,17 +27663,8 @@ StatusLabel[style=&quot;homing&quot;]{
                    <height>35</height>
                   </size>
                  </property>
-                 <property name="font">
-                  <font>
-                   <family>Bebas Kai</family>
-                   <pointsize>17</pointsize>
-                   <weight>50</weight>
-                   <italic>false</italic>
-                   <bold>false</bold>
-                  </font>
-                 </property>
                  <property name="styleSheet">
-                  <string notr="true">StatusLabel{
+                  <string notr="true">QLabel{
     border-style: transparent;
     border-color: rgb(235, 235, 235);
     border-width: 1px;
@@ -27726,27 +27675,39 @@ StatusLabel[style=&quot;homing&quot;]{
     padding-right: 2px;
 }
 
-StatusLabel[style=&quot;unhomed&quot;]{
+QLabel[style=&quot;unhomed&quot;]{
    color: red;
 }
 
-StatusLabel[style=&quot;homing&quot;]{
+QLabel[style=&quot;homing&quot;]{
    color: rgb(196, 160, 0);
 }</string>
                  </property>
                  <property name="alignment">
                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                  </property>
-                 <property name="style" stdset="0">
-                  <string>unhomed</string>
+                 <property name="referenceType" stdset="0">
+                  <number>0</number>
                  </property>
-                 <property name="rules" stdset="0">
-                  <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;position:abs?string&amp;axis=a&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;ch[0]&quot;, &quot;name&quot;: &quot;axis position&quot;}, {&quot;channels&quot;: [{&quot;url&quot;: &quot;status:joint.3.homed&quot;, &quot;trigger&quot;: true}, {&quot;url&quot;: &quot;status:joint.3.homing&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Style Class&quot;, &quot;expression&quot;: &quot;\&quot;homed\&quot; if ch[0] else \&quot;homing\&quot; if ch[1] else \&quot;unhomed\&quot;&quot;, &quot;name&quot;: &quot;homing indicator&quot;}]</string>
+                 <property name="axisNumber" stdset="0">
+                  <number>3</number>
+                 </property>
+                 <property name="inchFormat" stdset="0">
+                  <string>%9.4f</string>
+                 </property>
+                 <property name="millimeterFormat" stdset="0">
+                  <string>%10.3f</string>
+                 </property>
+                 <property name="degreeFormat" stdset="0">
+                  <string>%10.2f</string>
+                 </property>
+                 <property name="latheMode" stdset="0">
+                  <number>0</number>
                  </property>
                 </widget>
                </item>
                <item>
-                <widget class="StatusLabel" name="statuslabel_88">
+                <widget class="DROLabel" name="drolabel_14">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                    <horstretch>0</horstretch>
@@ -27765,32 +27726,38 @@ StatusLabel[style=&quot;homing&quot;]{
                    <height>35</height>
                   </size>
                  </property>
-                 <property name="font">
-                  <font>
-                   <family>Bebas Kai</family>
-                   <pointsize>17</pointsize>
-                   <weight>50</weight>
-                   <italic>false</italic>
-                   <bold>false</bold>
-                  </font>
-                 </property>
                  <property name="styleSheet">
-                  <string notr="true">StatusLabel{
-    border-style: transparant;
+                  <string notr="true">QLabel{
+    border-style: transparent;
     border-color: rgb(235, 235, 235);
     border-width: 1px;
     border-radius: 5px;
     color: black;
     background: rgb(235, 235, 235);
+	font: 17pt &quot;Bebas Kai&quot;;
     padding-right: 2px;
-    font: 17pt &quot;Bebas Kai&quot;;
 }</string>
                  </property>
                  <property name="alignment">
                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                  </property>
-                 <property name="rules" stdset="0">
-                  <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;position:dtg?string&amp;axis=a&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;ch[0]&quot;, &quot;name&quot;: &quot;REL axis position&quot;}]</string>
+                 <property name="referenceType" stdset="0">
+                  <number>2</number>
+                 </property>
+                 <property name="axisNumber" stdset="0">
+                  <number>3</number>
+                 </property>
+                 <property name="inchFormat" stdset="0">
+                  <string>%9.4f</string>
+                 </property>
+                 <property name="millimeterFormat" stdset="0">
+                  <string>%10.3f</string>
+                 </property>
+                 <property name="degreeFormat" stdset="0">
+                  <string>%10.2f</string>
+                 </property>
+                 <property name="latheMode" stdset="0">
+                  <number>0</number>
                  </property>
                 </widget>
                </item>
@@ -28148,7 +28115,7 @@ StatusLabel[style=&quot;homing&quot;]{
                   <item>
                    <widget class="QLabel" name="work_column_header_2">
                     <property name="enabled">
-                     <bool>true</bool>
+                     <bool>false</bool>
                     </property>
                     <property name="sizePolicy">
                      <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
@@ -28346,7 +28313,7 @@ StatusLabel[style=&quot;homing&quot;]{
                 </widget>
                </item>
                <item>
-                <widget class="StatusLabel" name="statuslabel_40">
+                <widget class="DROWidget" name="drowidget_8">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                    <horstretch>0</horstretch>
@@ -28365,17 +28332,8 @@ StatusLabel[style=&quot;homing&quot;]{
                    <height>35</height>
                   </size>
                  </property>
-                 <property name="font">
-                  <font>
-                   <family>Bebas Kai</family>
-                   <pointsize>17</pointsize>
-                   <weight>50</weight>
-                   <italic>false</italic>
-                   <bold>false</bold>
-                  </font>
-                 </property>
                  <property name="styleSheet">
-                  <string notr="true">StatusLabel{
+                  <string notr="true">QLabel{
     border-style: transparant;
     border-color: rgb(235, 235, 235);
     border-width: 1px;
@@ -28389,13 +28347,13 @@ StatusLabel[style=&quot;homing&quot;]{
                  <property name="alignment">
                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                  </property>
-                 <property name="rules" stdset="0">
-                  <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;position:rel?string&amp;axis=x&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;ch[0]&quot;, &quot;name&quot;: &quot;REL axis position&quot;}]</string>
+                 <property name="referenceType" stdset="0">
+                  <enum>DROWidget::Relative</enum>
                  </property>
                 </widget>
                </item>
                <item>
-                <widget class="StatusLabel" name="statuslabel_45">
+                <widget class="DROLabel" name="drolabel_15">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                    <horstretch>0</horstretch>
@@ -28414,17 +28372,8 @@ StatusLabel[style=&quot;homing&quot;]{
                    <height>35</height>
                   </size>
                  </property>
-                 <property name="font">
-                  <font>
-                   <family>Bebas Kai</family>
-                   <pointsize>17</pointsize>
-                   <weight>50</weight>
-                   <italic>false</italic>
-                   <bold>false</bold>
-                  </font>
-                 </property>
                  <property name="styleSheet">
-                  <string notr="true">StatusLabel{
+                  <string notr="true">QLabel{
     border-style: transparent;
     border-color: rgb(235, 235, 235);
     border-width: 1px;
@@ -28435,27 +28384,39 @@ StatusLabel[style=&quot;homing&quot;]{
     padding-right: 2px;
 }
 
-StatusLabel[style=&quot;unhomed&quot;]{
+QLabel[style=&quot;unhomed&quot;]{
    color: red;
 }
 
-StatusLabel[style=&quot;homing&quot;]{
+QLabel[style=&quot;homing&quot;]{
    color: rgb(196, 160, 0);
 }</string>
                  </property>
                  <property name="alignment">
                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                  </property>
-                 <property name="style" stdset="0">
-                  <string>unhomed</string>
+                 <property name="referenceType" stdset="0">
+                  <number>0</number>
                  </property>
-                 <property name="rules" stdset="0">
-                  <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;position:abs?string&amp;axis=x&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;ch[0]&quot;, &quot;name&quot;: &quot;axis position&quot;}, {&quot;channels&quot;: [{&quot;url&quot;: &quot;status:joint.0.homed&quot;, &quot;trigger&quot;: true}, {&quot;url&quot;: &quot;status:joint.0.homing&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Style Class&quot;, &quot;expression&quot;: &quot;\&quot;homed\&quot; if ch[0] else \&quot;homing\&quot; if ch[1] else \&quot;unhomed\&quot;&quot;, &quot;name&quot;: &quot;homing indicator&quot;}]</string>
+                 <property name="axisNumber" stdset="0">
+                  <number>0</number>
+                 </property>
+                 <property name="inchFormat" stdset="0">
+                  <string>%9.4f</string>
+                 </property>
+                 <property name="millimeterFormat" stdset="0">
+                  <string>%10.3f</string>
+                 </property>
+                 <property name="degreeFormat" stdset="0">
+                  <string>%10.2f</string>
+                 </property>
+                 <property name="latheMode" stdset="0">
+                  <number>0</number>
                  </property>
                 </widget>
                </item>
                <item>
-                <widget class="StatusLabel" name="statuslabel_75">
+                <widget class="DROLabel" name="drolabel_16">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                    <horstretch>0</horstretch>
@@ -28474,35 +28435,38 @@ StatusLabel[style=&quot;homing&quot;]{
                    <height>35</height>
                   </size>
                  </property>
-                 <property name="font">
-                  <font>
-                   <family>Bebas Kai</family>
-                   <pointsize>17</pointsize>
-                   <weight>50</weight>
-                   <italic>false</italic>
-                   <bold>false</bold>
-                  </font>
-                 </property>
-                 <property name="mouseTracking">
-                  <bool>true</bool>
-                 </property>
                  <property name="styleSheet">
-                  <string notr="true">StatusLabel{
-    border-style: transparant;
+                  <string notr="true">QLabel{
+    border-style: transparent;
     border-color: rgb(235, 235, 235);
     border-width: 1px;
     border-radius: 5px;
     color: black;
     background: rgb(235, 235, 235);
+	font: 17pt &quot;Bebas Kai&quot;;
     padding-right: 2px;
-    font: 17pt &quot;Bebas Kai&quot;;
 }</string>
                  </property>
                  <property name="alignment">
                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                  </property>
-                 <property name="rules" stdset="0">
-                  <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;position:dtg?string&amp;axis=x&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;ch[0]&quot;, &quot;name&quot;: &quot;REL axis position&quot;}]</string>
+                 <property name="referenceType" stdset="0">
+                  <number>2</number>
+                 </property>
+                 <property name="axisNumber" stdset="0">
+                  <number>0</number>
+                 </property>
+                 <property name="inchFormat" stdset="0">
+                  <string>%9.4f</string>
+                 </property>
+                 <property name="millimeterFormat" stdset="0">
+                  <string>%10.3f</string>
+                 </property>
+                 <property name="degreeFormat" stdset="0">
+                  <string>%10.2f</string>
+                 </property>
+                 <property name="latheMode" stdset="0">
+                  <number>0</number>
                  </property>
                 </widget>
                </item>
@@ -28627,7 +28591,7 @@ StatusLabel[style=&quot;homing&quot;]{
                 </widget>
                </item>
                <item>
-                <widget class="StatusLabel" name="statuslabel_41">
+                <widget class="DROWidget" name="drowidget_9">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                    <horstretch>0</horstretch>
@@ -28646,17 +28610,8 @@ StatusLabel[style=&quot;homing&quot;]{
                    <height>35</height>
                   </size>
                  </property>
-                 <property name="font">
-                  <font>
-                   <family>Bebas Kai</family>
-                   <pointsize>17</pointsize>
-                   <weight>50</weight>
-                   <italic>false</italic>
-                   <bold>false</bold>
-                  </font>
-                 </property>
                  <property name="styleSheet">
-                  <string notr="true">StatusLabel{
+                  <string notr="true">QLabel{
     border-style: transparant;
     border-color: rgb(235, 235, 235);
     border-width: 1px;
@@ -28670,13 +28625,16 @@ StatusLabel[style=&quot;homing&quot;]{
                  <property name="alignment">
                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                  </property>
-                 <property name="rules" stdset="0">
-                  <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;position:rel?string&amp;axis=y&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;ch[0]&quot;, &quot;name&quot;: &quot;REL axis position&quot;}]</string>
+                 <property name="referenceType" stdset="0">
+                  <enum>DROWidget::Relative</enum>
+                 </property>
+                 <property name="axis" stdset="0">
+                  <enum>DROWidget::Y</enum>
                  </property>
                 </widget>
                </item>
                <item>
-                <widget class="StatusLabel" name="statuslabel_46">
+                <widget class="DROLabel" name="drolabel_17">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                    <horstretch>0</horstretch>
@@ -28695,17 +28653,8 @@ StatusLabel[style=&quot;homing&quot;]{
                    <height>35</height>
                   </size>
                  </property>
-                 <property name="font">
-                  <font>
-                   <family>Bebas Kai</family>
-                   <pointsize>17</pointsize>
-                   <weight>50</weight>
-                   <italic>false</italic>
-                   <bold>false</bold>
-                  </font>
-                 </property>
                  <property name="styleSheet">
-                  <string notr="true">StatusLabel{
+                  <string notr="true">QLabel{
     border-style: transparent;
     border-color: rgb(235, 235, 235);
     border-width: 1px;
@@ -28716,27 +28665,39 @@ StatusLabel[style=&quot;homing&quot;]{
     padding-right: 2px;
 }
 
-StatusLabel[style=&quot;unhomed&quot;]{
+QLabel[style=&quot;unhomed&quot;]{
    color: red;
 }
 
-StatusLabel[style=&quot;homing&quot;]{
+QLabel[style=&quot;homing&quot;]{
    color: rgb(196, 160, 0);
 }</string>
                  </property>
                  <property name="alignment">
                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                  </property>
-                 <property name="style" stdset="0">
-                  <string>unhomed</string>
+                 <property name="referenceType" stdset="0">
+                  <number>0</number>
                  </property>
-                 <property name="rules" stdset="0">
-                  <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;position:abs?string&amp;axis=y&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;ch[0]&quot;, &quot;name&quot;: &quot;axis position&quot;}, {&quot;channels&quot;: [{&quot;url&quot;: &quot;status:joint.1.homed&quot;, &quot;trigger&quot;: true}, {&quot;url&quot;: &quot;status:joint.1.homing&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Style Class&quot;, &quot;expression&quot;: &quot;\&quot;homed\&quot; if ch[0] else \&quot;homing\&quot; if ch[1] else \&quot;unhomed\&quot;&quot;, &quot;name&quot;: &quot;homing indicator&quot;}]</string>
+                 <property name="axisNumber" stdset="0">
+                  <number>1</number>
+                 </property>
+                 <property name="inchFormat" stdset="0">
+                  <string>%9.4f</string>
+                 </property>
+                 <property name="millimeterFormat" stdset="0">
+                  <string>%10.3f</string>
+                 </property>
+                 <property name="degreeFormat" stdset="0">
+                  <string>%10.2f</string>
+                 </property>
+                 <property name="latheMode" stdset="0">
+                  <number>0</number>
                  </property>
                 </widget>
                </item>
                <item>
-                <widget class="StatusLabel" name="statuslabel_76">
+                <widget class="DROLabel" name="drolabel_18">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                    <horstretch>0</horstretch>
@@ -28755,32 +28716,38 @@ StatusLabel[style=&quot;homing&quot;]{
                    <height>35</height>
                   </size>
                  </property>
-                 <property name="font">
-                  <font>
-                   <family>Bebas Kai</family>
-                   <pointsize>17</pointsize>
-                   <weight>50</weight>
-                   <italic>false</italic>
-                   <bold>false</bold>
-                  </font>
-                 </property>
                  <property name="styleSheet">
-                  <string notr="true">StatusLabel{
-    border-style: transparant;
+                  <string notr="true">QLabel{
+    border-style: transparent;
     border-color: rgb(235, 235, 235);
     border-width: 1px;
     border-radius: 5px;
     color: black;
     background: rgb(235, 235, 235);
+	font: 17pt &quot;Bebas Kai&quot;;
     padding-right: 2px;
-    font: 17pt &quot;Bebas Kai&quot;;
 }</string>
                  </property>
                  <property name="alignment">
                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                  </property>
-                 <property name="rules" stdset="0">
-                  <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;position:dtg?string&amp;axis=y&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;ch[0]&quot;, &quot;name&quot;: &quot;REL axis position&quot;}]</string>
+                 <property name="referenceType" stdset="0">
+                  <number>2</number>
+                 </property>
+                 <property name="axisNumber" stdset="0">
+                  <number>1</number>
+                 </property>
+                 <property name="inchFormat" stdset="0">
+                  <string>%9.4f</string>
+                 </property>
+                 <property name="millimeterFormat" stdset="0">
+                  <string>%10.3f</string>
+                 </property>
+                 <property name="degreeFormat" stdset="0">
+                  <string>%10.2f</string>
+                 </property>
+                 <property name="latheMode" stdset="0">
+                  <number>0</number>
                  </property>
                 </widget>
                </item>
@@ -28902,7 +28869,7 @@ StatusLabel[style=&quot;homing&quot;]{
                 </widget>
                </item>
                <item>
-                <widget class="StatusLabel" name="statuslabel_42">
+                <widget class="DROWidget" name="drowidget_10">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                    <horstretch>0</horstretch>
@@ -28921,17 +28888,8 @@ StatusLabel[style=&quot;homing&quot;]{
                    <height>35</height>
                   </size>
                  </property>
-                 <property name="font">
-                  <font>
-                   <family>Bebas Kai</family>
-                   <pointsize>17</pointsize>
-                   <weight>50</weight>
-                   <italic>false</italic>
-                   <bold>false</bold>
-                  </font>
-                 </property>
                  <property name="styleSheet">
-                  <string notr="true">StatusLabel{
+                  <string notr="true">QLabel{
     border-style: transparant;
     border-color: rgb(235, 235, 235);
     border-width: 1px;
@@ -28945,13 +28903,16 @@ StatusLabel[style=&quot;homing&quot;]{
                  <property name="alignment">
                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                  </property>
-                 <property name="rules" stdset="0">
-                  <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;position:rel?string&amp;axis=z&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;ch[0]&quot;, &quot;name&quot;: &quot;REL axis position&quot;}]</string>
+                 <property name="referenceType" stdset="0">
+                  <enum>DROWidget::Relative</enum>
+                 </property>
+                 <property name="axis" stdset="0">
+                  <enum>DROWidget::Z</enum>
                  </property>
                 </widget>
                </item>
                <item>
-                <widget class="StatusLabel" name="statuslabel_47">
+                <widget class="DROLabel" name="drolabel_19">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                    <horstretch>0</horstretch>
@@ -28970,17 +28931,8 @@ StatusLabel[style=&quot;homing&quot;]{
                    <height>35</height>
                   </size>
                  </property>
-                 <property name="font">
-                  <font>
-                   <family>Bebas Kai</family>
-                   <pointsize>17</pointsize>
-                   <weight>50</weight>
-                   <italic>false</italic>
-                   <bold>false</bold>
-                  </font>
-                 </property>
                  <property name="styleSheet">
-                  <string notr="true">StatusLabel{
+                  <string notr="true">QLabel{
     border-style: transparent;
     border-color: rgb(235, 235, 235);
     border-width: 1px;
@@ -28991,27 +28943,39 @@ StatusLabel[style=&quot;homing&quot;]{
     padding-right: 2px;
 }
 
-StatusLabel[style=&quot;unhomed&quot;]{
+QLabel[style=&quot;unhomed&quot;]{
    color: red;
 }
 
-StatusLabel[style=&quot;homing&quot;]{
+QLabel[style=&quot;homing&quot;]{
    color: rgb(196, 160, 0);
 }</string>
                  </property>
                  <property name="alignment">
                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                  </property>
-                 <property name="style" stdset="0">
-                  <string>unhomed</string>
+                 <property name="referenceType" stdset="0">
+                  <number>0</number>
                  </property>
-                 <property name="rules" stdset="0">
-                  <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;position:abs?string&amp;axis=z&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;ch[0]&quot;, &quot;name&quot;: &quot;axis position&quot;}, {&quot;channels&quot;: [{&quot;url&quot;: &quot;status:joint.2.homed&quot;, &quot;trigger&quot;: true}, {&quot;url&quot;: &quot;status:joint.2.homing&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Style Class&quot;, &quot;expression&quot;: &quot;\&quot;homed\&quot; if ch[0] else \&quot;homing\&quot; if ch[1] else \&quot;unhomed\&quot;&quot;, &quot;name&quot;: &quot;homing indicator&quot;}]</string>
+                 <property name="axisNumber" stdset="0">
+                  <number>2</number>
+                 </property>
+                 <property name="inchFormat" stdset="0">
+                  <string>%9.4f</string>
+                 </property>
+                 <property name="millimeterFormat" stdset="0">
+                  <string>%10.3f</string>
+                 </property>
+                 <property name="degreeFormat" stdset="0">
+                  <string>%10.2f</string>
+                 </property>
+                 <property name="latheMode" stdset="0">
+                  <number>0</number>
                  </property>
                 </widget>
                </item>
                <item>
-                <widget class="StatusLabel" name="statuslabel_77">
+                <widget class="DROLabel" name="drolabel_20">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                    <horstretch>0</horstretch>
@@ -29030,32 +28994,38 @@ StatusLabel[style=&quot;homing&quot;]{
                    <height>35</height>
                   </size>
                  </property>
-                 <property name="font">
-                  <font>
-                   <family>Bebas Kai</family>
-                   <pointsize>17</pointsize>
-                   <weight>50</weight>
-                   <italic>false</italic>
-                   <bold>false</bold>
-                  </font>
-                 </property>
                  <property name="styleSheet">
-                  <string notr="true">StatusLabel{
-    border-style: transparant;
+                  <string notr="true">QLabel{
+    border-style: transparent;
     border-color: rgb(235, 235, 235);
     border-width: 1px;
     border-radius: 5px;
     color: black;
     background: rgb(235, 235, 235);
+	font: 17pt &quot;Bebas Kai&quot;;
     padding-right: 2px;
-    font: 17pt &quot;Bebas Kai&quot;;
 }</string>
                  </property>
                  <property name="alignment">
                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                  </property>
-                 <property name="rules" stdset="0">
-                  <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;position:dtg?string&amp;axis=z&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;ch[0]&quot;, &quot;name&quot;: &quot;REL axis position&quot;}]</string>
+                 <property name="referenceType" stdset="0">
+                  <number>2</number>
+                 </property>
+                 <property name="axisNumber" stdset="0">
+                  <number>2</number>
+                 </property>
+                 <property name="inchFormat" stdset="0">
+                  <string>%9.4f</string>
+                 </property>
+                 <property name="millimeterFormat" stdset="0">
+                  <string>%10.3f</string>
+                 </property>
+                 <property name="degreeFormat" stdset="0">
+                  <string>%10.2f</string>
+                 </property>
+                 <property name="latheMode" stdset="0">
+                  <number>0</number>
                  </property>
                 </widget>
                </item>
@@ -29174,12 +29144,12 @@ StatusLabel[style=&quot;homing&quot;]{
 ]</string>
                  </property>
                  <property name="MDICommand" stdset="0">
-                  <string>G10 L2 P{ch[0]} A0.0</string>
+                  <string>G10 L20 P{ch[0]} A0.0</string>
                  </property>
                 </widget>
                </item>
                <item>
-                <widget class="StatusLabel" name="statuslabel_43">
+                <widget class="DROWidget" name="drowidget_11">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                    <horstretch>0</horstretch>
@@ -29198,17 +29168,8 @@ StatusLabel[style=&quot;homing&quot;]{
                    <height>35</height>
                   </size>
                  </property>
-                 <property name="font">
-                  <font>
-                   <family>Bebas Kai</family>
-                   <pointsize>17</pointsize>
-                   <weight>50</weight>
-                   <italic>false</italic>
-                   <bold>false</bold>
-                  </font>
-                 </property>
                  <property name="styleSheet">
-                  <string notr="true">StatusLabel{
+                  <string notr="true">QLabel{
     border-style: transparant;
     border-color: rgb(235, 235, 235);
     border-width: 1px;
@@ -29222,13 +29183,16 @@ StatusLabel[style=&quot;homing&quot;]{
                  <property name="alignment">
                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                  </property>
-                 <property name="rules" stdset="0">
-                  <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;position:rel?string&amp;axis=a&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;ch[0]&quot;, &quot;name&quot;: &quot;REL axis position&quot;}]</string>
+                 <property name="referenceType" stdset="0">
+                  <enum>DROWidget::Relative</enum>
+                 </property>
+                 <property name="axis" stdset="0">
+                  <enum>DROWidget::A</enum>
                  </property>
                 </widget>
                </item>
                <item>
-                <widget class="StatusLabel" name="statuslabel_48">
+                <widget class="DROLabel" name="drolabel_21">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                    <horstretch>0</horstretch>
@@ -29247,17 +29211,8 @@ StatusLabel[style=&quot;homing&quot;]{
                    <height>35</height>
                   </size>
                  </property>
-                 <property name="font">
-                  <font>
-                   <family>Bebas Kai</family>
-                   <pointsize>17</pointsize>
-                   <weight>50</weight>
-                   <italic>false</italic>
-                   <bold>false</bold>
-                  </font>
-                 </property>
                  <property name="styleSheet">
-                  <string notr="true">StatusLabel{
+                  <string notr="true">QLabel{
     border-style: transparent;
     border-color: rgb(235, 235, 235);
     border-width: 1px;
@@ -29268,27 +29223,39 @@ StatusLabel[style=&quot;homing&quot;]{
     padding-right: 2px;
 }
 
-StatusLabel[style=&quot;unhomed&quot;]{
+QLabel[style=&quot;unhomed&quot;]{
    color: red;
 }
 
-StatusLabel[style=&quot;homing&quot;]{
+QLabel[style=&quot;homing&quot;]{
    color: rgb(196, 160, 0);
 }</string>
                  </property>
                  <property name="alignment">
                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                  </property>
-                 <property name="style" stdset="0">
-                  <string>unhomed</string>
+                 <property name="referenceType" stdset="0">
+                  <number>0</number>
                  </property>
-                 <property name="rules" stdset="0">
-                  <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;position:abs?string&amp;axis=a&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;ch[0]&quot;, &quot;name&quot;: &quot;axis position&quot;}, {&quot;channels&quot;: [{&quot;url&quot;: &quot;status:joint.3.homed&quot;, &quot;trigger&quot;: true}, {&quot;url&quot;: &quot;status:joint.3.homing&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Style Class&quot;, &quot;expression&quot;: &quot;\&quot;homed\&quot; if ch[0] else \&quot;homing\&quot; if ch[1] else \&quot;unhomed\&quot;&quot;, &quot;name&quot;: &quot;homing indicator&quot;}]</string>
+                 <property name="axisNumber" stdset="0">
+                  <number>3</number>
+                 </property>
+                 <property name="inchFormat" stdset="0">
+                  <string>%9.4f</string>
+                 </property>
+                 <property name="millimeterFormat" stdset="0">
+                  <string>%10.3f</string>
+                 </property>
+                 <property name="degreeFormat" stdset="0">
+                  <string>%10.2f</string>
+                 </property>
+                 <property name="latheMode" stdset="0">
+                  <number>0</number>
                  </property>
                 </widget>
                </item>
                <item>
-                <widget class="StatusLabel" name="statuslabel_78">
+                <widget class="DROLabel" name="drolabel_22">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                    <horstretch>0</horstretch>
@@ -29307,32 +29274,38 @@ StatusLabel[style=&quot;homing&quot;]{
                    <height>35</height>
                   </size>
                  </property>
-                 <property name="font">
-                  <font>
-                   <family>Bebas Kai</family>
-                   <pointsize>17</pointsize>
-                   <weight>50</weight>
-                   <italic>false</italic>
-                   <bold>false</bold>
-                  </font>
-                 </property>
                  <property name="styleSheet">
-                  <string notr="true">StatusLabel{
-    border-style: transparant;
+                  <string notr="true">QLabel{
+    border-style: transparent;
     border-color: rgb(235, 235, 235);
     border-width: 1px;
     border-radius: 5px;
     color: black;
     background: rgb(235, 235, 235);
+	font: 17pt &quot;Bebas Kai&quot;;
     padding-right: 2px;
-    font: 17pt &quot;Bebas Kai&quot;;
 }</string>
                  </property>
                  <property name="alignment">
                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                  </property>
-                 <property name="rules" stdset="0">
-                  <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;position:dtg?string&amp;axis=a&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;ch[0]&quot;, &quot;name&quot;: &quot;REL axis position&quot;}]</string>
+                 <property name="referenceType" stdset="0">
+                  <number>2</number>
+                 </property>
+                 <property name="axisNumber" stdset="0">
+                  <number>3</number>
+                 </property>
+                 <property name="inchFormat" stdset="0">
+                  <string>%9.4f</string>
+                 </property>
+                 <property name="millimeterFormat" stdset="0">
+                  <string>%10.3f</string>
+                 </property>
+                 <property name="degreeFormat" stdset="0">
+                  <string>%10.2f</string>
+                 </property>
+                 <property name="latheMode" stdset="0">
+                  <number>0</number>
                  </property>
                 </widget>
                </item>
@@ -29452,12 +29425,12 @@ StatusLabel[style=&quot;homing&quot;]{
 ]</string>
                  </property>
                  <property name="MDICommand" stdset="0">
-                  <string>G10 L2 P{ch[0]} B0.0</string>
+                  <string>G10 L20 P{ch[0]} B0.0</string>
                  </property>
                 </widget>
                </item>
                <item>
-                <widget class="StatusLabel" name="statuslabel_44">
+                <widget class="DROWidget" name="drowidget_12">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                    <horstretch>0</horstretch>
@@ -29476,17 +29449,8 @@ StatusLabel[style=&quot;homing&quot;]{
                    <height>35</height>
                   </size>
                  </property>
-                 <property name="font">
-                  <font>
-                   <family>Bebas Kai</family>
-                   <pointsize>17</pointsize>
-                   <weight>50</weight>
-                   <italic>false</italic>
-                   <bold>false</bold>
-                  </font>
-                 </property>
                  <property name="styleSheet">
-                  <string notr="true">StatusLabel{
+                  <string notr="true">QLabel{
     border-style: transparant;
     border-color: rgb(235, 235, 235);
     border-width: 1px;
@@ -29500,13 +29464,16 @@ StatusLabel[style=&quot;homing&quot;]{
                  <property name="alignment">
                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                  </property>
-                 <property name="rules" stdset="0">
-                  <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;position:rel?string&amp;axis=b&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;ch[0]&quot;, &quot;name&quot;: &quot;REL axis position&quot;}]</string>
+                 <property name="referenceType" stdset="0">
+                  <enum>DROWidget::Relative</enum>
+                 </property>
+                 <property name="axis" stdset="0">
+                  <enum>DROWidget::B</enum>
                  </property>
                 </widget>
                </item>
                <item>
-                <widget class="StatusLabel" name="statuslabel_49">
+                <widget class="DROLabel" name="drolabel_23">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                    <horstretch>0</horstretch>
@@ -29525,17 +29492,8 @@ StatusLabel[style=&quot;homing&quot;]{
                    <height>35</height>
                   </size>
                  </property>
-                 <property name="font">
-                  <font>
-                   <family>Bebas Kai</family>
-                   <pointsize>17</pointsize>
-                   <weight>50</weight>
-                   <italic>false</italic>
-                   <bold>false</bold>
-                  </font>
-                 </property>
                  <property name="styleSheet">
-                  <string notr="true">StatusLabel{
+                  <string notr="true">QLabel{
     border-style: transparent;
     border-color: rgb(235, 235, 235);
     border-width: 1px;
@@ -29546,27 +29504,39 @@ StatusLabel[style=&quot;homing&quot;]{
     padding-right: 2px;
 }
 
-StatusLabel[style=&quot;unhomed&quot;]{
+QLabel[style=&quot;unhomed&quot;]{
    color: red;
 }
 
-StatusLabel[style=&quot;homing&quot;]{
+QLabel[style=&quot;homing&quot;]{
    color: rgb(196, 160, 0);
 }</string>
                  </property>
                  <property name="alignment">
                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                  </property>
-                 <property name="style" stdset="0">
-                  <string>unhomed</string>
+                 <property name="referenceType" stdset="0">
+                  <number>0</number>
                  </property>
-                 <property name="rules" stdset="0">
-                  <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;position:abs?string&amp;axis=b&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;ch[0]&quot;, &quot;name&quot;: &quot;axis position&quot;}, {&quot;channels&quot;: [{&quot;url&quot;: &quot;status:joint.4.homed&quot;, &quot;trigger&quot;: true}, {&quot;url&quot;: &quot;status:joint.4.homing&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Style Class&quot;, &quot;expression&quot;: &quot;\&quot;homed\&quot; if ch[0] else \&quot;homing\&quot; if ch[1] else \&quot;unhomed\&quot;&quot;, &quot;name&quot;: &quot;homing indicator&quot;}]</string>
+                 <property name="axisNumber" stdset="0">
+                  <number>4</number>
+                 </property>
+                 <property name="inchFormat" stdset="0">
+                  <string>%9.4f</string>
+                 </property>
+                 <property name="millimeterFormat" stdset="0">
+                  <string>%10.3f</string>
+                 </property>
+                 <property name="degreeFormat" stdset="0">
+                  <string>%10.2f</string>
+                 </property>
+                 <property name="latheMode" stdset="0">
+                  <number>0</number>
                  </property>
                 </widget>
                </item>
                <item>
-                <widget class="StatusLabel" name="statuslabel_79">
+                <widget class="DROLabel" name="drolabel_24">
                  <property name="sizePolicy">
                   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
                    <horstretch>0</horstretch>
@@ -29585,32 +29555,38 @@ StatusLabel[style=&quot;homing&quot;]{
                    <height>35</height>
                   </size>
                  </property>
-                 <property name="font">
-                  <font>
-                   <family>Bebas Kai</family>
-                   <pointsize>17</pointsize>
-                   <weight>50</weight>
-                   <italic>false</italic>
-                   <bold>false</bold>
-                  </font>
-                 </property>
                  <property name="styleSheet">
-                  <string notr="true">StatusLabel{
-    border-style: transparant;
+                  <string notr="true">QLabel{
+    border-style: transparent;
     border-color: rgb(235, 235, 235);
     border-width: 1px;
     border-radius: 5px;
     color: black;
     background: rgb(235, 235, 235);
+	font: 17pt &quot;Bebas Kai&quot;;
     padding-right: 2px;
-    font: 17pt &quot;Bebas Kai&quot;;
 }</string>
                  </property>
                  <property name="alignment">
                   <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                  </property>
-                 <property name="rules" stdset="0">
-                  <string>[{&quot;channels&quot;: [{&quot;url&quot;: &quot;position:dtg?string&amp;axis=b&quot;, &quot;trigger&quot;: true}], &quot;property&quot;: &quot;Text&quot;, &quot;expression&quot;: &quot;ch[0]&quot;, &quot;name&quot;: &quot;REL axis position&quot;}]</string>
+                 <property name="referenceType" stdset="0">
+                  <number>2</number>
+                 </property>
+                 <property name="axisNumber" stdset="0">
+                  <number>4</number>
+                 </property>
+                 <property name="inchFormat" stdset="0">
+                  <string>%9.4f</string>
+                 </property>
+                 <property name="millimeterFormat" stdset="0">
+                  <string>%10.3f</string>
+                 </property>
+                 <property name="degreeFormat" stdset="0">
+                  <string>%10.2f</string>
+                 </property>
+                 <property name="latheMode" stdset="0">
+                  <number>0</number>
                  </property>
                 </widget>
                </item>
@@ -29998,17 +29974,17 @@ LOAD</string>
           </widget>
          </item>
          <item row="0" column="0" colspan="2">
-          <widget class="LoadMeter" name="loadmeter">
+          <widget class="HalBarIndicator" name="spindle_load_indicator">
            <property name="minimumSize">
             <size>
              <width>0</width>
-             <height>25</height>
+             <height>30</height>
             </size>
            </property>
            <property name="maximumSize">
             <size>
              <width>16777215</width>
-             <height>25</height>
+             <height>30</height>
             </size>
            </property>
            <property name="font">
@@ -30020,11 +29996,11 @@ LOAD</string>
            <property name="styleSheet">
             <string notr="true"/>
            </property>
-           <property name="maximum">
-            <number>150</number>
+           <property name="value" stdset="0">
+            <double>150.000000000000000</double>
            </property>
-           <property name="value">
-            <number>150</number>
+           <property name="maximum" stdset="0">
+            <double>150.000000000000000</double>
            </property>
            <property name="barGradient" stdset="0">
             <stringlist>
@@ -31524,11 +31500,6 @@ font: 11pt bebas kai;
    <header>qtpyvcp.widgets.input_widgets.file_system</header>
   </customwidget>
   <customwidget>
-   <class>LoadMeter</class>
-   <extends>QProgressBar</extends>
-   <header>qtpyvcp.widgets.display_widgets.load_meter</header>
-  </customwidget>
-  <customwidget>
    <class>MDIEntry</class>
    <extends>QLineEdit</extends>
    <header>qtpyvcp.widgets.input_widgets.mdientry_widget</header>
@@ -31552,6 +31523,11 @@ font: 11pt bebas kai;
    <class>ProbeSim</class>
    <extends>QWidget</extends>
    <header>qtpyvcp.widgets.input_widgets.probesim_widget</header>
+  </customwidget>
+  <customwidget>
+   <class>DROWidget</class>
+   <extends>QLabel</extends>
+   <header>qtpyvcp.widgets.display_widgets.dro_widget</header>
   </customwidget>
   <customwidget>
    <class>StatusLabel</class>
@@ -31600,6 +31576,11 @@ font: 11pt bebas kai;
    <header>qtpyvcp.widgets.button_widgets.mdi_button</header>
   </customwidget>
   <customwidget>
+   <class>HalBarIndicator</class>
+   <extends>QWidget</extends>
+   <header>qtpyvcp.widgets.hal_widgets.hal_bar_indicator</header>
+  </customwidget>
+  <customwidget>
    <class>GcodeEditor</class>
    <extends>QFrame</extends>
    <header>qtpyvcp.widgets.input_widgets.gcode_editor</header>
@@ -31617,14 +31598,14 @@ font: 11pt bebas kai;
    <header>qtpyvcp.widgets.display_widgets.vtk_backplot.vtk_backplot</header>
   </customwidget>
   <customwidget>
-   <class>VCPSettingsCheckBox</class>
-   <extends>QCheckBox</extends>
-   <header>qtpyvcp.widgets.input_widgets.setting_slider</header>
-  </customwidget>
-  <customwidget>
    <class>VCPLineEdit</class>
    <extends>QLineEdit</extends>
    <header>qtpyvcp.widgets.input_widgets.line_edit</header>
+  </customwidget>
+  <customwidget>
+   <class>DROLabel</class>
+   <extends>QLabel</extends>
+   <header>qtpyvcp.widgets.display_widgets.dro_label</header>
   </customwidget>
   <customwidget>
    <class>ActionButton</class>
@@ -31662,6 +31643,7 @@ font: 11pt bebas kai;
   <include location="probe_basic.qrc"/>
   <include location="probe_basic.qrc"/>
   <include location="probe_basic.qrc"/>
+  <include location="../probe_basic_lathe/probe_basic_lathe.qrc"/>
  </resources>
  <connections>
   <connection>
@@ -31675,7 +31657,7 @@ font: 11pt bebas kai;
      <y>75</y>
     </hint>
     <hint type="destinationlabel">
-     <x>119</x>
+     <x>180</x>
      <y>75</y>
     </hint>
    </hints>
@@ -31687,11 +31669,11 @@ font: 11pt bebas kai;
    <slot>viewParentDirectory()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>129</x>
-     <y>75</y>
+     <x>194</x>
+     <y>107</y>
     </hint>
     <hint type="destinationlabel">
-     <x>119</x>
+     <x>180</x>
      <y>75</y>
     </hint>
    </hints>
@@ -31703,11 +31685,11 @@ font: 11pt bebas kai;
    <slot>newFolder()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>144</x>
-     <y>75</y>
+     <x>437</x>
+     <y>102</y>
     </hint>
     <hint type="destinationlabel">
-     <x>119</x>
+     <x>180</x>
      <y>75</y>
     </hint>
    </hints>
@@ -31719,11 +31701,11 @@ font: 11pt bebas kai;
    <slot>newFolder()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>144</x>
-     <y>75</y>
+     <x>403</x>
+     <y>102</y>
     </hint>
     <hint type="destinationlabel">
-     <x>119</x>
+     <x>146</x>
      <y>75</y>
     </hint>
    </hints>
@@ -31735,11 +31717,11 @@ font: 11pt bebas kai;
    <slot>doFileTransfer()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>79</x>
-     <y>135</y>
+     <x>112</x>
+     <y>265</y>
     </hint>
     <hint type="destinationlabel">
-     <x>119</x>
+     <x>146</x>
      <y>75</y>
     </hint>
    </hints>
@@ -31755,7 +31737,7 @@ font: 11pt bebas kai;
      <y>75</y>
     </hint>
     <hint type="destinationlabel">
-     <x>119</x>
+     <x>146</x>
      <y>75</y>
     </hint>
    </hints>
@@ -31767,11 +31749,11 @@ font: 11pt bebas kai;
    <slot>newFile()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>119</x>
-     <y>75</y>
+     <x>296</x>
+     <y>102</y>
     </hint>
     <hint type="destinationlabel">
-     <x>119</x>
+     <x>180</x>
      <y>75</y>
     </hint>
    </hints>
@@ -31787,7 +31769,7 @@ font: 11pt bebas kai;
      <y>135</y>
     </hint>
     <hint type="destinationlabel">
-     <x>119</x>
+     <x>180</x>
      <y>75</y>
     </hint>
    </hints>
@@ -31799,11 +31781,11 @@ font: 11pt bebas kai;
    <slot>viewParentDirectory()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>129</x>
-     <y>75</y>
+     <x>160</x>
+     <y>107</y>
     </hint>
     <hint type="destinationlabel">
-     <x>119</x>
+     <x>146</x>
      <y>75</y>
     </hint>
    </hints>
@@ -31815,11 +31797,11 @@ font: 11pt bebas kai;
    <slot>transferFile(QString)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>119</x>
+     <x>146</x>
      <y>75</y>
     </hint>
     <hint type="destinationlabel">
-     <x>119</x>
+     <x>180</x>
      <y>75</y>
     </hint>
    </hints>
@@ -31831,11 +31813,11 @@ font: 11pt bebas kai;
    <slot>loadSelectedFile()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>119</x>
-     <y>75</y>
+     <x>552</x>
+     <y>107</y>
     </hint>
     <hint type="destinationlabel">
-     <x>119</x>
+     <x>180</x>
      <y>75</y>
     </hint>
    </hints>
@@ -31847,11 +31829,11 @@ font: 11pt bebas kai;
    <slot>transferFile(QString)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>119</x>
+     <x>180</x>
      <y>75</y>
     </hint>
     <hint type="destinationlabel">
-     <x>119</x>
+     <x>146</x>
      <y>75</y>
     </hint>
    </hints>
@@ -31863,12 +31845,12 @@ font: 11pt bebas kai;
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>119</x>
+     <x>180</x>
      <y>75</y>
     </hint>
     <hint type="destinationlabel">
-     <x>119</x>
-     <y>75</y>
+     <x>552</x>
+     <y>107</y>
     </hint>
    </hints>
   </connection>
@@ -31879,11 +31861,11 @@ font: 11pt bebas kai;
    <slot>newFile()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>119</x>
-     <y>75</y>
+     <x>262</x>
+     <y>102</y>
     </hint>
     <hint type="destinationlabel">
-     <x>119</x>
+     <x>146</x>
      <y>75</y>
     </hint>
    </hints>
@@ -31899,8 +31881,8 @@ font: 11pt bebas kai;
      <y>87</y>
     </hint>
     <hint type="destinationlabel">
-     <x>128</x>
-     <y>84</y>
+     <x>92</x>
+     <y>72</y>
     </hint>
    </hints>
   </connection>
@@ -31911,12 +31893,12 @@ font: 11pt bebas kai;
    <slot>toggleMachineLabels()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>1742</x>
-     <y>101</y>
+     <x>1844</x>
+     <y>397</y>
     </hint>
     <hint type="destinationlabel">
-     <x>831</x>
-     <y>103</y>
+     <x>10</x>
+     <y>48</y>
     </hint>
    </hints>
   </connection>
@@ -31931,8 +31913,8 @@ font: 11pt bebas kai;
      <y>87</y>
     </hint>
     <hint type="destinationlabel">
-     <x>128</x>
-     <y>84</y>
+     <x>92</x>
+     <y>72</y>
     </hint>
    </hints>
   </connection>
@@ -31943,12 +31925,12 @@ font: 11pt bebas kai;
    <slot>setViewY()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>781</x>
-     <y>183</y>
+     <x>146</x>
+     <y>78</y>
     </hint>
     <hint type="destinationlabel">
-     <x>831</x>
-     <y>103</y>
+     <x>10</x>
+     <y>48</y>
     </hint>
    </hints>
   </connection>
@@ -31963,8 +31945,8 @@ font: 11pt bebas kai;
      <y>87</y>
     </hint>
     <hint type="destinationlabel">
-     <x>128</x>
-     <y>84</y>
+     <x>92</x>
+     <y>72</y>
     </hint>
    </hints>
   </connection>
@@ -31975,12 +31957,12 @@ font: 11pt bebas kai;
    <slot>zoomIn()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>781</x>
-     <y>319</y>
+     <x>146</x>
+     <y>78</y>
     </hint>
     <hint type="destinationlabel">
-     <x>831</x>
-     <y>103</y>
+     <x>10</x>
+     <y>48</y>
     </hint>
    </hints>
   </connection>
@@ -31995,8 +31977,8 @@ font: 11pt bebas kai;
      <y>87</y>
     </hint>
     <hint type="destinationlabel">
-     <x>128</x>
-     <y>84</y>
+     <x>92</x>
+     <y>72</y>
     </hint>
    </hints>
   </connection>
@@ -32007,12 +31989,12 @@ font: 11pt bebas kai;
    <slot>setViewX()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>781</x>
-     <y>141</y>
+     <x>146</x>
+     <y>78</y>
     </hint>
     <hint type="destinationlabel">
-     <x>831</x>
-     <y>103</y>
+     <x>10</x>
+     <y>48</y>
     </hint>
    </hints>
   </connection>
@@ -32023,12 +32005,12 @@ font: 11pt bebas kai;
    <slot>setViewP()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>781</x>
-     <y>99</y>
+     <x>146</x>
+     <y>78</y>
     </hint>
     <hint type="destinationlabel">
-     <x>831</x>
-     <y>103</y>
+     <x>10</x>
+     <y>48</y>
     </hint>
    </hints>
   </connection>
@@ -32039,12 +32021,12 @@ font: 11pt bebas kai;
    <slot>setViewPath()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>781</x>
-     <y>507</y>
+     <x>146</x>
+     <y>78</y>
     </hint>
     <hint type="destinationlabel">
-     <x>831</x>
-     <y>103</y>
+     <x>10</x>
+     <y>48</y>
     </hint>
    </hints>
   </connection>
@@ -32055,12 +32037,12 @@ font: 11pt bebas kai;
    <slot>setViewZ()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>781</x>
-     <y>225</y>
+     <x>146</x>
+     <y>78</y>
     </hint>
     <hint type="destinationlabel">
-     <x>831</x>
-     <y>103</y>
+     <x>10</x>
+     <y>48</y>
     </hint>
    </hints>
   </connection>
@@ -32071,12 +32053,12 @@ font: 11pt bebas kai;
    <slot>clearLivePlot()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>781</x>
-     <y>549</y>
+     <x>146</x>
+     <y>78</y>
     </hint>
     <hint type="destinationlabel">
-     <x>831</x>
-     <y>103</y>
+     <x>10</x>
+     <y>48</y>
     </hint>
    </hints>
   </connection>
@@ -32087,12 +32069,12 @@ font: 11pt bebas kai;
    <slot>toggleProgramBounds()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>1742</x>
-     <y>101</y>
+     <x>1844</x>
+     <y>133</y>
     </hint>
     <hint type="destinationlabel">
-     <x>110</x>
-     <y>66</y>
+     <x>1196</x>
+     <y>196</y>
     </hint>
    </hints>
   </connection>
@@ -32103,12 +32085,12 @@ font: 11pt bebas kai;
    <slot>toggleMachineBounds()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>1742</x>
-     <y>101</y>
+     <x>1844</x>
+     <y>181</y>
     </hint>
     <hint type="destinationlabel">
-     <x>831</x>
-     <y>103</y>
+     <x>10</x>
+     <y>48</y>
     </hint>
    </hints>
   </connection>
@@ -32119,12 +32101,12 @@ font: 11pt bebas kai;
    <slot>zoomOut()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>781</x>
-     <y>361</y>
+     <x>146</x>
+     <y>78</y>
     </hint>
     <hint type="destinationlabel">
-     <x>831</x>
-     <y>103</y>
+     <x>10</x>
+     <y>48</y>
     </hint>
    </hints>
   </connection>
@@ -32135,12 +32117,12 @@ font: 11pt bebas kai;
    <slot>toggleProgramBounds()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>1742</x>
-     <y>101</y>
+     <x>1844</x>
+     <y>133</y>
     </hint>
     <hint type="destinationlabel">
-     <x>831</x>
-     <y>103</y>
+     <x>10</x>
+     <y>48</y>
     </hint>
    </hints>
   </connection>
@@ -32151,12 +32133,12 @@ font: 11pt bebas kai;
    <slot>toggleMachineTicks()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>1742</x>
-     <y>101</y>
+     <x>1844</x>
+     <y>289</y>
     </hint>
     <hint type="destinationlabel">
-     <x>831</x>
-     <y>103</y>
+     <x>10</x>
+     <y>48</y>
     </hint>
    </hints>
   </connection>
@@ -32167,12 +32149,12 @@ font: 11pt bebas kai;
    <slot>toggleProgramTicks()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>1742</x>
-     <y>101</y>
+     <x>1844</x>
+     <y>241</y>
     </hint>
     <hint type="destinationlabel">
-     <x>831</x>
-     <y>103</y>
+     <x>10</x>
+     <y>48</y>
     </hint>
    </hints>
   </connection>
@@ -32183,12 +32165,12 @@ font: 11pt bebas kai;
    <slot>toggleProgramLabels()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>1742</x>
-     <y>101</y>
+     <x>1844</x>
+     <y>349</y>
     </hint>
     <hint type="destinationlabel">
-     <x>831</x>
-     <y>103</y>
+     <x>10</x>
+     <y>48</y>
     </hint>
    </hints>
   </connection>
@@ -32199,12 +32181,12 @@ font: 11pt bebas kai;
    <slot>setViewPersp()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>781</x>
-     <y>643</y>
+     <x>146</x>
+     <y>78</y>
     </hint>
     <hint type="destinationlabel">
-     <x>831</x>
-     <y>103</y>
+     <x>10</x>
+     <y>48</y>
     </hint>
    </hints>
   </connection>
@@ -32215,12 +32197,12 @@ font: 11pt bebas kai;
    <slot>setViewOrtho()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>781</x>
-     <y>601</y>
+     <x>146</x>
+     <y>78</y>
     </hint>
     <hint type="destinationlabel">
-     <x>831</x>
-     <y>103</y>
+     <x>10</x>
+     <y>48</y>
     </hint>
    </hints>
   </connection>
@@ -32235,8 +32217,8 @@ font: 11pt bebas kai;
      <y>101</y>
     </hint>
     <hint type="destinationlabel">
-     <x>831</x>
-     <y>103</y>
+     <x>10</x>
+     <y>48</y>
     </hint>
    </hints>
   </connection>
@@ -32247,12 +32229,12 @@ font: 11pt bebas kai;
    <slot>showGrid(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>1742</x>
-     <y>101</y>
+     <x>1844</x>
+     <y>457</y>
     </hint>
     <hint type="destinationlabel">
-     <x>831</x>
-     <y>103</y>
+     <x>10</x>
+     <y>48</y>
     </hint>
    </hints>
   </connection>
@@ -32263,12 +32245,12 @@ font: 11pt bebas kai;
    <slot>setViewY()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>1742</x>
-     <y>101</y>
+     <x>1747</x>
+     <y>225</y>
     </hint>
     <hint type="destinationlabel">
-     <x>831</x>
-     <y>103</y>
+     <x>10</x>
+     <y>48</y>
     </hint>
    </hints>
   </connection>
@@ -32279,12 +32261,12 @@ font: 11pt bebas kai;
    <slot>zoomOut()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>1742</x>
-     <y>101</y>
+     <x>1747</x>
+     <y>387</y>
     </hint>
     <hint type="destinationlabel">
-     <x>831</x>
-     <y>103</y>
+     <x>10</x>
+     <y>48</y>
     </hint>
    </hints>
   </connection>
@@ -32295,12 +32277,12 @@ font: 11pt bebas kai;
    <slot>setViewX()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>1742</x>
-     <y>101</y>
+     <x>1747</x>
+     <y>179</y>
     </hint>
     <hint type="destinationlabel">
-     <x>831</x>
-     <y>103</y>
+     <x>10</x>
+     <y>48</y>
     </hint>
    </hints>
   </connection>
@@ -32311,12 +32293,12 @@ font: 11pt bebas kai;
    <slot>zoomIn()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>1742</x>
-     <y>101</y>
+     <x>1747</x>
+     <y>341</y>
     </hint>
     <hint type="destinationlabel">
-     <x>831</x>
-     <y>103</y>
+     <x>10</x>
+     <y>48</y>
     </hint>
    </hints>
   </connection>
@@ -32327,12 +32309,12 @@ font: 11pt bebas kai;
    <slot>setViewOrtho()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>1742</x>
-     <y>101</y>
+     <x>1747</x>
+     <y>526</y>
     </hint>
     <hint type="destinationlabel">
-     <x>831</x>
-     <y>103</y>
+     <x>10</x>
+     <y>48</y>
     </hint>
    </hints>
   </connection>
@@ -32343,12 +32325,12 @@ font: 11pt bebas kai;
    <slot>clearLivePlot()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>1742</x>
-     <y>101</y>
+     <x>1747</x>
+     <y>457</y>
     </hint>
     <hint type="destinationlabel">
-     <x>831</x>
-     <y>103</y>
+     <x>10</x>
+     <y>48</y>
     </hint>
    </hints>
   </connection>
@@ -32359,12 +32341,12 @@ font: 11pt bebas kai;
    <slot>setViewMachine()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>1742</x>
-     <y>101</y>
+     <x>1844</x>
+     <y>571</y>
     </hint>
     <hint type="destinationlabel">
-     <x>831</x>
-     <y>103</y>
+     <x>10</x>
+     <y>48</y>
     </hint>
    </hints>
   </connection>
@@ -32375,12 +32357,12 @@ font: 11pt bebas kai;
    <slot>setViewPersp()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>1742</x>
-     <y>101</y>
+     <x>1747</x>
+     <y>572</y>
     </hint>
     <hint type="destinationlabel">
-     <x>831</x>
-     <y>103</y>
+     <x>10</x>
+     <y>48</y>
     </hint>
    </hints>
   </connection>
@@ -32391,12 +32373,12 @@ font: 11pt bebas kai;
    <slot>printView()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>1742</x>
-     <y>101</y>
+     <x>1844</x>
+     <y>523</y>
     </hint>
     <hint type="destinationlabel">
-     <x>831</x>
-     <y>103</y>
+     <x>10</x>
+     <y>48</y>
     </hint>
    </hints>
   </connection>
@@ -32407,12 +32389,12 @@ font: 11pt bebas kai;
    <slot>setViewPersp()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>1742</x>
-     <y>101</y>
+     <x>1747</x>
+     <y>572</y>
     </hint>
     <hint type="destinationlabel">
-     <x>110</x>
-     <y>66</y>
+     <x>1196</x>
+     <y>196</y>
     </hint>
    </hints>
   </connection>
@@ -32427,8 +32409,8 @@ font: 11pt bebas kai;
      <y>101</y>
     </hint>
     <hint type="destinationlabel">
-     <x>110</x>
-     <y>66</y>
+     <x>1196</x>
+     <y>196</y>
     </hint>
    </hints>
   </connection>
@@ -32439,12 +32421,12 @@ font: 11pt bebas kai;
    <slot>setViewX()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>1742</x>
-     <y>101</y>
+     <x>1747</x>
+     <y>179</y>
     </hint>
     <hint type="destinationlabel">
-     <x>110</x>
-     <y>66</y>
+     <x>1196</x>
+     <y>196</y>
     </hint>
    </hints>
   </connection>
@@ -32455,12 +32437,12 @@ font: 11pt bebas kai;
    <slot>setViewY()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>1742</x>
-     <y>101</y>
+     <x>1747</x>
+     <y>225</y>
     </hint>
     <hint type="destinationlabel">
-     <x>110</x>
-     <y>66</y>
+     <x>1196</x>
+     <y>196</y>
     </hint>
    </hints>
   </connection>
@@ -32471,12 +32453,12 @@ font: 11pt bebas kai;
    <slot>zoomIn()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>1742</x>
-     <y>101</y>
+     <x>1747</x>
+     <y>341</y>
     </hint>
     <hint type="destinationlabel">
-     <x>110</x>
-     <y>66</y>
+     <x>1196</x>
+     <y>196</y>
     </hint>
    </hints>
   </connection>
@@ -32487,12 +32469,12 @@ font: 11pt bebas kai;
    <slot>zoomOut()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>1742</x>
-     <y>101</y>
+     <x>1747</x>
+     <y>387</y>
     </hint>
     <hint type="destinationlabel">
-     <x>110</x>
-     <y>66</y>
+     <x>1196</x>
+     <y>196</y>
     </hint>
    </hints>
   </connection>
@@ -32503,12 +32485,12 @@ font: 11pt bebas kai;
    <slot>clearLivePlot()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>1742</x>
-     <y>101</y>
+     <x>1747</x>
+     <y>457</y>
     </hint>
     <hint type="destinationlabel">
-     <x>110</x>
-     <y>66</y>
+     <x>1196</x>
+     <y>196</y>
     </hint>
    </hints>
   </connection>
@@ -32519,12 +32501,12 @@ font: 11pt bebas kai;
    <slot>setViewOrtho()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>1742</x>
-     <y>101</y>
+     <x>1747</x>
+     <y>526</y>
     </hint>
     <hint type="destinationlabel">
-     <x>110</x>
-     <y>66</y>
+     <x>1196</x>
+     <y>196</y>
     </hint>
    </hints>
   </connection>
@@ -32535,12 +32517,12 @@ font: 11pt bebas kai;
    <slot>toggleMachineTicks()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>1742</x>
-     <y>101</y>
+     <x>1844</x>
+     <y>289</y>
     </hint>
     <hint type="destinationlabel">
-     <x>110</x>
-     <y>66</y>
+     <x>1196</x>
+     <y>196</y>
     </hint>
    </hints>
   </connection>
@@ -32551,12 +32533,12 @@ font: 11pt bebas kai;
    <slot>showGrid(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>1742</x>
-     <y>101</y>
+     <x>1844</x>
+     <y>457</y>
     </hint>
     <hint type="destinationlabel">
-     <x>110</x>
-     <y>66</y>
+     <x>1196</x>
+     <y>196</y>
     </hint>
    </hints>
   </connection>
@@ -32567,12 +32549,12 @@ font: 11pt bebas kai;
    <slot>toggleMachineLabels()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>1742</x>
-     <y>101</y>
+     <x>1844</x>
+     <y>397</y>
     </hint>
     <hint type="destinationlabel">
-     <x>110</x>
-     <y>66</y>
+     <x>1196</x>
+     <y>196</y>
     </hint>
    </hints>
   </connection>
@@ -32583,12 +32565,12 @@ font: 11pt bebas kai;
    <slot>toggleMachineBounds()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>1742</x>
-     <y>101</y>
+     <x>1844</x>
+     <y>181</y>
     </hint>
     <hint type="destinationlabel">
-     <x>110</x>
-     <y>66</y>
+     <x>1196</x>
+     <y>196</y>
     </hint>
    </hints>
   </connection>
@@ -32599,12 +32581,12 @@ font: 11pt bebas kai;
    <slot>toggleProgramTicks()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>1742</x>
-     <y>101</y>
+     <x>1844</x>
+     <y>241</y>
     </hint>
     <hint type="destinationlabel">
-     <x>110</x>
-     <y>66</y>
+     <x>1196</x>
+     <y>196</y>
     </hint>
    </hints>
   </connection>
@@ -32615,12 +32597,12 @@ font: 11pt bebas kai;
    <slot>toggleProgramLabels()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>1742</x>
-     <y>101</y>
+     <x>1844</x>
+     <y>349</y>
     </hint>
     <hint type="destinationlabel">
-     <x>110</x>
-     <y>66</y>
+     <x>1196</x>
+     <y>196</y>
     </hint>
    </hints>
   </connection>
@@ -32631,12 +32613,12 @@ font: 11pt bebas kai;
    <slot>setViewZ()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>1742</x>
-     <y>101</y>
+     <x>1747</x>
+     <y>271</y>
     </hint>
     <hint type="destinationlabel">
-     <x>831</x>
-     <y>103</y>
+     <x>10</x>
+     <y>48</y>
     </hint>
    </hints>
   </connection>
@@ -32647,11 +32629,11 @@ font: 11pt bebas kai;
    <slot>rename()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>109</x>
-     <y>75</y>
+     <x>543</x>
+     <y>102</y>
     </hint>
     <hint type="destinationlabel">
-     <x>119</x>
+     <x>180</x>
      <y>75</y>
     </hint>
    </hints>
@@ -32663,12 +32645,12 @@ font: 11pt bebas kai;
    <slot>printView()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>1742</x>
-     <y>101</y>
+     <x>1844</x>
+     <y>523</y>
     </hint>
     <hint type="destinationlabel">
-     <x>110</x>
-     <y>66</y>
+     <x>1196</x>
+     <y>196</y>
     </hint>
    </hints>
   </connection>
@@ -32679,12 +32661,12 @@ font: 11pt bebas kai;
    <slot>setViewMachine()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>1742</x>
-     <y>101</y>
+     <x>1844</x>
+     <y>571</y>
     </hint>
     <hint type="destinationlabel">
-     <x>110</x>
-     <y>66</y>
+     <x>1196</x>
+     <y>196</y>
     </hint>
    </hints>
   </connection>
@@ -32695,12 +32677,12 @@ font: 11pt bebas kai;
    <slot>setViewZ()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>1742</x>
-     <y>101</y>
+     <x>1747</x>
+     <y>271</y>
     </hint>
     <hint type="destinationlabel">
-     <x>110</x>
-     <y>66</y>
+     <x>1196</x>
+     <y>196</y>
     </hint>
    </hints>
   </connection>
@@ -32711,11 +32693,11 @@ font: 11pt bebas kai;
    <slot>rename()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>109</x>
-     <y>75</y>
+     <x>509</x>
+     <y>102</y>
     </hint>
     <hint type="destinationlabel">
-     <x>119</x>
+     <x>146</x>
      <y>75</y>
     </hint>
    </hints>
@@ -32727,12 +32709,12 @@ font: 11pt bebas kai;
    <slot>setText(QString)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>119</x>
+     <x>180</x>
      <y>75</y>
     </hint>
     <hint type="destinationlabel">
-     <x>110</x>
-     <y>60</y>
+     <x>187</x>
+     <y>89</y>
     </hint>
    </hints>
   </connection>
@@ -32743,12 +32725,12 @@ font: 11pt bebas kai;
    <slot>find_replace()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>128</x>
-     <y>96</y>
+     <x>228</x>
+     <y>125</y>
     </hint>
     <hint type="destinationlabel">
-     <x>110</x>
-     <y>60</y>
+     <x>187</x>
+     <y>89</y>
     </hint>
    </hints>
   </connection>
@@ -32759,12 +32741,12 @@ font: 11pt bebas kai;
    <slot>saveAs()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>128</x>
-     <y>96</y>
+     <x>271</x>
+     <y>125</y>
     </hint>
     <hint type="destinationlabel">
-     <x>110</x>
-     <y>60</y>
+     <x>187</x>
+     <y>89</y>
     </hint>
    </hints>
   </connection>
@@ -32779,8 +32761,8 @@ font: 11pt bebas kai;
      <y>96</y>
     </hint>
     <hint type="destinationlabel">
-     <x>110</x>
-     <y>60</y>
+     <x>187</x>
+     <y>89</y>
     </hint>
    </hints>
   </connection>
@@ -32791,12 +32773,12 @@ font: 11pt bebas kai;
    <slot>save()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>128</x>
-     <y>96</y>
+     <x>249</x>
+     <y>125</y>
     </hint>
     <hint type="destinationlabel">
-     <x>110</x>
-     <y>60</y>
+     <x>187</x>
+     <y>89</y>
     </hint>
    </hints>
   </connection>
@@ -32807,12 +32789,12 @@ font: 11pt bebas kai;
    <slot>setText(QString)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>119</x>
+     <x>180</x>
      <y>75</y>
     </hint>
     <hint type="destinationlabel">
-     <x>328</x>
-     <y>79</y>
+     <x>405</x>
+     <y>107</y>
     </hint>
    </hints>
   </connection>
@@ -32823,12 +32805,12 @@ font: 11pt bebas kai;
    <slot>setFilename(QString)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>119</x>
+     <x>180</x>
      <y>75</y>
     </hint>
     <hint type="destinationlabel">
-     <x>110</x>
-     <y>60</y>
+     <x>187</x>
+     <y>89</y>
     </hint>
    </hints>
   </connection>
@@ -32839,8 +32821,8 @@ font: 11pt bebas kai;
    <slot>deleteSelectedOffset()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>119</x>
-     <y>78</y>
+     <x>143</x>
+     <y>562</y>
     </hint>
     <hint type="destinationlabel">
      <x>117</x>
@@ -32855,8 +32837,8 @@ font: 11pt bebas kai;
    <slot>clearOffsetTable()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>119</x>
-     <y>78</y>
+     <x>276</x>
+     <y>562</y>
     </hint>
     <hint type="destinationlabel">
      <x>220</x>
@@ -32871,8 +32853,8 @@ font: 11pt bebas kai;
    <slot>saveOffsetTable()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>119</x>
-     <y>78</y>
+     <x>409</x>
+     <y>562</y>
     </hint>
     <hint type="destinationlabel">
      <x>358</x>
@@ -32887,8 +32869,8 @@ font: 11pt bebas kai;
    <slot>loadOffsetTable()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>119</x>
-     <y>78</y>
+     <x>541</x>
+     <y>562</y>
     </hint>
     <hint type="destinationlabel">
      <x>508</x>
@@ -32898,16 +32880,16 @@ font: 11pt bebas kai;
   </connection>
   <connection>
    <sender>removabledevicecombobox</sender>
-   <signal>currentIndexChanged(QString)</signal>
+   <signal>currentPathChanged(QString)</signal>
    <receiver>filesystemtable_2</receiver>
    <slot>setRootPath(QString)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>119</x>
-     <y>75</y>
+     <x>238</x>
+     <y>107</y>
     </hint>
     <hint type="destinationlabel">
-     <x>119</x>
+     <x>146</x>
      <y>75</y>
     </hint>
    </hints>
@@ -32919,12 +32901,12 @@ font: 11pt bebas kai;
    <slot>setEnabled(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>119</x>
-     <y>75</y>
+     <x>238</x>
+     <y>107</y>
     </hint>
     <hint type="destinationlabel">
-     <x>119</x>
-     <y>75</y>
+     <x>518</x>
+     <y>107</y>
     </hint>
    </hints>
   </connection>
@@ -32935,12 +32917,12 @@ font: 11pt bebas kai;
    <slot>ejectDevice()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>119</x>
-     <y>75</y>
+     <x>518</x>
+     <y>107</y>
     </hint>
     <hint type="destinationlabel">
-     <x>119</x>
-     <y>75</y>
+     <x>238</x>
+     <y>107</y>
     </hint>
    </hints>
   </connection>
@@ -32951,12 +32933,12 @@ font: 11pt bebas kai;
    <slot>click()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>185</x>
-     <y>88</y>
+     <x>211</x>
+     <y>169</y>
     </hint>
     <hint type="destinationlabel">
-     <x>210</x>
-     <y>90</y>
+     <x>383</x>
+     <y>170</y>
     </hint>
    </hints>
   </connection>
@@ -32967,12 +32949,12 @@ font: 11pt bebas kai;
    <slot>click()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>483</x>
-     <y>168</y>
+     <x>490</x>
+     <y>264</y>
     </hint>
     <hint type="destinationlabel">
-     <x>503</x>
-     <y>170</y>
+     <x>619</x>
+     <y>265</y>
     </hint>
    </hints>
   </connection>
@@ -32999,12 +32981,12 @@ font: 11pt bebas kai;
    <slot>click()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>213</x>
-     <y>88</y>
+     <x>239</x>
+     <y>416</y>
     </hint>
     <hint type="destinationlabel">
-     <x>210</x>
-     <y>90</y>
+     <x>379</x>
+     <y>417</y>
     </hint>
    </hints>
   </connection>
@@ -33015,12 +32997,12 @@ font: 11pt bebas kai;
    <slot>click()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>483</x>
-     <y>168</y>
+     <x>490</x>
+     <y>381</y>
     </hint>
     <hint type="destinationlabel">
-     <x>503</x>
-     <y>170</y>
+     <x>619</x>
+     <y>382</y>
     </hint>
    </hints>
   </connection>
@@ -33031,12 +33013,44 @@ font: 11pt bebas kai;
    <slot>enable_panning(bool)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>744</x>
-     <y>261</y>
+     <x>146</x>
+     <y>78</y>
     </hint>
     <hint type="destinationlabel">
-     <x>1210</x>
-     <y>355</y>
+     <x>10</x>
+     <y>48</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>filesystemtable_2</sender>
+   <signal>atDeviceRoot(bool)</signal>
+   <receiver>device_folder_up_button</receiver>
+   <slot>setDisabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>143</x>
+     <y>75</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>154</x>
+     <y>107</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>removabledevicecombobox</sender>
+   <signal>currentDeviceEjectable(bool)</signal>
+   <receiver>device_eject_usb_button</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>238</x>
+     <y>107</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>518</x>
+     <y>107</y>
     </hint>
    </hints>
   </connection>
@@ -33059,19 +33073,16 @@ font: 11pt bebas kai;
   </property>
  </designerdata>
  <buttongroups>
-  <buttongroup name="proberoutinebtnGroup"/>
+  <buttongroup name="probetabGroup"/>
+  <buttongroup name="plotorthoperspbtnGroup"/>
+  <buttongroup name="plotviewGroup"/>
   <buttongroup name="mainorthoperspbtnGroup"/>
-  <buttongroup name="customwcsbtnGroup"/>
-  <buttongroup name="guiaxisdisplayGroup"/>
+  <buttongroup name="xycalbtnGroup"/>
   <buttongroup name="probepagewcsbtnGroup"/>
   <buttongroup name="probemodeGroup"/>
-  <buttongroup name="plotviewGroup"/>
+  <buttongroup name="proberoutinebtnGroup"/>
+  <buttongroup name="probehelpGroup"/>
+  <buttongroup name="customwcsbtnGroup"/>
   <buttongroup name="fileviewerbtnGroup"/>
-  <buttongroup name="probetabGroup"/>
-  <buttongroup name="xycalbtnGroup"/>
-  <buttongroup name="probehelpGroup"/>
-  <buttongroup name="plotorthoperspbtnGroup"/>
-  <buttongroup name="probemodeGroup"/>
-  <buttongroup name="probehelpGroup"/>
  </buttongroups>
 </ui>
