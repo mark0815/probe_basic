@@ -20088,6 +20088,65 @@ QPushButton:checked {
              </property>
             </widget>
            </widget>
+           <widget class="SubCallButton" name="tool_touch_off_spindle_nose">
+            <property name="geometry">
+             <rect>
+              <x>40</x>
+              <y>230</y>
+              <width>210</width>
+              <height>45</height>
+             </rect>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>145</width>
+              <height>45</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">QPushButton {
+    color: white;    
+    border-color: black;
+    border-style: solid;
+    border-radius: 5px;
+    border-width: 2px;
+    background: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 rgba(213, 218, 216, 255), stop:0.169312 rgba(82, 82, 83, 255), stop:0.328042 rgba(72, 70, 73, 255), stop:0.492063 rgba(78, 77, 79, 255), stop:0.703704 rgba(72, 70, 73, 255), stop:0.86 rgba(82, 82, 83, 255), stop:1 rgba(213, 218, 216, 255));
+}
+
+QPushButton {
+    font-family: &quot;Bebas Kai&quot;;
+    font-size: 16pt;
+}
+
+QPushButton:disabled {
+    border-color: gray;
+}
+
+QPushButton:hover {
+    background:  qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                     stop: 0 #A19E9E, stop: 1.0 #5C5959);
+}
+
+QPushButton:pressed {
+    background:  qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(85, 85, 238, 255), stop:0.544974 rgba(90, 91, 239, 255), stop:1 rgba(126, 135, 243, 255));
+}
+
+QPushButton:checked[option=&quot;true&quot;] {
+    background:  qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(85, 85, 238, 255), stop:0.544974 rgba(90, 91, 239, 255), stop:1 rgba(126, 135, 243, 255));
+}
+
+QPushButton:checked {
+    background:  qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(85, 85, 238, 255), stop:0.544974 rgba(90, 91, 239, 255), stop:1 rgba(126, 135, 243, 255));
+}
+</string>
+            </property>
+            <property name="text">
+             <string>TOUCH OFF CURRENT TOOL</string>
+            </property>
+            <property name="filename" stdset="0">
+             <string>touch_off_spindle_nose.ngc</string>
+            </property>
+           </widget>
           </widget>
          </widget>
         </item>
@@ -29997,7 +30056,7 @@ LOAD</string>
             <string notr="true"/>
            </property>
            <property name="value" stdset="0">
-            <double>150.000000000000000</double>
+            <double>100.000000000000000</double>
            </property>
            <property name="maximum" stdset="0">
             <double>150.000000000000000</double>
@@ -33073,16 +33132,16 @@ font: 11pt bebas kai;
   </property>
  </designerdata>
  <buttongroups>
-  <buttongroup name="probetabGroup"/>
-  <buttongroup name="plotorthoperspbtnGroup"/>
-  <buttongroup name="plotviewGroup"/>
   <buttongroup name="mainorthoperspbtnGroup"/>
-  <buttongroup name="xycalbtnGroup"/>
-  <buttongroup name="probepagewcsbtnGroup"/>
-  <buttongroup name="probemodeGroup"/>
-  <buttongroup name="proberoutinebtnGroup"/>
-  <buttongroup name="probehelpGroup"/>
+  <buttongroup name="probetabGroup"/>
   <buttongroup name="customwcsbtnGroup"/>
+  <buttongroup name="plotviewGroup"/>
+  <buttongroup name="probemodeGroup"/>
+  <buttongroup name="xycalbtnGroup"/>
+  <buttongroup name="plotorthoperspbtnGroup"/>
+  <buttongroup name="probehelpGroup"/>
   <buttongroup name="fileviewerbtnGroup"/>
+  <buttongroup name="probepagewcsbtnGroup"/>
+  <buttongroup name="proberoutinebtnGroup"/>
  </buttongroups>
 </ui>
